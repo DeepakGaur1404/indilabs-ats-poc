@@ -1,0 +1,115 @@
+*,
+*:focus {
+  outline: none;
+}
+
+.form {
+  width: auto;
+  margin: 0 auto;
+  margin-top: 150px;
+  font-family: sans-serif;
+  background: #fff;
+}
+
+.form-item {
+  position: relative;
+}
+
+.form-item input[type="text"] {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background: transparent;
+  border: solid 1px #6F6B75;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form-item input[type="text"]:focus {
+  // border: none;
+  border-color: gray;
+  //border-width: 3px;
+  //outline: none;
+}
+
+.form-item label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: -6px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #5F558E;
+  transition: all 0.3s ease;
+}
+
+.form-item input:focus + label,
+.form-item input:valid + label {
+  // font-size: 11px;
+  top: -6px;
+}
+
+.form-item input:focus + label {
+  color: black;
+  //font-weight:bolder;
+}
+
+.commonBox {
+  .username {
+    font-size: 15px;
+    color: #7f7f7f;
+    font-weight: 600;
+    font-family: 'Calibri' !important
+  }
+
+  div {
+    display: flex;
+
+    .amount {
+      font-size: 16px;
+    }
+
+    img {
+      font-weight: 700;
+      margin: 0 10px;
+    }
+
+    .red {
+      transform: rotate(180deg);
+    }
+
+    .smText {
+      font-size: 10px;
+      color: black;
+      margin: 0 !important;
+    }
+  }
+}
+
+.vertical-line {
+  border-left: 2px solid #4472C4; /* Adjust the color and thickness as needed */
+  height: 30px; /* Set the height of the vertical line */
+  // margin: 6px 10px; /* Adjust the margin as needed */
+  margin-left:20px;
+  align-self: center;
+}
+
+.vertical-bar {
+  border-left: 1px solid #E0E3E8; 
+  height: 32px; 
+  // margin-left:60px;
+  align-self: center;
+}
+.input-field {
+  border: none;
+  outline: none; /* Remove the border by default */
+}
+
+.input-field:focus {
+  outline: none; /* Remove the outline when the input is focused */
+}

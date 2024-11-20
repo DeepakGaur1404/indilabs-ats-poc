@@ -1,0 +1,72 @@
+@media all and (min-width:1024px) {
+    .mainHeaderWrapper {
+        padding-left: 230px;
+    }
+}
+@media all and (max-width:991px) {
+    .mainHeaderWrapper {
+        padding-left: 60px;
+        h1{
+            display: none;
+        }
+    }
+}
+@media all and (max-width:768px) {
+    .mainHeaderWrapper {
+        padding-left: 60px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        h1{
+            padding: 20px 0;
+            width: 100%;
+
+        }
+        
+        .leftContainHeader{
+            padding: 10px;
+            // width: 100%;
+            
+            div{
+                width: 100%;
+            }
+            justify-content: space-between;
+        }
+        .nameHeader{
+            display: none;
+        }
+    }
+}
+
+@media all and (max-width : 480px) {
+    .iconHeader{
+        margin: 0;
+        padding: 0;
+        width: auto !important;
+        margin-right: 30px;
+    }
+    .mainHeaderWrapper{
+        flex-direction: column-reverse;
+        padding-right: 25px;
+        .tabsectionHeader{
+            width: 100% ;
+            justify-content: space-around;
+            p{
+                width: 48%;
+                text-align: center;
+            }            
+            button{
+                width: 48%;
+            }
+        }
+        .leftContainHeader{
+            width: 100%;
+            div{
+                justify-content: space-between;
+            }
+        }
+        .profileIConHeader{
+            width: auto !important;
+        }
+    }
+}

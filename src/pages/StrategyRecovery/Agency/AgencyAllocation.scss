@@ -1,0 +1,140 @@
+@media all and (max-width: 1330px) {
+    .upperSectionAllocation {
+      flex-direction: column;
+      overflow-x: auto;
+  
+      .B1TabsContain {
+        min-width: 400px;
+      }
+  
+      .cityes {
+        margin-top: 20px;
+        width: 100%;
+        min-width: 600px;
+      }
+    }
+  
+    .chartDonatGraph {
+      margin-left: 0;
+  
+      canvas {
+        width: 80% !important;
+        // height: 80% !important;
+      }
+    }
+  
+    .chartLineGraph {
+      div {
+        width: 100% !important;
+      }
+  
+      svg {
+        width: 80%;
+      }
+    }
+  }
+  
+  @media all and (max-width: 1024px) {
+    .chartDonatGraph {
+      margin-left: 0;
+  
+      canvas {
+        width: 100% !important;
+        // height: 80% !important;
+      }
+    }
+  }
+  
+  @media all and (max-width: 1180px) {
+    .commonInput {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media all and (max-width: 991px) {
+    p {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .commonInput {
+      width: 50%;
+  
+      input {
+        width: 97%;
+      }
+    }
+  
+    .commonBox {
+      width: 50%;
+  
+      .username {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  @media all and (max-width: 768px) {
+    .responsivePageWrapper {
+      padding: 0px;
+    }
+  
+    .commonInput {
+      width: 100%;
+  
+      input {
+        width: 97%;
+      }
+    }
+  
+    .commonBox {
+      width: 100%;
+  
+      .username {
+        margin-bottom: 5px;
+      }
+    }
+  
+    .AllocationTabelMain {
+      overflow-x: auto;
+  
+      table {
+        width: 500px;
+      }
+    }
+  }
+  
+  @media all and (max-width: 480px) {
+    .CustomTabsDashHeader {
+      div {
+        min-width: auto;
+      }
+    }
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #5C4E8E;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 48.5%;
+    z-index: 1000;
+  }

@@ -1,0 +1,117 @@
+@media all and (max-width: 490px) {
+    .proposer_text {
+        margin-left: -245px;
+    }
+}
+
+@media all and (max-width: 460px) {
+    .proposer_text {
+        margin-left: -245px;
+    }
+}
+
+@media all and (max-width: 415px) {
+    .Dur_text {
+        padding-right: 5px;
+        padding-top: 6px;
+        padding-bottom: 24px;    }
+}
+
+@media all and (max-width: 403px) {
+    .impact-container {
+        margin-left: -19px;
+    }
+}
+
+@media all and (max-width: 396px) {
+    .impact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-text {
+        font-size: 12px;
+        margin-right: 0px;
+    }
+   
+    .impact_text{
+        margin-left: 88px;    
+    }
+    .perf_text{
+        margin-left: 88px;     
+    }
+    .vsRecommend_text{
+        margin-left: 60px;
+    }
+}
+
+@media all and (max-width: 335px) {
+    table.performance_table{
+        margin-left: 30px;
+    }
+    table.recommended_table{
+        margin-left: 20px;
+    }
+    table.proposed_table{
+        margin-left: 30px;
+    }
+}
+
+@media all and (max-width: 327px) {
+    table.performance_table{
+        margin-left: 17px;   
+     }
+}
+    
+
+@media all and (max-width: 315px) {
+    .proposer_text {
+        margin-left: -239px;
+    }
+
+    .bucket_location {
+        margin-left: -16px;
+    }
+    table.performance_table{
+        margin-left: 11px;
+    }
+    table.recommended_table{
+        margin-left: 12px;
+    }
+}
+
+@media all and (max-width: 309px) {
+    table.performance_table{
+        margin-left: 5px;   
+     }
+}
+
+@media all and (max-width: 300px) {
+    .proposer_text {
+        margin-left: -211px;
+    }
+    .date_text {
+        margin-left: 21px;
+    }
+    .changeProposal-tableText{
+        font-size: 11px;
+    }
+}
+
+@media all and (max-width: 290px) {
+    table.performance_table{
+        margin-left: 1px;
+    }
+    table.recommended_table{
+        margin-left: 5px;
+    }
+    
+    .bucket_location{
+        margin-left: -30px;
+    }
+
+    .location_input{
+        margin-left: -7px;
+    }
+}

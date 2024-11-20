@@ -1,0 +1,41 @@
+@media all and (max-width : 1360px) {
+    .DashbOardHeaderCards {
+        justify-content: left !important;
+
+        // .CustomTabsDashHeader {
+            // width: 18%;
+            // border-right: none;
+        // }
+    }
+}
+
+@media (max-width: 1100px) {
+    .DashbOardHeaderCards {
+        .CustomTabsDashHeader {
+            width: 47%;
+            border-right: none;
+        }
+    }
+}
+
+
+@media all and (max-width : 768px) {
+    .DashbOardHeaderCards {
+        .CustomTabsDashHeader {
+            width: 46%;
+            border-right: none;
+        }
+    }
+
+    .DashBoardHeaderTabs {
+        margin: 20px 0;
+    }
+}
+
+@media all and (max-width : 420px) {
+    .DashbOardHeaderCards {
+        .CustomTabsDashHeader {
+            width: 100%;
+        }
+    }
+}

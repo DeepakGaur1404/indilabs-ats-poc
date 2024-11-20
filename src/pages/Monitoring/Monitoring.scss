@@ -1,0 +1,257 @@
+@media all and (max-width: 1180px) {
+  .writeoffsBOs {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .placemnetHeaight {
+      width: 95%;
+      height: auto;
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .MonitoringMainWrapper {
+    div {
+      width: 100%;
+    }
+  }
+
+  .writeoffsBOs {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .mapLocation {
+      height: 500px;
+
+      .labelsMapLocation {
+        width: auto;
+        padding: 15px;
+      }
+    }
+
+    .placemnetHeaight {
+      height: auto;
+    }
+  }
+
+  .frequency_text {
+    // position: absolute;
+    top: 50%;
+    left: -95px;
+  }
+
+  .benchmark_text {
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 990px) {
+  .frequency_text {
+    top: -14%;
+    left: -452px;
+  }} 
+
+@media all and (max-width: 940px) {
+  .frequency_text {
+    top: -14%;
+    left: -418px;
+  }
+}
+
+@media all and (max-width: 912px) {
+  .frequency_text {
+    top: -12%;
+    left: -406px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .frequency_text {
+    top: -17%;
+    left: -399px;
+  }
+}
+@media all and (max-width: 855px) {
+  .frequency_text {
+    top: -8%;
+    left: -381px;
+  }
+}
+
+@media all and (max-width: 820px) {
+  .frequency_text {
+    top: -3%;
+    left: -360px;
+  }
+}
+
+
+@media all and (max-width: 768px) {
+  .WritoffChart {
+    overflow-x: auto;
+
+    .recharts-wrapper {
+      width: 100% !important;
+    }
+  }
+
+  .BenchmarkTableMain {
+    overflow-x: auto;
+
+    .BenchmarkTableMainTable {
+      width: 700px;
+    }
+  }
+
+  .ColorIndicator {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .frequency_text {
+    top: 4%;
+    left: -326px;
+  }
+}
+
+@media all and (max-width: 710px) {
+  .frequency_text {
+    top: 8%;
+    left: -305px;
+  }
+}
+
+@media all and (max-width: 677px) {
+  .frequency_text {
+    top: 11%;
+    left: -292px;
+  }
+}
+
+@media all and (max-width: 645px) {
+  .frequency_text {
+    top: 13%;
+    left: -273px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .frequency_text {
+    top: 18%;
+    left: -256px;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .frequency_text {
+    top: 19%;
+    left: -240px;
+  }
+}
+
+
+@media all and (max-width : 540px) {
+  .writeoffsBOs {
+    .placemnetHeaight {
+      width: 85%;
+      height: auto;
+    }
+  }
+
+  .frequency_text {
+    top: 24%;
+    left: -224px;
+  }
+}
+
+@media all and (max-width : 505px) {
+  .frequency_text {
+    top: 26%;
+    left: -209px;
+  }
+}
+
+@media all and (max-width : 470px) {
+  .frequency_text {
+    top: 32%;
+    left: -193px;
+  }
+}
+
+@media all and (max-width : 440px) {
+  .frequency_text {
+    top: 33%;
+    left: -179px;
+  }
+}
+
+@media all and (max-width : 415px) {
+  .frequency_text {
+    top: 34%;
+    left: -167px;
+  }
+  .Blind_Text{
+    top: 91%;
+    left: 82%;
+  }
+}
+
+@media all and (max-width : 400px) {
+  .frequency_text {
+    top: 37%;
+    left: -159px;
+  }
+}
+
+@media all and (max-width : 380px) {
+  .frequency_text {
+    top: 39%;
+    left: -151px;
+  }
+}
+
+@media all and (max-width : 360px) {
+  .frequency_text {
+    top: 40%;
+    left: -140px;
+  }
+  .Blind_Text{
+    top: 13%;
+    left: 22%;
+  }
+}
+
+@media all and (max-width : 333px) {
+  .frequency_text {
+    top: 42%;
+    left: -131px;
+  }
+  .hotspot_text{
+    top: 13%;
+    left: 77%;
+  }
+  .Blind_Text{
+    top: 91%;
+    left: 82%;
+  }
+}
+
+@media all and (max-width : 300px) {
+  .frequency_text {
+    top: 46%;
+    left: -113px;
+  }
+  .Blind_Text{
+    top: 91%;
+    left: 80%;
+  }
+}

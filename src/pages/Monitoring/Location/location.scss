@@ -1,0 +1,53 @@
+@media all and (max-width:768px) {
+    .rangeLocation{
+        width: 100%;
+    }
+    .tempLocationControl{
+        width: 100%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .mainBodyLocation{
+        width: 65%;
+    }
+}
+
+@media all and (max-width:950px) {
+    .mainBodyLocation{
+        width: 70%;
+    }
+}
+
+@media all and (max-width:900px) {
+    .mainBodyLocation{
+        width: 75%;
+    }
+}
+
+@media all and (max-width:800px) {
+    .mainBodyLocation{
+        width: 85%;
+    }
+}
+
+@media all and (max-width:700px) {
+    .mainBodyLocation{
+        width: 99%;
+    }
+}
+
+.mainBodyLocation{
+    div{
+        width: 100%;
+        // height: auto;
+        margin-bottom: 9px;
+    }
+    .mapLocation{
+        height: 500px;
+        .labelsMapLocation{
+            width: auto;
+            padding: 15px;
+        }
+    }
+}

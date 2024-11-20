@@ -1,0 +1,114 @@
+.changesControlTab div {
+    background-color: #56478A !important;
+    height: 30px !important;
+    padding: 0px 25px !important;
+    clip-path: polygon(50% 0%, 86% 0, 100% 50%, 86% 100%, 0 100%, 12% 51%, 0 0) !important;
+    color: white !important;
+    margin-left: -20px !important;
+    width: 200px !important;
+    cursor: pointer;
+}
+
+ /* xyz */
+
+.changesControlTab div:first-child {
+    clip-path: polygon(50% 0%, 88% 0, 100% 50%, 88% 100%, 0 100%, 0 51%, 0 0) !important;
+    margin-left: 0px !important;
+}
+
+@media (max-width: 990px) {
+    .changesControlTab div {
+        padding: 14px 0px 0px 25px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .changesControlTab div:first-child {
+        margin-left: -15px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .changesControlTab div:first-child {
+        margin-left: -15px !important;
+        margin-right: 2px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .changesControlTab div:first-child {
+        margin-right: 4px !important;
+        margin-left: -15px !important;
+    }
+    .changesControlTab div:last-child {
+        margin-left: -18px !important;  
+      }
+}
+
+@media (max-width: 470px) {
+    .changesControlTab div:first-child {
+        margin-right: 5px !important;
+        margin-left: -15px !important;
+    }
+    .changesControlTab div:last-child {
+        margin-left: -15px !important;  
+      }
+}
+
+@media (max-width: 450px) {
+    .changesControlTab div:first-child {
+        margin-right: 7px !important;
+        margin-left: -15px !important;
+    }
+    
+    .changesControlTab div:last-child {
+        margin-left: -14px !important;  
+      }
+}
+
+
+@media (max-width: 380px) {
+    .changesControlTab div {
+        width: 100% !important;
+        /* Set the width to 100% for smaller screens */
+        margin-left: 0 !important;
+        /* Remove negative margin for smaller screens */
+        clip-path: polygon(50% 0%, 88% 0, 100% 50%, 88% 100%, 0 100%, 0 51%, 0 0) !important;
+        width: 100px !important;
+        height: 20px !important;
+        padding-top: 17px !important;
+        font-size: 12px !important;
+        padding-left: 18px !important;
+    }
+    
+    .changesControlTab div:last-child {
+        margin-left: 7px !important;  
+      }
+}
+
+@media (max-width: 325px) {
+    .changesControlTab div {
+        margin-left: -10px !important;
+        padding-left: 16px !important;
+    }
+
+    .changesControlTab .pending_tabtext{
+        margin-left: -2px !important;
+       }
+}
+
+@media (max-width: 300px) {
+    .changesControlTab div {
+        margin-left: -20px !important;
+        padding-left: 13px !important;
+    }
+    .changesControlTab .pending_tabtext{
+        margin-left: -2px !important;
+    }
+}
+
+@media (max-width: 280px) {
+    .changesControlTab div {
+        margin-left: -30px !important;
+    }
+}
