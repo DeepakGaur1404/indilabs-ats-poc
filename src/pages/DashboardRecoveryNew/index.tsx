@@ -202,67 +202,75 @@ const DashboardRecoveryNew = (props: Props) => {
   };
 
   return (
-    <div id="reportContent">
-      <div
-        className="w-full flex bg-neutral-50 justify-between items-center px-4 hidden"
-        // style={{ display: "none" }}
-        id="indilabsheader"
-      >
-        <h1
-          className={`text-3xl font-bold ml-4 py-2 customClassDashboardHeader`}
-        >
-          Dashboard
-        </h1>
-        <div className="justify-end p-8  items-center gap-11 flex h-21 leftContainHeader">
-          <div className="justify-start items-center gap-2 lg:gap-4 flex">
-            <div className="flex justify-start items-center items-end gap-[12px] inline-flex profileIConHeader">
-              <div className="nameHeader">
-                <p className="text-[black] italic font-[500] text-[14x] lg:text-sm">
-                  Report Generated On: &nbsp;
-                  {`${formattedDate()}`}
-                </p>
-                <p className="text-[#6750A4] italic text-sm lg:text-base flex justify-end font-medium">
-                  {profileUsername}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="px-[6px] lg:px-[59px] lg:pt-[59px] bg-[#fafafb] flex flex-col gap-5 w-full">
-        {/* <PerformanceDashboard /> */}
-        <HomeDashboard />
-        <div className="w-full flex justify-end items-center mt-1">
-          <div
-            className="w-[150px] h-[40px] flex justify-around items-center cursor-pointer"
-            onClick={downloadReport}
-          >
-            <div className="w-[18px] h-[18px]" id="hiddenbutton">
-              {loader ? "" : <img src={download} alt="download" />}
-            </div>
-            <div
-              className="w-[116px] h-[20px] text-[#6750A4] text-[14px] font-[500] font-['DM Sans']"
-              id="hiddenbutton2"
-            >
-              {loader ? "Downloading...." : "Download Report"}
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col lg:flex-row justify-between gap-10 ml-5 mb-6">
-          <MonitoringDiagnostics /> 
-          <StrategyOptimisation />
-          <Execution />
-        </div>
+    // <div id="reportContent">
+    //   <div
+    //     className="w-full flex bg-neutral-50 justify-between items-center px-4 hidden"
+    //     // style={{ display: "none" }}
+    //     id="indilabsheader"
+    //   >
+    //     <h1
+    //       className={`text-3xl font-bold ml-4 py-2 customClassDashboardHeader`}
+    //     >
+    //       Dashboard
+    //     </h1>
+    //     <div className="justify-end p-8  items-center gap-11 flex h-21 leftContainHeader">
+    //       <div className="justify-start items-center gap-2 lg:gap-4 flex">
+    //         <div className="flex justify-start items-center items-end gap-[12px] inline-flex profileIConHeader">
+    //           <div className="nameHeader">
+    //             <p className="text-[black] italic font-[500] text-[14x] lg:text-sm">
+    //               Report Generated On: &nbsp;
+    //               {`${formattedDate()}`}
+    //             </p>
+    //             <p className="text-[#6750A4] italic text-sm lg:text-base flex justify-end font-medium">
+    //               {profileUsername}
+    //             </p>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="px-[6px] lg:px-[59px] lg:pt-[59px] bg-[#fafafb] flex flex-col gap-5 w-full">
+    //     {/* <PerformanceDashboard /> */}
+    //     <HomeDashboard />
+    //     <div className="w-full flex justify-end items-center mt-1">
+    //       <div
+    //         className="w-[150px] h-[40px] flex justify-around items-center cursor-pointer"
+    //         onClick={downloadReport}
+    //       >
+    //         <div className="w-[18px] h-[18px]" id="hiddenbutton">
+    //           {loader ? "" : <img src={download} alt="download" />}
+    //         </div>
+    //         <div
+    //           className="w-[116px] h-[20px] text-[#6750A4] text-[14px] font-[500] font-['DM Sans']"
+    //           id="hiddenbutton2"
+    //         >
+    //           {loader ? "Downloading...." : "Download Report"}
+    //         </div>
+    //       </div>
+    //     </div>
+    //     <div className="flex flex-col lg:flex-row justify-between gap-10 ml-5 mb-6">
+    //       <MonitoringDiagnostics /> 
+    //       <StrategyOptimisation />
+    //       <Execution />
+    //     </div>
 
-        <div
-          id="indilabslogo"
-          className="flex items-center justify-center gap-1  text-['italic'] font-[500] text-[#000000] h-[20px] mt-2 mb-8 hidden"
-        >
-          <span className="italic">Made By</span>{" "}
-          <img src={indilabslogo} className="mt-4" alt="indilabs.ai" />
-        </div>
+    //     <div
+    //       id="indilabslogo"
+    //       className="flex items-center justify-center gap-1  text-['italic'] font-[500] text-[#000000] h-[20px] mt-2 mb-8 hidden"
+    //     >
+    //       <span className="italic">Made By</span>{" "}
+    //       <img src={indilabslogo} className="mt-4" alt="indilabs.ai" />
+    //     </div>
+    //   </div>
+    // </div>
+    <div className="CommonBodyWrap">
+    <div className="h-[80vh] flex items-center justify-center">
+      <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+        <p className="text-gray-700">This page is under construction.</p>
       </div>
     </div>
+  </div>
   );
 };
 
