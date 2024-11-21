@@ -550,7 +550,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                 {location.pathname.startsWith(
                                   "/monitoring/recovery"
                                 )
-                                  ? "Vintage"
+                                  ? "Retention"
                                   : "Location"}
                               </p>
                               {(location.pathname === "/monitoring/agency" ||
@@ -679,49 +679,8 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                               )}
                             </Link>
 
-                            {data?.submenu?.map((subitem: any, subidx) => (
+                            {/* {data?.submenu?.map((subitem: any, subidx) => (
                               <React.Fragment key={subidx}>
-                                {/* {subitem.title !== "settlement" && (
-            <Link
-              to={
-                location.pathname === "/monitoring/recovery/portfolio" ||
-                location.pathname === "/monitoring/recovery/location" ||
-                location.pathname === "/monitoring/recovery/vintage" ||
-                location.pathname === "/monitoring/recovery/agency" ||
-                location.pathname === "/monitoring/recovery/placement" ||
-                location.pathname === "/monitoring/recovery/settlement" ||
-                location.pathname === "/monitoring/recovery/distribution" ||
-                location.pathname === "/monitoring/recovery"
-                  ? "/monitoring/recovery/settlement"
-                  : "/monitoring/watchlist"
-              }
-              className={`flex gap-2 items-center px-2 ml-[19px] w-[101%] ${
-                location.pathname === "/monitoring/watchlist" ||
-                location.pathname === "/monitoring/recovery/settlement"
-                  ? "bg-white bg-opacity-30 rounded-lg h-9"
-                  : ""
-              }`}
-              onClick={() => navigateSubFunc(subitem?.title)}
-            >
-              <img src={ArrowCircle} alt="" className="h-4" />
-              <p className="mb-0">
-                {location.pathname.startsWith("/monitoring/recovery")
-                  ? "Settlement"
-                  : "Watchlist"}
-              </p>
-              {(location.pathname === "/monitoring/watchlist" ||
-                location.pathname === "/monitoring/recovery/settlement") && (
-                <div
-                  className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                  style={{
-                    position: "absolute",
-                    right: "1px",
-                  }}
-                ></div>
-              )}
-            </Link>
-          )} */}
-
                                 {subitem.title === "settlement" && (
                                   <Link
                                     to={
@@ -762,16 +721,7 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                         />
                                       </span>
                                     </p>
-                                    {/* {location.pathname ===
-                                      "/monitoring/recovery/settlement" && (
-                                      <div
-                                        className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
-                                        style={{
-                                          position: "absolute",
-                                          right: "1px",
-                                        }}
-                                      ></div>
-                                    )} */}
+                                   
                                   </Link>
                                 )}
                                 {subitem.title === "settlement" &&
@@ -866,11 +816,11 @@ const Sidebar: FC<SidebarProps> = ({ layout, moduleName, setmoduleName }) => {
                                         ></div>
                                       )}
                                     </Link>
-                                    {/* </div> */}
+                                  
                                   </div>
                                 ) : null}
                               </React.Fragment>
-                            ))}
+                            ))} */}
                           </div>
                         </>
                       )}
