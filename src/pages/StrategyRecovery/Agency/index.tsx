@@ -298,950 +298,958 @@ const  AgencyStrategyRecovery = () => {
   };
 
   return (
-    <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#fafafb]  relative">
-      <HomeDashboard />
-      {loader ? <Loader /> : ""}
-      <div className="bg-gray-100 rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
-        <div className=" w-full flex flex-col gap-5 ml-1">
-          <div className="flex gap-[53px] ">
-            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
-              Buckets:
-            </div>
-            <div className=" flex justify-between  rounded-xl B1TabsContain">
-              {BGroups.map((button, index) => (
-                <div
-                  key={button.id}
-                  onClick={() => handleButtonClick(button.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    activeBucket === button.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === BGroups.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {button.label}
-                </div>
-              ))}
-            </div>
-          </div>
+    // <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#fafafb]  relative">
+    //   <HomeDashboard />
+    //   {loader ? <Loader /> : ""}
+    //   <div className="bg-gray-100 rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
+    //     <div className=" w-full flex flex-col gap-5 ml-1">
+    //       <div className="flex gap-[53px] ">
+    //         <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
+    //           Buckets:
+    //         </div>
+    //         <div className=" flex justify-between  rounded-xl B1TabsContain">
+    //           {BGroups.map((button, index) => (
+    //             <div
+    //               key={button.id}
+    //               onClick={() => handleButtonClick(button.id)}
+    //               className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+    //                 activeBucket === button.id
+    //                   ? " bg-[#E8DEF8] "
+    //                   : "bg-[#fafafb]"
+    //               } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+    //                 index === BGroups.length - 1 ? "rounded-r-[4px]" : ""
+    //               }`}
+    //             >
+    //               {button.label}
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
 
-          <div className="flex gap-10 ">
-            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
-              Locations:
-            </div>
-            <div className=" flex justify-between  rounded-xl B1TabsContain">
-              {cities.map((city, index) => (
-                <div
-                  key={city.id}
-                  onClick={() => handleCityClick(city.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    selectedCity === city.id ? " bg-[#E8DEF8] " : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === cities.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {city.name}
-                </div>
-              ))}
-            </div>
-          </div>
+    //       <div className="flex gap-10 ">
+    //         <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
+    //           Locations:
+    //         </div>
+    //         <div className=" flex justify-between  rounded-xl B1TabsContain">
+    //           {cities.map((city, index) => (
+    //             <div
+    //               key={city.id}
+    //               onClick={() => handleCityClick(city.id)}
+    //               className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+    //                 selectedCity === city.id ? " bg-[#E8DEF8] " : "bg-[#fafafb]"
+    //               } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+    //                 index === cities.length - 1 ? "rounded-r-[4px]" : ""
+    //               }`}
+    //             >
+    //               {city.name}
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
 
-          <div className="flex gap-11 ">
-            <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
-              Products:
-            </div>
-            <div className=" flex justify-between rounded-xl B1TabsContain">
-              {Buttons.map((buttons, index) => (
-                <div
-                  key={buttons.id}
-                  onClick={() => handleProductClick(buttons.id)}
-                  className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                    activeButton === buttons.id
-                      ? " bg-[#E8DEF8] "
-                      : "bg-[#fafafb]"
-                  } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                    index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
-                  }`}
-                >
-                  {buttons.label}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+    //       <div className="flex gap-11 ">
+    //         <div className="flex items-center text-[#000000] font-[500] text-[16px] font-['DM Sans']">
+    //           Products:
+    //         </div>
+    //         <div className=" flex justify-between rounded-xl B1TabsContain">
+    //           {Buttons.map((buttons, index) => (
+    //             <div
+    //               key={buttons.id}
+    //               onClick={() => handleProductClick(buttons.id)}
+    //               className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+    //                 activeButton === buttons.id
+    //                   ? " bg-[#E8DEF8] "
+    //                   : "bg-[#fafafb]"
+    //               } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+    //                 index === Buttons.length - 1 ? "rounded-r-[4px]" : ""
+    //               }`}
+    //             >
+    //               {buttons.label}
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     </div>
 
-        <>
-          {/* <div className="mt-5 p-3 rounded-xl shadow bg-white ">
-            <div className=" flex flex-wrap justify-between items-center">
-              <p className="text-[#848484] text-[18px] font-[400] font-['Calibir' !important] md:w-f">
-                Exclusion Criteria
-              </p>
-              <div className="commonInput form-item">
-                <input
-                  type="text"
-                  id="DPD"
-                  autoComplete="off"
-                  required
-                  placeholder="Eg-22"
-                />
-                <label htmlFor="DPD">DPD</label>
-              </div>
-              <div className="commonInput form-item">
-                <input
-                  type="text"
-                  id="minbal"
-                  autoComplete="off"
-                  required
-                  placeholder="Eg-100,000"
-                />
-                <label htmlFor="minbal">Min. Bal.</label>
-              </div>
-              <div className="commonInput form-item">
-                <input
-                  type="text"
-                  id="score"
-                  autoComplete="off"
-                  required
-                  placeholder="Eg-360"
-                />
-                <label htmlFor="score">Score</label>
-              </div>
-              <div className="commonInput form-item">
-                <input
-                  type="text"
-                  id="flag"
-                  autoComplete="off"
-                  required
-                  placeholder="Eg-360"
-                />
-                <label htmlFor="flag">Flag</label>
-              </div>
-              <button className="bg-[#56478A] py-1 px-6 border border-primary rounded-3xl text-white bg-">
-                Change/Add
-              </button>
-            </div>
-          </div> */}
-         <div className="w-full p-4 mt-6 mb-2 rounded-xl shadow bg-white">
-            <div className=" flex flex-col gap-4">
-              <div className="flex justify-start items-center ">
-                <p className="text-[#000000] text-[16px]  font-[500] font-['DM Sans' !important] md:w-f">
-                  Volumes (MTD)
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-between items-center gap-1">
-                <div className="flex  flex-col">
-                  <div className="flex items-center">
-                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important] ">
-                      Total B1
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center gap-2">
-                    <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
-                      {/* {overall?.total_balance?.toLocaleString() ||
-                        "5,334,843,865"} */}
-                        5,334,843,865
-                    </p>
+    //     <>
+    //       {/* <div className="mt-5 p-3 rounded-xl shadow bg-white ">
+    //         <div className=" flex flex-wrap justify-between items-center">
+    //           <p className="text-[#848484] text-[18px] font-[400] font-['Calibir' !important] md:w-f">
+    //             Exclusion Criteria
+    //           </p>
+    //           <div className="commonInput form-item">
+    //             <input
+    //               type="text"
+    //               id="DPD"
+    //               autoComplete="off"
+    //               required
+    //               placeholder="Eg-22"
+    //             />
+    //             <label htmlFor="DPD">DPD</label>
+    //           </div>
+    //           <div className="commonInput form-item">
+    //             <input
+    //               type="text"
+    //               id="minbal"
+    //               autoComplete="off"
+    //               required
+    //               placeholder="Eg-100,000"
+    //             />
+    //             <label htmlFor="minbal">Min. Bal.</label>
+    //           </div>
+    //           <div className="commonInput form-item">
+    //             <input
+    //               type="text"
+    //               id="score"
+    //               autoComplete="off"
+    //               required
+    //               placeholder="Eg-360"
+    //             />
+    //             <label htmlFor="score">Score</label>
+    //           </div>
+    //           <div className="commonInput form-item">
+    //             <input
+    //               type="text"
+    //               id="flag"
+    //               autoComplete="off"
+    //               required
+    //               placeholder="Eg-360"
+    //             />
+    //             <label htmlFor="flag">Flag</label>
+    //           </div>
+    //           <button className="bg-[#56478A] py-1 px-6 border border-primary rounded-3xl text-white bg-">
+    //             Change/Add
+    //           </button>
+    //         </div>
+    //       </div> */}
+    //      <div className="w-full p-4 mt-6 mb-2 rounded-xl shadow bg-white">
+    //         <div className=" flex flex-col gap-4">
+    //           <div className="flex justify-start items-center ">
+    //             <p className="text-[#000000] text-[16px]  font-[500] font-['DM Sans' !important] md:w-f">
+    //               Volumes (MTD)
+    //             </p>
+    //           </div>
+    //           <div className="flex flex-wrap justify-between items-center gap-1">
+    //             <div className="flex  flex-col">
+    //               <div className="flex items-center">
+    //                 <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important] ">
+    //                   Total B1
+    //                 </p>
+    //               </div>
+    //               <div className="flex justify-between items-center gap-2">
+    //                 <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+    //                   {/* {overall?.total_balance?.toLocaleString() ||
+    //                     "5,334,843,865"} */}
+    //                     5,334,843,865
+    //                 </p>
 
-                    <img src={shiftOrange} alt="" />
-                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
-                      +2% MOM
-                    </p>
-                  </div>
-                </div>
-                <div className="vertical-bar"></div>
-                <div className="flex flex-col">
-                  <div className="flex items-center">
-                    <p className=" text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
-                      Inhouse/ Exclusion
-                    </p>
-                  </div>
+    //                 <img src={shiftOrange} alt="" />
+    //                 <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+    //                   +2% MOM
+    //                 </p>
+    //               </div>
+    //             </div>
+    //             <div className="vertical-bar"></div>
+    //             <div className="flex flex-col">
+    //               <div className="flex items-center">
+    //                 <p className=" text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+    //                   Inhouse/ Exclusion
+    //                 </p>
+    //               </div>
 
-                  <div className="flex justify-between items-center gap-2">
-                    <p className="amount text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
-                      {/* {overall?.in_house_exclusion?.toLocaleString() ||
-                        "5,334,843,865"} */}
-                        5,334,843,865
-                    </p>
-                    <img src={shiftOrange} alt="" />
-                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
-                      +2% MOM
-                    </p>
-                  </div>
-                </div>
-                <div className="vertical-bar"></div>
-                <div className="flex flex-col">
-                  <div className="flex items-center">
-                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
-                      {" "}
-                      Allocated Balance
-                    </p>
-                  </div>
+    //               <div className="flex justify-between items-center gap-2">
+    //                 <p className="amount text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+    //                   {/* {overall?.in_house_exclusion?.toLocaleString() ||
+    //                     "5,334,843,865"} */}
+    //                     5,334,843,865
+    //                 </p>
+    //                 <img src={shiftOrange} alt="" />
+    //                 <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+    //                   +2% MOM
+    //                 </p>
+    //               </div>
+    //             </div>
+    //             <div className="vertical-bar"></div>
+    //             <div className="flex flex-col">
+    //               <div className="flex items-center">
+    //                 <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+    //                   {" "}
+    //                   Allocated Balance
+    //                 </p>
+    //               </div>
 
-                  <div className="flex justify-between items-center gap-2">
-                    <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
-                      {/* {overall?.total_balance_allocated?.toLocaleString() ||
-                        "5,334,843,865"} */}
-                        5,334,843,865
-                    </p>
-                    <img className="" src={shiftOrange} alt="" />
-                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
-                      +2% MOM
-                    </p>
-                  </div>
-                </div>
-                <div className="vertical-bar"></div>
-                <div className="flex flex-col">
-                  <div className="flex items-center">
-                    <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
-                      Account Allocation{" "}
-                    </p>
-                  </div>
+    //               <div className="flex justify-between items-center gap-2">
+    //                 <p className=" text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+    //                   {/* {overall?.total_balance_allocated?.toLocaleString() ||
+    //                     "5,334,843,865"} */}
+    //                     5,334,843,865
+    //                 </p>
+    //                 <img className="" src={shiftOrange} alt="" />
+    //                 <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+    //                   +2% MOM
+    //                 </p>
+    //               </div>
+    //             </div>
+    //             <div className="vertical-bar"></div>
+    //             <div className="flex flex-col">
+    //               <div className="flex items-center">
+    //                 <p className="text-[#161D29] text-[14px]  font-[500] font-['DM Sans' !important]">
+    //                   Account Allocation{" "}
+    //                 </p>
+    //               </div>
 
-                  <div className="flex justify-between items-center gap-2">
-                    <p className="text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
-                      {/* {overall?.total_accounts_allocated?.toLocaleString() ||
-                        "5,334,843,865"} */}
-                        5,334,843,865
-                    </p>
-                    <img className="" src={shiftOrange} alt="" />
-                    <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
-                      +2% MOM
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    //               <div className="flex justify-between items-center gap-2">
+    //                 <p className="text-[#161D29] text-[14px]  font-[400] font-['DM Sans' !important]">
+    //                   {/* {overall?.total_accounts_allocated?.toLocaleString() ||
+    //                     "5,334,843,865"} */}
+    //                     5,334,843,865
+    //                 </p>
+    //                 <img className="" src={shiftOrange} alt="" />
+    //                 <p className="text-[#161D29] text-[10px]  font-[400] font-['DM Sans' !important]">
+    //                   +2% MOM
+    //                 </p>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
 
-          <div className="flex w-[100%] lg:flex-row md:flex-col sm:flex-col flex-row gap-6 mb-3">
-            {/* <div className="col-span-1 lg:col-span-2">
-              <AllocationButtons
-                activeButton={activeButton}
-                setActiveButton={setActiveButton}
-              />
-            </div> */}
+    //       <div className="flex w-[100%] lg:flex-row md:flex-col sm:flex-col flex-row gap-6 mb-3">
+    //         {/* <div className="col-span-1 lg:col-span-2">
+    //           <AllocationButtons
+    //             activeButton={activeButton}
+    //             setActiveButton={setActiveButton}
+    //           />
+    //         </div> */}
 
-            {/* <div className="flex lg:col-span-5 w-[49%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
-              <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
-                Allocation Share
-              </p> */}
-              {/* <ResponsiveContainer width="100%" height="90%">
-                  <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="100%" barSize={20} data={data}>
-                    <RadialBar
-                      minAngle={15} // error came here
-                      label={{ position: "insideStart", fill: "red" }}
-                      background
-                      clockWise
-                      dataKey="uv"
-                    />
-                    <Legend
-                      iconSize={20}
-                      layout="vertical"
-                      verticalAlign="middle"
-                      wrapperStyle={style}
-                    />
-                  </RadialBarChart>
-                </ResponsiveContainer> */}
+    //         {/* <div className="flex lg:col-span-5 w-[49%] h-[460px] bg-white rounded-xl p-3 shadow  mt-3">
+    //           <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
+    //             Allocation Share
+    //           </p> */}
+    //           {/* <ResponsiveContainer width="100%" height="90%">
+    //               <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="100%" barSize={20} data={data}>
+    //                 <RadialBar
+    //                   minAngle={15} // error came here
+    //                   label={{ position: "insideStart", fill: "red" }}
+    //                   background
+    //                   clockWise
+    //                   dataKey="uv"
+    //                 />
+    //                 <Legend
+    //                   iconSize={20}
+    //                   layout="vertical"
+    //                   verticalAlign="middle"
+    //                   wrapperStyle={style}
+    //                 />
+    //               </RadialBarChart>
+    //             </ResponsiveContainer> */}
                 
-              {/* <div className="flex items-center justify-center"> */}
-                <AgencyRadialBarChart
-                  allocationData={allocationData}
-                  // selectedCity={selectedCity}
-                  // activeBucket={activeBucket}
-                />
-                 <AgencyScatterChart/>
-                {/* <div className="flex flex-col ">
-                  {allocationData?.map((item) => (
-                    <div className="flex items-center">
-                      <div
-                        className={`${colorObjectNew[id]} `}
-                        style={{
-                          width: "13px",
-                          height: "13px",
-                          marginRight: "10px",
-                          borderRadius: "0px",
-                        }}
-                      />
-                      <span>{item.agency_name}</span>
-                    </div>
-                  ))}
-                </div> */}
-              {/* </div> */}
-            {/* </div> */}
-            {/* <div className="flex flex-col  items-start  justify-center gap-7 p-[6px] lg:px-[59px] bg-[#fafafb] w-full"> */}
-              {/* <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
-                Optimization
-              </p> */}
+    //           {/* <div className="flex items-center justify-center"> */}
+    //             <AgencyRadialBarChart
+    //               allocationData={allocationData}
+    //               // selectedCity={selectedCity}
+    //               // activeBucket={activeBucket}
+    //             />
+    //              <AgencyScatterChart/>
+    //             {/* <div className="flex flex-col ">
+    //               {allocationData?.map((item) => (
+    //                 <div className="flex items-center">
+    //                   <div
+    //                     className={`${colorObjectNew[id]} `}
+    //                     style={{
+    //                       width: "13px",
+    //                       height: "13px",
+    //                       marginRight: "10px",
+    //                       borderRadius: "0px",
+    //                     }}
+    //                   />
+    //                   <span>{item.agency_name}</span>
+    //                 </div>
+    //               ))}
+    //             </div> */}
+    //           {/* </div> */}
+    //         {/* </div> */}
+    //         {/* <div className="flex flex-col  items-start  justify-center gap-7 p-[6px] lg:px-[59px] bg-[#fafafb] w-full"> */}
+    //           {/* <p className=" text-[18px] font-[500] text-[#000000] font-['DM Sans'] ">
+    //             Optimization
+    //           </p> */}
              
-            </div>
-          {/* </div> */}
+    //         </div>
+    //       {/* </div> */}
 
-          {/* new change */}
+    //       {/* new change */}
 
-          <div className="w-full flex flex-col gap-4 bg-[white] py-5 px-3 mt-5 ">
-            {/* New Allocation */}
-            <span className="text-black font-bold">Review</span>
-            <div className="w-full flex gap-4">
-              <div className="col-span-1 w-[48%] lg:col-span-1 bg-white rounded-xl p-3 border-[1px] shadow">
-                <div className="w-full flex gap-x-5">
-                  <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
-                    Recommended
-                  </p>
-                  <p className="text-[#000000] text-[16px] font-[500] font-['Calibri' !important] ">
-                    New Allocation
-                  </p>
-                </div>
-                <div className="w-full  rounded my-6 AllocationTabelMain">
-                  <table className="w-full   ">
-                    <thead>
-                      <tr className="border-b text-[15px]">
-                        <th className="px-4 py-2"></th>
-                        {["DCA001", "DCA026", "DCA088"].map((item) => {
-                          // {allocationData?.map((item) => {
-                          return (
-                            <th className="px-4 py-2  text-[15px] text-[#6750A4]">
-                              {item}
-                              {/* {item?.agency_name} */}
-                            </th>
-                          );
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className=" text-center border-b  py-5">
-                        <td className="text-left border-none px-4 py-4 text-[#161D29] text-[16px] font-bold font-['calibri' !important]">
-                          Allocation
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          34%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          33%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          33%
-                        </td>
-                        {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                        20%
-                      </td> */}
-                        {/* {allocationData?.map((item) => {
-                          return (
-                            <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important]">
-                              {item.current_month_allocated_percentage}%
-                            </td>
-                          );
-                        })} */}
-                      </tr>
-                      <tr className="text-center ">
-                        <td className="text-left border-none px-4 py-4 text-[#161D29] text-[15px] font-bold font-['Calibri' !important]">
-                          Volume
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          30,023
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          29,440
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          28,766
-                        </td>
-                        {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                        180
-                      </td> */}
+    //       <div className="w-full flex flex-col gap-4 bg-[white] py-5 px-3 mt-5 ">
+    //         {/* New Allocation */}
+    //         <span className="text-black font-bold">Review</span>
+    //         <div className="w-full flex gap-4">
+    //           <div className="col-span-1 w-[48%] lg:col-span-1 bg-white rounded-xl p-3 border-[1px] shadow">
+    //             <div className="w-full flex gap-x-5">
+    //               <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
+    //                 Recommended
+    //               </p>
+    //               <p className="text-[#000000] text-[16px] font-[500] font-['Calibri' !important] ">
+    //                 New Allocation
+    //               </p>
+    //             </div>
+    //             <div className="w-full  rounded my-6 AllocationTabelMain">
+    //               <table className="w-full   ">
+    //                 <thead>
+    //                   <tr className="border-b text-[15px]">
+    //                     <th className="px-4 py-2"></th>
+    //                     {["DCA001", "DCA026", "DCA088"].map((item) => {
+    //                       // {allocationData?.map((item) => {
+    //                       return (
+    //                         <th className="px-4 py-2  text-[15px] text-[#6750A4]">
+    //                           {item}
+    //                           {/* {item?.agency_name} */}
+    //                         </th>
+    //                       );
+    //                     })}
+    //                   </tr>
+    //                 </thead>
+    //                 <tbody>
+    //                   <tr className=" text-center border-b  py-5">
+    //                     <td className="text-left border-none px-4 py-4 text-[#161D29] text-[16px] font-bold font-['calibri' !important]">
+    //                       Allocation
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       34%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       33%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       33%
+    //                     </td>
+    //                     {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                     20%
+    //                   </td> */}
+    //                     {/* {allocationData?.map((item) => {
+    //                       return (
+    //                         <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important]">
+    //                           {item.current_month_allocated_percentage}%
+    //                         </td>
+    //                       );
+    //                     })} */}
+    //                   </tr>
+    //                   <tr className="text-center ">
+    //                     <td className="text-left border-none px-4 py-4 text-[#161D29] text-[15px] font-bold font-['Calibri' !important]">
+    //                       Volume
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       30,023
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       29,440
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       28,766
+    //                     </td>
+    //                     {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                     180
+    //                   </td> */}
 
-                        {/* {allocationData?.map((item) => {
-                        return (
-                          <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important] ml-9">
-                            {item?.accounts.toLocaleString() || "0"}
-                          </td>
-                        );
-                      })} */}
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+    //                     {/* {allocationData?.map((item) => {
+    //                     return (
+    //                       <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important] ml-9">
+    //                         {item?.accounts.toLocaleString() || "0"}
+    //                       </td>
+    //                     );
+    //                   })} */}
+    //                   </tr>
+    //                 </tbody>
+    //               </table>
+    //             </div>
 
-                <div className="w-full py-5 flex justify-end pr-5 gap-x-5 items-center">
-                  <div
-                    className="text-[#6750A4] font-medium font-['Calibri' !important] cursor-pointer"
-                    onClick={() => setCustomiseEditEnable(true)}
-                  >
-                    Customise
-                  </div>
-                  <div
-                    className="bg-[#6750A4] py-3 px-6 rounded-3xl text-[white] font-medium font-['Calibri' !important] cursor-pointer"
-                    onClick={() => setCustomiseEditEnable(false)}
-                  >
-                    Submit for Approval
-                  </div>
-                </div>
-              </div>
+    //             <div className="w-full py-5 flex justify-end pr-5 gap-x-5 items-center">
+    //               <div
+    //                 className="text-[#6750A4] font-medium font-['Calibri' !important] cursor-pointer"
+    //                 onClick={() => setCustomiseEditEnable(true)}
+    //               >
+    //                 Customise
+    //               </div>
+    //               <div
+    //                 className="bg-[#6750A4] py-3 px-6 rounded-3xl text-[white] font-medium font-['Calibri' !important] cursor-pointer"
+    //                 onClick={() => setCustomiseEditEnable(false)}
+    //               >
+    //                 Submit for Approval
+    //               </div>
+    //             </div>
+    //           </div>
 
-              {/* change allocation */}
-              <div
-                className={`col-span-1 w-[48%] lg:col-span-1 bg-[white] rounded-xl p-3 shadow opacity-70 ${
-                  customiseEdit ? `opacity-100` : `opacity-70`
-                }`}
-              >
-                <div className="w-full flex gap-x-5 ">
-                  {/* <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
-                  Recommended
-                </p> */}
-                  <p className="text-[grey] text-[16px] font-[500] font-['Calibri' !important] ">
-                    Change Allocation
-                  </p>
-                </div>
-                <div className="w-full  rounded my-6 AllocationTabelMain">
-                  <table className="w-full   ">
-                    <thead>
-                      <tr className="border-b text-[15px]">
-                        <th className="px-4 py-2"></th>
-                        {["DCA001", "DCA026", "DCA088"].map((item) => {
-                          // {allocationData?.map((item) => {
-                          return (
-                            <th className="px-4 py-2  text-[15px] text-[#6750A4]">
-                              {item}
-                              {/* {item?.agency_name} */}
-                            </th>
-                          );
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className=" text-center border-b ">
-                        <td className="text-left border-none px-4 py-4 text-[grey] text-[16px] font-bold font-['calibri' !important]">
-                          Allocation
-                        </td>
-                        <td className=" mb-2 px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']  ">
-                          <div className="bg-[#f4f4f4] border-[#1C1B1F] border-b-[1px] py-4">
-                            <input
-                              type="text"
-                              disabled={customiseEdit ? false : true}
-                              value={changeAllocationData?.allocationOne}
-                              className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
-                              onChange={(e) =>
-                                setChangeAllocationData((prev) => ({
-                                  ...prev,
-                                  allocationOne: e.target.value,
-                                }))
-                              }
-                            />
-                            {/* 34% */}
-                          </div>
-                        </td>
-                        <td className="border-none px-4 py-2  text-gray-800 text-sm font-medium font-['DM Sans']">
-                          <div className="border-[#1C1B1F] border-b-[1px] bg-[#f4f4f4] py-4">
-                            <input
-                              type="text"
-                              disabled={customiseEdit ? false : true}
-                              value={changeAllocationData?.allocationTwo}
-                              className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
-                              onChange={(e) =>
-                                setChangeAllocationData((prev) => ({
-                                  ...prev,
-                                  allocationTwo: e.target.value,
-                                }))
-                              }
-                            />
-                            {/* 33% */}
-                          </div>
-                        </td>
-                        <td className="border-none px-4 py-2  text-gray-800 text-sm font-medium font-['DM Sans']">
-                          <div className="border-[#1C1B1F] border-b-[1px] bg-[#f4f4f4] py-4">
-                            <input
-                              type="text"
-                              disabled={customiseEdit ? false : true}
-                              value={changeAllocationData?.allocationThree}
-                              className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
-                              onChange={(e) =>
-                                setChangeAllocationData((prev) => ({
-                                  ...prev,
-                                  allocationThree: e.target.value,
-                                }))
-                              }
-                            />
-                            {/* 33% */}
-                          </div>
-                        </td>
-                        {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                        20%
-                      </td> */}
-                        {/* {allocationData?.map((item) => {
-                          return (
-                            <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important]">
-                              {item.current_month_allocated_percentage}%
-                            </td>
-                          );
-                        })} */}
-                      </tr>
-                      <tr className="text-center ">
-                        <td className="text-left border-none px-4 py-4 text-[grey] text-[15px] font-bold font-['Calibri' !important]">
-                          Volume
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          30,023
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          29,440
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          28,766
-                        </td>
-                        {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                        180
-                      </td> */}
+    //           {/* change allocation */}
+    //           <div
+    //             className={`col-span-1 w-[48%] lg:col-span-1 bg-[white] rounded-xl p-3 shadow opacity-70 ${
+    //               customiseEdit ? `opacity-100` : `opacity-70`
+    //             }`}
+    //           >
+    //             <div className="w-full flex gap-x-5 ">
+    //               {/* <p className="text-[#2A972F] text-[16px] font-[500] font-['Calibri' !important] bg-[#EBFFF1] px-2 py-1">
+    //               Recommended
+    //             </p> */}
+    //               <p className="text-[grey] text-[16px] font-[500] font-['Calibri' !important] ">
+    //                 Change Allocation
+    //               </p>
+    //             </div>
+    //             <div className="w-full  rounded my-6 AllocationTabelMain">
+    //               <table className="w-full   ">
+    //                 <thead>
+    //                   <tr className="border-b text-[15px]">
+    //                     <th className="px-4 py-2"></th>
+    //                     {["DCA001", "DCA026", "DCA088"].map((item) => {
+    //                       // {allocationData?.map((item) => {
+    //                       return (
+    //                         <th className="px-4 py-2  text-[15px] text-[#6750A4]">
+    //                           {item}
+    //                           {/* {item?.agency_name} */}
+    //                         </th>
+    //                       );
+    //                     })}
+    //                   </tr>
+    //                 </thead>
+    //                 <tbody>
+    //                   <tr className=" text-center border-b ">
+    //                     <td className="text-left border-none px-4 py-4 text-[grey] text-[16px] font-bold font-['calibri' !important]">
+    //                       Allocation
+    //                     </td>
+    //                     <td className=" mb-2 px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']  ">
+    //                       <div className="bg-[#f4f4f4] border-[#1C1B1F] border-b-[1px] py-4">
+    //                         <input
+    //                           type="text"
+    //                           disabled={customiseEdit ? false : true}
+    //                           value={changeAllocationData?.allocationOne}
+    //                           className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
+    //                           onChange={(e) =>
+    //                             setChangeAllocationData((prev) => ({
+    //                               ...prev,
+    //                               allocationOne: e.target.value,
+    //                             }))
+    //                           }
+    //                         />
+    //                         {/* 34% */}
+    //                       </div>
+    //                     </td>
+    //                     <td className="border-none px-4 py-2  text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       <div className="border-[#1C1B1F] border-b-[1px] bg-[#f4f4f4] py-4">
+    //                         <input
+    //                           type="text"
+    //                           disabled={customiseEdit ? false : true}
+    //                           value={changeAllocationData?.allocationTwo}
+    //                           className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
+    //                           onChange={(e) =>
+    //                             setChangeAllocationData((prev) => ({
+    //                               ...prev,
+    //                               allocationTwo: e.target.value,
+    //                             }))
+    //                           }
+    //                         />
+    //                         {/* 33% */}
+    //                       </div>
+    //                     </td>
+    //                     <td className="border-none px-4 py-2  text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       <div className="border-[#1C1B1F] border-b-[1px] bg-[#f4f4f4] py-4">
+    //                         <input
+    //                           type="text"
+    //                           disabled={customiseEdit ? false : true}
+    //                           value={changeAllocationData?.allocationThree}
+    //                           className="border-none focus:outline-none focus:ring-0 bg-[#f4f4f4] w-[100%] text-center"
+    //                           onChange={(e) =>
+    //                             setChangeAllocationData((prev) => ({
+    //                               ...prev,
+    //                               allocationThree: e.target.value,
+    //                             }))
+    //                           }
+    //                         />
+    //                         {/* 33% */}
+    //                       </div>
+    //                     </td>
+    //                     {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                     20%
+    //                   </td> */}
+    //                     {/* {allocationData?.map((item) => {
+    //                       return (
+    //                         <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important]">
+    //                           {item.current_month_allocated_percentage}%
+    //                         </td>
+    //                       );
+    //                     })} */}
+    //                   </tr>
+    //                   <tr className="text-center ">
+    //                     <td className="text-left border-none px-4 py-4 text-[grey] text-[15px] font-bold font-['Calibri' !important]">
+    //                       Volume
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       30,023
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       29,440
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       28,766
+    //                     </td>
+    //                     {/* <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                     180
+    //                   </td> */}
 
-                        {/* {allocationData?.map((item) => {
-                        return (
-                          <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important] ml-9">
-                            {item?.accounts.toLocaleString() || "0"}
-                          </td>
-                        );
-                      })} */}
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+    //                     {/* {allocationData?.map((item) => {
+    //                     return (
+    //                       <td className="border-none px-4 py-2 text-[#848484] text-[16px] font-medium font-['Calibri' !important] ml-9">
+    //                         {item?.accounts.toLocaleString() || "0"}
+    //                       </td>
+    //                     );
+    //                   })} */}
+    //                   </tr>
+    //                 </tbody>
+    //               </table>
+    //             </div>
 
-                {/* <div className="w-full py-5 flex justify-end pr-5 gap-x-5 items-center">
-                <div className="text-[#6750A4] font-medium font-['Calibri' !important]">
-                  Customise
-                </div>
-                <div className="bg-[#6750A4] py-3 px-6 rounded-3xl text-[white] font-medium font-['Calibri' !important]">
-                  Submit for Approval
-                </div>
-              </div> */}
-              </div>
-            </div>
-            {/*  */}
+    //             {/* <div className="w-full py-5 flex justify-end pr-5 gap-x-5 items-center">
+    //             <div className="text-[#6750A4] font-medium font-['Calibri' !important]">
+    //               Customise
+    //             </div>
+    //             <div className="bg-[#6750A4] py-3 px-6 rounded-3xl text-[white] font-medium font-['Calibri' !important]">
+    //               Submit for Approval
+    //             </div>
+    //           </div> */}
+    //           </div>
+    //         </div>
+    //         {/*  */}
 
-            {/* new figma change */}
+    //         {/* new figma change */}
 
-            {/* <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-              <p className="text-[#3d5586] text-[16px] font-normal font-['Calibri' !important] ">
-                Impact Analysis
-              </p>
-              <div className="w-full  rounded my-6 AllocationTabelMain flex flex-col">
-                <table className="w-full table-auto ">
-                  <tbody>
-                    <tr className="">
-                      <td className="border-none px-4 py-0 text-[#2f2f2f] text-[18px] font-normal font-['Calibri' !important]">
-                        Resolve Rate
-                      </td>
-                      <td className="border-none px-0 py-2 text-[#2f2f2f] text-[17px] font-normal font-['Calibri' !important] border">
-                        {impact_analysis?.resolve_rate?.base}%
-                      </td>
-                      <td className="border-none px-0 py-2 ml-6 text-gray-800 text-sm font-medium font-['DM Sans'] border flex items-center">
-                        <img
-                          className="mr-3 h-4 mt-0.5"
-                          src={RedDownArrow}
-                          alt=""
-                        />
-                        <p> {impact_analysis?.resolve_rate?.increment}% </p>
-                        <p className="ml-4 text-[#848484] text-[17px] font-['Calibri' !important]">
-                          vs. Recommended
-                        </p>
-                      </td>
-                      <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
-                        vs. Recommended
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-none px-4 py-0 text-[#2f2f2f] text-[18px] font-normal font-['Calibri' !important]">
-                        cost
-                      </td>
-                      <td className="border-none px-0 py-2 text-[#2f2f2f] text-[17px] font-normal font-['Calibri' !important]">
-                        {impact_analysis?.cost_rate_on_resolved_amount?.value}
-                      </td>
-                      <td className="border-none px-0 py-2 ml-[22px] text-gray-800 text-sm font-medium font-['Calibri' !important'] flex items-center">
-                        <img
-                          className="mr-2 h-[18px] mt-0.5"
-                          src={shiftOrange}
-                          alt=""
-                        />
-                        <p className="ml-0">
-                          {
-                            impact_analysis?.cost_rate_on_resolved_amount
-                              ?.increment
-                          }
-                          %
-                        </p>
-                        <p className="ml-5 text-[#848484] text-[17px] font-['Calibri' !important]">
-                          vs. Recommended
-                        </p>
-                      </td>
-                      <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                        vs. Recommended
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className=""></td>
-                      <td className=""></td>
-                      <td className=""></td>
-                      <td className="border-none px-4 py-2 text-blue-500 underline text-sm font-medium font-['DM Sans']">
-                        Approval Required
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p className="border-none px-4 py-2 text-[#5b83cb] underline text-[16px] font-medium font-['Calibri' !important] self-end mr-[16%]">
-                  Approval Required
-                </p>
-              </div>
-            </div>
+    //         {/* <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //           <p className="text-[#3d5586] text-[16px] font-normal font-['Calibri' !important] ">
+    //             Impact Analysis
+    //           </p>
+    //           <div className="w-full  rounded my-6 AllocationTabelMain flex flex-col">
+    //             <table className="w-full table-auto ">
+    //               <tbody>
+    //                 <tr className="">
+    //                   <td className="border-none px-4 py-0 text-[#2f2f2f] text-[18px] font-normal font-['Calibri' !important]">
+    //                     Resolve Rate
+    //                   </td>
+    //                   <td className="border-none px-0 py-2 text-[#2f2f2f] text-[17px] font-normal font-['Calibri' !important] border">
+    //                     {impact_analysis?.resolve_rate?.base}%
+    //                   </td>
+    //                   <td className="border-none px-0 py-2 ml-6 text-gray-800 text-sm font-medium font-['DM Sans'] border flex items-center">
+    //                     <img
+    //                       className="mr-3 h-4 mt-0.5"
+    //                       src={RedDownArrow}
+    //                       alt=""
+    //                     />
+    //                     <p> {impact_analysis?.resolve_rate?.increment}% </p>
+    //                     <p className="ml-4 text-[#848484] text-[17px] font-['Calibri' !important]">
+    //                       vs. Recommended
+    //                     </p>
+    //                   </td>
+    //                   <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
+    //                     vs. Recommended
+    //                   </td>
+    //                 </tr>
+    //                 <tr>
+    //                   <td className="border-none px-4 py-0 text-[#2f2f2f] text-[18px] font-normal font-['Calibri' !important]">
+    //                     cost
+    //                   </td>
+    //                   <td className="border-none px-0 py-2 text-[#2f2f2f] text-[17px] font-normal font-['Calibri' !important]">
+    //                     {impact_analysis?.cost_rate_on_resolved_amount?.value}
+    //                   </td>
+    //                   <td className="border-none px-0 py-2 ml-[22px] text-gray-800 text-sm font-medium font-['Calibri' !important'] flex items-center">
+    //                     <img
+    //                       className="mr-2 h-[18px] mt-0.5"
+    //                       src={shiftOrange}
+    //                       alt=""
+    //                     />
+    //                     <p className="ml-0">
+    //                       {
+    //                         impact_analysis?.cost_rate_on_resolved_amount
+    //                           ?.increment
+    //                       }
+    //                       %
+    //                     </p>
+    //                     <p className="ml-5 text-[#848484] text-[17px] font-['Calibri' !important]">
+    //                       vs. Recommended
+    //                     </p>
+    //                   </td>
+    //                   <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                     vs. Recommended
+    //                   </td>
+    //                 </tr>
+    //                 <tr>
+    //                   <td className=""></td>
+    //                   <td className=""></td>
+    //                   <td className=""></td>
+    //                   <td className="border-none px-4 py-2 text-blue-500 underline text-sm font-medium font-['DM Sans']">
+    //                     Approval Required
+    //                   </td>
+    //                 </tr>
+    //               </tbody>
+    //             </table>
+    //             <p className="border-none px-4 py-2 text-[#5b83cb] underline text-[16px] font-medium font-['Calibri' !important] self-end mr-[16%]">
+    //               Approval Required
+    //             </p>
+    //           </div>
+    //         </div>
 
-            <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-              <p className="text-[#4e7496] text-[16px] font-[400] font-['Calibri' !important]">
-                Change Allocations
-              </p>
-              <div className="w-full  rounded my-6 AllocationTabelMain">
-                <table className="w-full table-auto">
-                  <tbody>
-                    <tr className="">
-                      <td className="border-none px-4 py-2 text-[#5b83cb] text-[16px] font-normal font-['Calibri' !important]">
-                        Allocation
-                      </td>
-                      {allocationData?.map((item) => {
-                        return (
-                          <td className="px-4 py-2 text-[#ca2828] text-[16px] font-medium font-['Calibri' !important] border text-center">
-                            {item.current_month_allocated_percentage}%
-                          </td>
-                        );
-                      })}
-                      <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
-                        5%
-                      </td>
-                      <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
-                        35%
-                      </td>
-                      <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
-                        20%
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-none px-4 py-2 text-[#5b83cb] text-[16px] font-normal font-['Calibri' !important]">
-                        Volume
-                      </td>
-                      {allocationData?.map((item) => {
-                        return (
-                          <td className="px-4 py-2  text-[#ca2828] text-[16px] font-medium font-['Calibri' !important]  text-center">
-                            {item?.accounts.toLocaleString() || "0"}
-                          </td>
-                        );
-                      })}
-                      <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
-                        45
-                      </td>
-                      <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
-                        315
-                      </td>
-                      <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
-                        180
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-              <p className="text-[#3d5586] text-[16px] font-[400] font-['Calibri' !important] ">
-                Exception Request
-              </p>
-              <p className="text-[#848484] text-[15px] font-[500] font-['Calibri' !important] mt-5">
-                To maintain min. allocation for DCA2 to rebuild performance. DCA
-                impacted by one off spike in attrition. Performance monitoring
-                initiated
-              </p>
-              <div className="mt-3">
-                <button className="self-end  bg-[rebeccapurple] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
-                  Default
-                </button>
-                <button className="self-end bg-[rebeccapurple] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
-                  ABC
-                </button>
-              </div>
-            </div> */}
-            <div className="w-full bg-white rounded-xl p-3 flex flex-col  mt-5">
-              <div>
-                <h5 className="text-black font-semibold">Impact Analysis</h5>
-                <p className="text-[grey] mt-1">
-                  This is how impactful your decision would be
-                </p>
-              </div>
-              <div className="w-full flex justify-between mt-5 border-b pb-5 p-4">
-                <div className="text-black font-bold w-[10%]">Resolve Rate</div>
-                <div className="text-black font-semibold">84%</div>
-                <div className="text-black font-semibold flex">
-                  <img src={shiftOrange} alt="up-arrow" />
-                  2% more than recommended
-                </div>
-              </div>
-              <div className="w-full flex justify-between mt-5 border-b pb-4 p-4">
-                <div className="text-black font-bold w-[10%]">Cost</div>
-                <div className="text-black font-semibold">14</div>
-                <div className="text-black font-semibold flex ">
-                  <img src={upgreenArrow} alt="up-arrow" />
-                  +2% more than recommended
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
+    //         <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //           <p className="text-[#4e7496] text-[16px] font-[400] font-['Calibri' !important]">
+    //             Change Allocations
+    //           </p>
+    //           <div className="w-full  rounded my-6 AllocationTabelMain">
+    //             <table className="w-full table-auto">
+    //               <tbody>
+    //                 <tr className="">
+    //                   <td className="border-none px-4 py-2 text-[#5b83cb] text-[16px] font-normal font-['Calibri' !important]">
+    //                     Allocation
+    //                   </td>
+    //                   {allocationData?.map((item) => {
+    //                     return (
+    //                       <td className="px-4 py-2 text-[#ca2828] text-[16px] font-medium font-['Calibri' !important] border text-center">
+    //                         {item.current_month_allocated_percentage}%
+    //                       </td>
+    //                     );
+    //                   })}
+    //                   <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
+    //                     5%
+    //                   </td>
+    //                   <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
+    //                     35%
+    //                   </td>
+    //                   <td className="px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] border text-center">
+    //                     20%
+    //                   </td>
+    //                 </tr>
+    //                 <tr>
+    //                   <td className="border-none px-4 py-2 text-[#5b83cb] text-[16px] font-normal font-['Calibri' !important]">
+    //                     Volume
+    //                   </td>
+    //                   {allocationData?.map((item) => {
+    //                     return (
+    //                       <td className="px-4 py-2  text-[#ca2828] text-[16px] font-medium font-['Calibri' !important]  text-center">
+    //                         {item?.accounts.toLocaleString() || "0"}
+    //                       </td>
+    //                     );
+    //                   })}
+    //                   <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
+    //                     45
+    //                   </td>
+    //                   <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
+    //                     315
+    //                   </td>
+    //                   <td className="border-none px-4 py-2 text-red-600 text-sm font-medium font-['DM Sans'] text-center">
+    //                     180
+    //                   </td>
+    //                 </tr>
+    //               </tbody>
+    //             </table>
+    //           </div>
+    //         </div>
+    //         <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //           <p className="text-[#3d5586] text-[16px] font-[400] font-['Calibri' !important] ">
+    //             Exception Request
+    //           </p>
+    //           <p className="text-[#848484] text-[15px] font-[500] font-['Calibri' !important] mt-5">
+    //             To maintain min. allocation for DCA2 to rebuild performance. DCA
+    //             impacted by one off spike in attrition. Performance monitoring
+    //             initiated
+    //           </p>
+    //           <div className="mt-3">
+    //             <button className="self-end  bg-[rebeccapurple] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
+    //               Default
+    //             </button>
+    //             <button className="self-end bg-[rebeccapurple] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
+    //               ABC
+    //             </button>
+    //           </div>
+    //         </div> */}
+    //         <div className="w-full bg-white rounded-xl p-3 flex flex-col  mt-5">
+    //           <div>
+    //             <h5 className="text-black font-semibold">Impact Analysis</h5>
+    //             <p className="text-[grey] mt-1">
+    //               This is how impactful your decision would be
+    //             </p>
+    //           </div>
+    //           <div className="w-full flex justify-between mt-5 border-b pb-5 p-4">
+    //             <div className="text-black font-bold w-[10%]">Resolve Rate</div>
+    //             <div className="text-black font-semibold">84%</div>
+    //             <div className="text-black font-semibold flex">
+    //               <img src={shiftOrange} alt="up-arrow" />
+    //               2% more than recommended
+    //             </div>
+    //           </div>
+    //           <div className="w-full flex justify-between mt-5 border-b pb-4 p-4">
+    //             <div className="text-black font-bold w-[10%]">Cost</div>
+    //             <div className="text-black font-semibold">14</div>
+    //             <div className="text-black font-semibold flex ">
+    //               <img src={upgreenArrow} alt="up-arrow" />
+    //               +2% more than recommended
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </>
 
-        {/* {activeBucket === "b2" ? (
-          <>
-            <div className="mt-3 p-3 rounded-xl shadow bg-white">
-              <div className=" flex flex-wrap justify-between items-center">
-                <p className="text-gray-800 text-sm font-medium font-['DM Sans']">
-                  Exclusion Criteria
-                </p>
-                <div className="commonInput form-item">
-                  <input type="text" id="DPD" autoComplete="off" required />
-                  <label htmlFor="DPD">DPD</label>
-                </div>
-                <div className="commonInput form-item">
-                  <input type="text" id="minbal" autoComplete="off" required />
-                  <label htmlFor="minbal">Min. Bal.</label>
-                </div>
-                <div className="commonInput form-item">
-                  <input type="text" id="score" autoComplete="off" required />
-                  <label htmlFor="score">Score</label>
-                </div>
-                <div className="commonInput form-item">
-                  <input type="text" id="flag" autoComplete="off" required />
-                  <label htmlFor="flag">Flag</label>
-                </div>
-                <button className="text-gray-400 bg-blue-500 text-white rounded-xl  text-sm font-normal font-['DM Sans'] border-2 px-5 h-10">
-                  Change/Add
-                </button>
-              </div>
-            </div>
-            <div className="my-3 p-3 rounded-xl shadow bg-white">
-              <div className=" flex flex-wrap justify-between items-center">
-                <p className="text-gray-800 text-sm font-medium font-['DM Sans']">
-                  Volumes (MTD)
-                </p>
-                <div className="commonBox">
-                  <p className="username">Total B1</p>
-                  <div className="flex items-center">
-                    <p className="amount">18,923</p>
-                    <img src={shiftOrange} alt="" />
-                    <p className="smText">+8% MOM</p>
-                  </div>
-                </div>
-                <div className="commonBox">
-                  <p className="username">Inhouse/ Exclusion</p>
-                  <div className="flex items-center">
-                    <p className="amount">22,466</p>
-                    <img src={shiftOrange} alt="" />
-                    <p className="smText">+12% MOM</p>
-                  </div>
-                </div>
-                <div className="commonBox">
-                  <p className="username">Allocated (MTD)</p>
-                  <div className="flex items-center">
-                    <p className="amount">759</p>
-                    <img className="" src={RedDownArrow} alt="" />
-                    <p className="smText">+34% MOM</p>
-                  </div>
-                </div>
-                <div className="commonBox">
-                  <p className="username">New Allocation (Today)</p>
-                  <div className="flex items-center">
-                    <p className="amount">10,200</p>
-                    <img className="" src={RedDownArrow} alt="" />
-                    <p className="smText">+2% MOM</p>
-                  </div>
-                </div>
-                <button className="text-gray-400 bg-blue-500 text-white rounded-xl  text-sm font-normal font-['DM Sans'] border-2 px-5 h-10">
-                  Test Pipeline
-                </button>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-                <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
-                  New Allocations: Recommended
-                </p>
-                <div className="w-full  rounded my-6 AllocationTabelMain">
-                  <table className="w-full table-auto">
-                    <thead>
-                      <tr>
-                        <th className="px-4 py-2"></th>
-                        <th className="px-4 py-2 border text-[12px]">DCA 1</th>
-                        <th className="px-4 py-2 border text-[12px]">DCA 2</th>
-                        <th className="px-4 py-2 border text-[12px]">DCA 3</th>
-                        <th className="px-4 py-2 border text-[12px]">DCA 4</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          Allocation
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          70%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          23%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          25%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          87%
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          Volume
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          520
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          65
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          815
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          980
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-                <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
-                  Impact Analysiss
-                </p>
-                <div className="w-full  rounded my-6 AllocationTabelMain">
-                  <table className="w-full table-auto">
-                    <tbody>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-black-400 text-sm font-medium font-['DM Sans']">
-                          Resolve Rate
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
-                          55%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border flex items-center">
-                          <img src={shiftOrange} alt="mr-1" />
-                          -5%{" "}
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
-                          vs. Recommended
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-black-400 text-sm font-medium font-['DM Sans']">
-                          cost
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          $ XX
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] flex items-center">
-                          <img className="mr-1" src={RedDownArrow} alt="" /> +2%
-                        </td>
-                        <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
-                          vs. Recommended
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className=""></td>
-                        <td className=""></td>
-                        <td className=""></td>
-                        <td className="border-none px-4 py-2 text-blue-500 underline text-sm font-medium font-['DM Sans']">
-                          Approval Required
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-                <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
-                  Change Allocations
-                </p>
-                <div className="w-full  rounded my-6 AllocationTabelMain">
-                  <table className="w-full table-auto">
-                    <tbody>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-blue-400 text-sm font-medium font-['DM Sans']">
-                          Allocation
-                        </td>
-                        <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
-                          67%
-                        </td>
-                        <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
-                          45%
-                        </td>
-                        <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
-                          15%
-                        </td>
-                        <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
-                          80%
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="border-none px-4 py-2 text-blue-400 text-sm font-medium font-['DM Sans']">
-                          Volume
-                        </td>
-                        <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
-                          450
-                        </td>
-                        <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
-                          85
-                        </td>
-                        <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
-                          135
-                        </td>
-                        <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
-                          80
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
-                <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
-                  Exception Request
-                </p>
-                <p className="text-gray-800 text-sm font-medium font-['DM Sans'] mt-5">
-                  To maintain min. allocation for DCA2 to rebuild performance.
-                  DCA impacted by one off spike in attrition. Performance
-                  monitoring initiated
-                </p>
-              </div>
-            </div>
-          </>
-        ) : null} */}
+    //     {/* {activeBucket === "b2" ? (
+    //       <>
+    //         <div className="mt-3 p-3 rounded-xl shadow bg-white">
+    //           <div className=" flex flex-wrap justify-between items-center">
+    //             <p className="text-gray-800 text-sm font-medium font-['DM Sans']">
+    //               Exclusion Criteria
+    //             </p>
+    //             <div className="commonInput form-item">
+    //               <input type="text" id="DPD" autoComplete="off" required />
+    //               <label htmlFor="DPD">DPD</label>
+    //             </div>
+    //             <div className="commonInput form-item">
+    //               <input type="text" id="minbal" autoComplete="off" required />
+    //               <label htmlFor="minbal">Min. Bal.</label>
+    //             </div>
+    //             <div className="commonInput form-item">
+    //               <input type="text" id="score" autoComplete="off" required />
+    //               <label htmlFor="score">Score</label>
+    //             </div>
+    //             <div className="commonInput form-item">
+    //               <input type="text" id="flag" autoComplete="off" required />
+    //               <label htmlFor="flag">Flag</label>
+    //             </div>
+    //             <button className="text-gray-400 bg-blue-500 text-white rounded-xl  text-sm font-normal font-['DM Sans'] border-2 px-5 h-10">
+    //               Change/Add
+    //             </button>
+    //           </div>
+    //         </div>
+    //         <div className="my-3 p-3 rounded-xl shadow bg-white">
+    //           <div className=" flex flex-wrap justify-between items-center">
+    //             <p className="text-gray-800 text-sm font-medium font-['DM Sans']">
+    //               Volumes (MTD)
+    //             </p>
+    //             <div className="commonBox">
+    //               <p className="username">Total B1</p>
+    //               <div className="flex items-center">
+    //                 <p className="amount">18,923</p>
+    //                 <img src={shiftOrange} alt="" />
+    //                 <p className="smText">+8% MOM</p>
+    //               </div>
+    //             </div>
+    //             <div className="commonBox">
+    //               <p className="username">Inhouse/ Exclusion</p>
+    //               <div className="flex items-center">
+    //                 <p className="amount">22,466</p>
+    //                 <img src={shiftOrange} alt="" />
+    //                 <p className="smText">+12% MOM</p>
+    //               </div>
+    //             </div>
+    //             <div className="commonBox">
+    //               <p className="username">Allocated (MTD)</p>
+    //               <div className="flex items-center">
+    //                 <p className="amount">759</p>
+    //                 <img className="" src={RedDownArrow} alt="" />
+    //                 <p className="smText">+34% MOM</p>
+    //               </div>
+    //             </div>
+    //             <div className="commonBox">
+    //               <p className="username">New Allocation (Today)</p>
+    //               <div className="flex items-center">
+    //                 <p className="amount">10,200</p>
+    //                 <img className="" src={RedDownArrow} alt="" />
+    //                 <p className="smText">+2% MOM</p>
+    //               </div>
+    //             </div>
+    //             <button className="text-gray-400 bg-blue-500 text-white rounded-xl  text-sm font-normal font-['DM Sans'] border-2 px-5 h-10">
+    //               Test Pipeline
+    //             </button>
+    //           </div>
+    //         </div>
+    //         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    //           <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //             <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
+    //               New Allocations: Recommended
+    //             </p>
+    //             <div className="w-full  rounded my-6 AllocationTabelMain">
+    //               <table className="w-full table-auto">
+    //                 <thead>
+    //                   <tr>
+    //                     <th className="px-4 py-2"></th>
+    //                     <th className="px-4 py-2 border text-[12px]">DCA 1</th>
+    //                     <th className="px-4 py-2 border text-[12px]">DCA 2</th>
+    //                     <th className="px-4 py-2 border text-[12px]">DCA 3</th>
+    //                     <th className="px-4 py-2 border text-[12px]">DCA 4</th>
+    //                   </tr>
+    //                 </thead>
+    //                 <tbody>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       Allocation
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       70%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       23%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       25%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       87%
+    //                     </td>
+    //                   </tr>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       Volume
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       520
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       65
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       815
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       980
+    //                     </td>
+    //                   </tr>
+    //                 </tbody>
+    //               </table>
+    //             </div>
+    //           </div>
+    //           <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //             <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
+    //               Impact Analysiss
+    //             </p>
+    //             <div className="w-full  rounded my-6 AllocationTabelMain">
+    //               <table className="w-full table-auto">
+    //                 <tbody>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-black-400 text-sm font-medium font-['DM Sans']">
+    //                       Resolve Rate
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
+    //                       55%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border flex items-center">
+    //                       <img src={shiftOrange} alt="mr-1" />
+    //                       -5%{" "}
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] border">
+    //                       vs. Recommended
+    //                     </td>
+    //                   </tr>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-black-400 text-sm font-medium font-['DM Sans']">
+    //                       cost
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       $ XX
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans'] flex items-center">
+    //                       <img className="mr-1" src={RedDownArrow} alt="" /> +2%
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-gray-800 text-sm font-medium font-['DM Sans']">
+    //                       vs. Recommended
+    //                     </td>
+    //                   </tr>
+    //                   <tr>
+    //                     <td className=""></td>
+    //                     <td className=""></td>
+    //                     <td className=""></td>
+    //                     <td className="border-none px-4 py-2 text-blue-500 underline text-sm font-medium font-['DM Sans']">
+    //                       Approval Required
+    //                     </td>
+    //                   </tr>
+    //                 </tbody>
+    //               </table>
+    //             </div>
+    //           </div>
+    //           <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //             <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
+    //               Change Allocations
+    //             </p>
+    //             <div className="w-full  rounded my-6 AllocationTabelMain">
+    //               <table className="w-full table-auto">
+    //                 <tbody>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-blue-400 text-sm font-medium font-['DM Sans']">
+    //                       Allocation
+    //                     </td>
+    //                     <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
+    //                       67%
+    //                     </td>
+    //                     <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
+    //                       45%
+    //                     </td>
+    //                     <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
+    //                       15%
+    //                     </td>
+    //                     <td className="px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans'] border">
+    //                       80%
+    //                     </td>
+    //                   </tr>
+    //                   <tr>
+    //                     <td className="border-none px-4 py-2 text-blue-400 text-sm font-medium font-['DM Sans']">
+    //                       Volume
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
+    //                       450
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
+    //                       85
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
+    //                       135
+    //                     </td>
+    //                     <td className="border-none px-4 py-2 text-red-500 text-sm font-medium font-['DM Sans']">
+    //                       80
+    //                     </td>
+    //                   </tr>
+    //                 </tbody>
+    //               </table>
+    //             </div>
+    //           </div>
+    //           <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+    //             <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
+    //               Exception Request
+    //             </p>
+    //             <p className="text-gray-800 text-sm font-medium font-['DM Sans'] mt-5">
+    //               To maintain min. allocation for DCA2 to rebuild performance.
+    //               DCA impacted by one off spike in attrition. Performance
+    //               monitoring initiated
+    //             </p>
+    //           </div>
+    //         </div>
+    //       </>
+    //     ) : null} */}
 
-        {/* new figma change */}
+    //     {/* new figma change */}
 
-        {/* <div className="self-end mt-3">
-          <button
-            onClick={navigateToReviewConstraints}
-            className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-2"
-          >
-            Review Constraints
-          </button>
-          <button
-            onClick={navigateToChangeControl}
-            className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl"
-          >
-            Submit Changes
-          </button>
-          <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
-            Execute
-          </button>
-        </div> */}
+    //     {/* <div className="self-end mt-3">
+    //       <button
+    //         onClick={navigateToReviewConstraints}
+    //         className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-2"
+    //       >
+    //         Review Constraints
+    //       </button>
+    //       <button
+    //         onClick={navigateToChangeControl}
+    //         className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl"
+    //       >
+    //         Submit Changes
+    //       </button>
+    //       <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
+    //         Execute
+    //       </button>
+    //     </div> */}
+    //   </div>
+    // </div>
+    <div className="CommonBodyWrap">
+    <div className="h-[80vh] flex items-center justify-center">
+      <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+        <p className="text-gray-700">This page is under construction.</p>
       </div>
     </div>
+  </div>
   );
 };
 
