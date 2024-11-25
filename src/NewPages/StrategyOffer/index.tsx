@@ -56,65 +56,73 @@ const ReviewExecution = () => {
   };
   const navigate = useNavigate();
   return (
-    <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#FAFAFB] relative">
+    // <div className="p-0 lg:p-[28px] responsivePageWrapper bg-[#FAFAFB] relative">
 
     
 
 
-      <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] flex flex-col">
-      <HomeDashboard />
-      <div className="flex mt-5 ml-2">
-          <div className=" flex justify-between rounded-xl B1TabsContain">
-            {categories.map((city, index) => (
-              <div
-                key={city.id}
-                onClick={() => handleCategoryClick(city.id)}
-                className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                  selectedCategory === city.id
-                    ? " bg-[#E8DEF8] "
-                    : "bg-[#fafafb]"
-                } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                  index === categories.length - 1 ? "rounded-r-[4px]" : ""
-                }`}
-              >
-                {city.name}
-              </div>
-            ))}
-          </div>
-        </div>
-        <>
+    //   <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] flex flex-col">
+    //   <HomeDashboard />
+    //   <div className="flex mt-5 ml-2">
+    //       <div className=" flex justify-between rounded-xl B1TabsContain">
+    //         {categories.map((city, index) => (
+    //           <div
+    //             key={city.id}
+    //             onClick={() => handleCategoryClick(city.id)}
+    //             className={`text-center text-[#1C1B1F] text-[14px] font-[500] font-['DM Sans' !important] h-10 w-full p-4 border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+    //               selectedCategory === city.id
+    //                 ? " bg-[#E8DEF8] "
+    //                 : "bg-[#fafafb]"
+    //             } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+    //               index === categories.length - 1 ? "rounded-r-[4px]" : ""
+    //             }`}
+    //           >
+    //             {city.name}
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //     <>
           
-           {selectedCategory === "segmentation"  && (  
-          <div className="w-[100%] flex gap-5 mt-4 flex-wrap xl:flex-nowrap">
+    //        {selectedCategory === "segmentation"  && (  
+    //       <div className="w-[100%] flex gap-5 mt-4 flex-wrap xl:flex-nowrap">
         
-            <OfferSegementation    showButtons={showButtons}
-              setSelectedSegment={setSelectedSegment} />
-            <OfferSettlementBar  selectedSegment={selectedSegment} />
+    //         <OfferSegementation    showButtons={showButtons}
+    //           setSelectedSegment={setSelectedSegment} />
+    //         <OfferSettlementBar  selectedSegment={selectedSegment} />
     
-          </div>
-           )}
+    //       </div>
+    //        )}
 
-           {selectedCategory === "startegy" && (
-             <StrategySimulation/>
-           )}
-        </>
-        <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">
-          <button
-            onClick={() => navigate(-1)}
-            className=" self-end w-20 h-10 px-4 py-2.5 rounded-3xl border border-zinc-500  text-center text-[#6750a4] text-sm font-medium "
-          >
-            Back
-          </button>
-          <button
-            onClick={navigateToOptimizeStrategy}
-            className="bg-primary py-2.5 px-9 border border-primary rounded-3xl text-white"
-            style={{ background: "#6750A4" }}
-          >
-            Review Execution
-          </button>
-        </div>
+    //        {selectedCategory === "startegy" && (
+    //          <StrategySimulation/>
+    //        )}
+    //     </>
+    //     <div className="self-end mt-8 flex justify-center gap-2 flex-wrap">
+    //       <button
+    //         onClick={() => navigate(-1)}
+    //         className=" self-end w-20 h-10 px-4 py-2.5 rounded-3xl border border-zinc-500  text-center text-[#6750a4] text-sm font-medium "
+    //       >
+    //         Back
+    //       </button>
+    //       <button
+    //         onClick={navigateToOptimizeStrategy}
+    //         className="bg-primary py-2.5 px-9 border border-primary rounded-3xl text-white"
+    //         style={{ background: "#6750A4" }}
+    //       >
+    //         Review Execution
+    //       </button>
+    //     </div>
+    //   </div>
+    // </div>
+    <div className="CommonBodyWrap">
+    <div className="h-[80vh] flex items-center justify-center">
+      <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+        <p className="text-gray-700">This page is under construction.</p>
       </div>
     </div>
+  </div>
   );
 };
 

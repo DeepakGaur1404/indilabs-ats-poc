@@ -75,66 +75,73 @@ const StrategyRecovery = () => {
   //   };
 
   return (
-    <div className="p-0 lg:px-[28px] responsivePageWrapper  bg-[#FAFAFB] relative">
-      {/* <DashboardHeader /> */}
+  //   <div className="p-0 lg:px-[28px] responsivePageWrapper  bg-[#FAFAFB] relative">
+  //     {/* <DashboardHeader /> */}
     
-      {/* <PerformanceDashboard /> */}
-  <HomeDashboard />
+  //     {/* <PerformanceDashboard /> */}
+  // <HomeDashboard />
      
-      <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 ml-2 flex flex-col">
-         <div className=" w-full flex flex-wrap justify-between items-center">
-          <div className=" flex min-w-[240px] justify-start items-center rounded-xl">
-            {BGroups.map((button, index) => (
-              <div
-                key={button.id}
-                onClick={() => handleButtonClick(button.id)}
-                className={`text-center text-[14px] text-[#1D192B] font-[500] font-[''DM Sans'' !important] h-10 w-[62px] border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
-                  activeBucket === button.id ? " bg-[#E8DEF8] " : "bg-[#fafafb]"
-                } ${index === 0 ? "rounded-l-[4px]" : ""} ${
-                  index === BGroups.length - 1 ? "rounded-r-[4px]" : ""
-                }`}
-              >
-                {button.label}
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-end items-center">
-            <TemperatureGrapgh />
-          </div>
-        </div> 
+  //     <div className="bg-[#FAFAFB] rounded-xl p-2 lg:p-[28px] mt-5 ml-2 flex flex-col">
+  //        <div className=" w-full flex flex-wrap justify-between items-center">
+  //         <div className=" flex min-w-[240px] justify-start items-center rounded-xl">
+  //           {BGroups.map((button, index) => (
+  //             <div
+  //               key={button.id}
+  //               onClick={() => handleButtonClick(button.id)}
+  //               className={`text-center text-[14px] text-[#1D192B] font-[500] font-[''DM Sans'' !important] h-10 w-[62px] border border-[#79747E] flex align-center justify-center items-center cursor-pointer ${
+  //                 activeBucket === button.id ? " bg-[#E8DEF8] " : "bg-[#fafafb]"
+  //               } ${index === 0 ? "rounded-l-[4px]" : ""} ${
+  //                 index === BGroups.length - 1 ? "rounded-r-[4px]" : ""
+  //               }`}
+  //             >
+  //               {button.label}
+  //             </div>
+  //           ))}
+  //         </div>
+  //         <div className="flex justify-end items-center">
+  //           <TemperatureGrapgh />
+  //         </div>
+  //       </div> 
 
-        <div className="w-[100%] flex gap-2 flex-wrap xl:flex-nowrap">
-          <PaidNotPaid />
-          <Performance />
-        </div>
+  //       <div className="w-[100%] flex gap-2 flex-wrap xl:flex-nowrap">
+  //         <PaidNotPaid />
+  //         <Performance />
+  //       </div>
        
       
 
-        <div className="w-full mt-3 flex justify-end  items-center gap-2 flex-wrap">
-          <button
-            onClick={() => navigate(-1)}
-            className="w-[85px] h-10 px-4 py-2.5 rounded-[100px] border border-[#79747E] justify-center items-center inline-flex text-center text-[#6750A4] font-[500] text-[14px] font-['DM Sans'] leading-tight "
-          >
-            Back
-          </button>
-          <button
-            onClick={navigateToStrategyToolBox}
-            className="bg-[#6750A4] py-2.5 px-9 border border-primary font-[500] text-[14px] font-['DM Sans'] rounded-3xl text-[#FFFFFF]"
-            style={{ background: "#6750A4" }}
-          >
-          Strategy Toolbox
-          </button>
-          {/* <button
-            onClick={navigateToReviewPerformance}
-            className="bg-[#6750A4] py-2.5 px-9 border border-primary rounded-3xl text-[#FFFFFF] font-[500] text-[14px] font-['DM Sans']"
-            style={{ background: "#6750A4" }}
-          >
-            Review Execution
-          </button> */}
-        </div>
-      </div>
+  //       <div className="w-full mt-3 flex justify-end  items-center gap-2 flex-wrap">
+  //         <button
+  //           onClick={() => navigate(-1)}
+  //           className="w-[85px] h-10 px-4 py-2.5 rounded-[100px] border border-[#79747E] justify-center items-center inline-flex text-center text-[#6750A4] font-[500] text-[14px] font-['DM Sans'] leading-tight "
+  //         >
+  //           Back
+  //         </button>
+  //         <button
+  //           onClick={navigateToStrategyToolBox}
+  //           className="bg-[#6750A4] py-2.5 px-9 border border-primary font-[500] text-[14px] font-['DM Sans'] rounded-3xl text-[#FFFFFF]"
+  //           style={{ background: "#6750A4" }}
+  //         >
+  //         Strategy Toolbox
+  //         </button>
+  //         {/* <button
+  //           onClick={navigateToReviewPerformance}
+  //           className="bg-[#6750A4] py-2.5 px-9 border border-primary rounded-3xl text-[#FFFFFF] font-[500] text-[14px] font-['DM Sans']"
+  //           style={{ background: "#6750A4" }}
+  //         >
+  //           Review Execution
+  //         </button> */}
+  //       </div>
+  //     </div>
+  //   </div>
+  <div className="CommonBodyWrap">
+  <div className="h-[80vh] flex items-center justify-center">
+    <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+      <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+      <p className="text-gray-700">This page is under construction.</p>
     </div>
-
+  </div>
+</div>
   );
 };
 

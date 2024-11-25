@@ -210,328 +210,335 @@ const ExecutionRecovery = () => {
   };
 
   return (
-    <div className="flex gap-5  flex-col">
-      <div className="flex flex-col bg-[#FAFAFB] p-5 px-[4.2rem]">
-         {/* <ExecutionDashboardRecovery />  */}
-        <PerformanceDashboard />
-        {/* <MonitoringCollectionDashboardHeader /> */}
+    // <div className="flex gap-5  flex-col">
+    //   <div className="flex flex-col bg-[#FAFAFB] p-5 px-[4.2rem]">
+    //      {/* <ExecutionDashboardRecovery />  */}
+    //     <PerformanceDashboard />
+    //     {/* <MonitoringCollectionDashboardHeader /> */}
 
-        <div className="w-[100%] flex justify-start gap-12 flex-wrap mt-7 ml-2 ">
-          <div className="flex gap-10 ml-2 border-b-[1px] border-[#E0E3E8] w-1/2">
-            <button
-              className={`font-['DM Sans'] text-${
-                activeTabs === "controls" ? "black" : "#000000"
-              } text-[black] text-[16px] font-[500] leading-5`}
-              style={{
-                borderBottom:
-                  activeTabs === "controls" ? "2px solid #5C4E8E" : "none",
-                width: "65px",
-                color: activeTabs !== "controls" ? "#9CA4B6" : "inherit",
-              }}
-              onClick={handleTabClickControls}
-            >
-              Controls
-            </button>
-            <button
-              className={`font-['DM Sans'] text-${
-                activeTabs === "compliance" ? "black" : "#9CA4B6"
-              } text-[#9CA4B6] text-[16px] font-[500] leading-5`}
-              style={{
-                borderBottom:
-                  activeTabs === "compliance" ? "2px solid #5C4E8E" : "none",
-                width: "92px",
-              }}
-              onClick={handleTabClickCompliance}
-            >
-              Compliance
-            </button>
-          </div>
-          {activeTabs === "controls" && (
-            <div className="flex w-[100%] gap-7 -mt-4 ">
-              <div className="w-[100%]  h-full bg-white  rounded-xl py-5 px-4 gap-1 border border-gray-100">
-                <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
-                  Strategy Adherence Controls
-                </p>
-                <table className="w-[100%]">
-                  <thead className="flex justify-between w-[100%] p-3 border-b border-gray-100">
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[271px] text-left">
-                      Controls
-                    </th>
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
-                      Limit
-                    </th>
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px] ">
-                      Actual
-                    </th>
-                  </thead>
-                  <tbody className="mt-5 w-[100%]">
-                    {StrategyAdherenceControlsData.map((each, index) => (
-                      <tr
-                        key={index}
-                        className="border-b border-gray-100 flex justify-between py-3 px-3  w-[100%]"
-                      >
-                        <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[271px]  break-all">
-                          {each.controls}
-                        </td>
-                        <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center ">
-                          {each.actual}%
-                        </td>
-                        <td
-                          className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center"
-                          style={controlsLimitStyles(index)}
-                        >
-                          {each.limit}%
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="w-[100%] p-4  h-max border bg-[white] flex items-center flex-col  border-gray-100 rounded-xl ">
-                <div className="flex   justify-between w-[100%]">
-                  <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
-                    Strategy Adherence Controls
-                  </p>
-                  <div className="flex items-center gap-4 mr-3">
-                    <div className="flex items-center gap-1 ">
-                      <div className="w-[13px] h-[14px] bg-[#34B53A] rounded-[10px]"></div>
-                      <div className=" text-[#000000] text-[12px] font-[400] font-['DM Sans']">
-                        Within CL
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-[13px] h-[14px] bg-[#ED0E00] rounded-[10px]"></div>
-                      <div className="text-[#000000] text-[12px] font-[400] font-['DM Sans']">
-                        Exceed CL
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[113%] h-[410px] flex items-centerr">
-                  <ResponsiveContainer className=" flex items-center  w-[100%]">
-                    <BarChart
-                      width={800}
-                      // height={100}
-                      data={data}
-                      margin={{
-                        top: 20,
-                        right: 45,
-                        left: 0,
-                        bottom: 0,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                      <XAxis
-                        dataKey="name"
-                        axisLine={false}
-                        tickLine={false}
-                        className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
-                      />
-                      <YAxis
-                        axisLine={false}
-                        tickLine={false}
-                        domain={[0, 9]}
-                        ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
-                        className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
-                      />
-                      <Tooltip />
-                      <Bar
-                        dataKey="pv"
-                        stackId="a"
-                        fill="#34B53A"
-                        barSize={10}
-                        shape={(props: any) => {
-                          const { x, y, width, height, ...rest } = props;
-                          const radius =
-                            props.payload.name === "Feb"
-                              ? [10, 10, 10, 10]
-                              : [0, 0, 10, 10];
-                          return (
-                            <Rectangle
-                              x={x}
-                              y={y}
-                              width={width}
-                              height={height}
-                              {...rest}
-                              radius={radius}
-                            />
-                          );
-                        }}
-                      />
-                      <Bar
-                        dataKey="uv"
-                        stackId="a"
-                        fill="#ED0E00"
-                        barSize={10}
-                        shape={(props: any) => {
-                          const { x, y, width, height, ...rest } = props;
-                          const radius =
-                            props.payload.name === "Feb"
-                              ? [10, 10, 0, 0]
-                              : [10, 10, 0, 0];
-                          return (
-                            <Rectangle
-                              x={x}
-                              y={y}
-                              width={width}
-                              height={height}
-                              {...rest}
-                              radius={radius}
-                            />
-                          );
-                        }}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            </div>
-          )}
-          {activeTabs === "compliance" && (
-            <div className="flex w-[100%] -mt-4 gap-7">
-              <div className="w-[100%] h-full  rounded-xl py-5 px-4 gap-1 border bg-[white]  border-gray-100">
-                <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
-                  Operational Controls
-                </p>
-                <table className="w-[100%]">
-                  <thead className="flex justify-between w-[100%] p-3 border-b border-gray-100">
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[271px] text-left">
-                      Controls
-                    </th>
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
-                      Limit
-                    </th>
-                    <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
-                      Actual
-                    </th>
-                  </thead>
-                  <tbody className="mt-5 w-[100%]">
-                    {OperationalControlsData.map((each, index) => (
-                      <tr
-                        key={index}
-                        className="border-b border-gray-100 flex justify-between py-3 px-3 w-[100%]"
-                      >
-                        <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[271px] text-left">
-                          {each.controls}
-                        </td>
-                        <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center ">
-                          {each.limit}%
-                        </td>
-                        <td
-                          className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center"
-                          style={complianceLimitStyles(index)}
-                        >
-                          {each.actual}%
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="w-[100%]  p-4  h-max border bg-[white] flex items-center flex-col  border-gray-100 rounded-xl ">
-                <div className="flex justify-between w-[100%]">
-                  <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
-                    Strategy Adherence Controls
-                  </p>
-                  <div className="flex items-center gap-4 mr-3">
-                    <div className="flex items-center gap-1 ">
-                      <div className="w-[13px] h-[14px] bg-[#34B53A] rounded-[10px]"></div>
-                      <div className=" text-[#000000] text-[12px] font-[400] font-['DM Sans']">
-                        Within CL
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-[13px] h-[14px] bg-[#ED0E00] rounded-[10px]"></div>
-                      <div className="text-[#000000] text-[12px] font-[400] font-['DM Sans']">
-                        Exceed CL
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[113%] h-[410px] flex items-center">
-                  <ResponsiveContainer className=" flex items-center  w-[100%]">
-                    <BarChart
-                      // width={400}
-                      // height={100}
-                      data={data}
-                      margin={{
-                        top: 20,
-                        right: 45,
-                        left: 0,
-                        bottom: 0,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                      <XAxis
-                        dataKey="name"
-                        axisLine={false}
-                        tickLine={false}
-                        className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
-                      />
-                      <YAxis
-                        axisLine={false}
-                        tickLine={false}
-                        domain={[0, 9]}
-                        ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
-                        className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
-                      />
-                      <Tooltip />
-                      <Bar
-                        dataKey="pv"
-                        stackId="a"
-                        fill="#34B53A"
-                        barSize={10}
-                        shape={(props: any) => {
-                          const { x, y, width, height, ...rest } = props;
-                          const radius =
-                            props.payload.name === "Feb"
-                              ? [10, 10, 10, 10]
-                              : [0, 0, 10, 10];
-                          return (
-                            <Rectangle
-                              x={x}
-                              y={y}
-                              width={width}
-                              height={height}
-                              {...rest}
-                              radius={radius}
-                            />
-                          );
-                        }}
-                      />
-                      <Bar
-                        dataKey="uv"
-                        stackId="a"
-                        fill="#ED0E00"
-                        barSize={10}
-                        shape={(props: any) => {
-                          const { x, y, width, height, ...rest } = props;
-                          const radius =
-                            props.payload.name === "Feb"
-                              ? [10, 10, 0, 0]
-                              : [10, 10, 0, 0];
-                          return (
-                            <Rectangle
-                              x={x}
-                              y={y}
-                              width={width}
-                              height={height}
-                              {...rest}
-                              radius={radius}
-                            />
-                          );
-                        }}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+    //     <div className="w-[100%] flex justify-start gap-12 flex-wrap mt-7 ml-2 ">
+    //       <div className="flex gap-10 ml-2 border-b-[1px] border-[#E0E3E8] w-1/2">
+    //         <button
+    //           className={`font-['DM Sans'] text-${
+    //             activeTabs === "controls" ? "black" : "#000000"
+    //           } text-[black] text-[16px] font-[500] leading-5`}
+    //           style={{
+    //             borderBottom:
+    //               activeTabs === "controls" ? "2px solid #5C4E8E" : "none",
+    //             width: "65px",
+    //             color: activeTabs !== "controls" ? "#9CA4B6" : "inherit",
+    //           }}
+    //           onClick={handleTabClickControls}
+    //         >
+    //           Controls
+    //         </button>
+    //         <button
+    //           className={`font-['DM Sans'] text-${
+    //             activeTabs === "compliance" ? "black" : "#9CA4B6"
+    //           } text-[#9CA4B6] text-[16px] font-[500] leading-5`}
+    //           style={{
+    //             borderBottom:
+    //               activeTabs === "compliance" ? "2px solid #5C4E8E" : "none",
+    //             width: "92px",
+    //           }}
+    //           onClick={handleTabClickCompliance}
+    //         >
+    //           Compliance
+    //         </button>
+    //       </div>
+    //       {activeTabs === "controls" && (
+    //         <div className="flex w-[100%] gap-7 -mt-4 ">
+    //           <div className="w-[100%]  h-full bg-white  rounded-xl py-5 px-4 gap-1 border border-gray-100">
+    //             <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
+    //               Strategy Adherence Controls
+    //             </p>
+    //             <table className="w-[100%]">
+    //               <thead className="flex justify-between w-[100%] p-3 border-b border-gray-100">
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[271px] text-left">
+    //                   Controls
+    //                 </th>
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
+    //                   Limit
+    //                 </th>
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px] ">
+    //                   Actual
+    //                 </th>
+    //               </thead>
+    //               <tbody className="mt-5 w-[100%]">
+    //                 {StrategyAdherenceControlsData.map((each, index) => (
+    //                   <tr
+    //                     key={index}
+    //                     className="border-b border-gray-100 flex justify-between py-3 px-3  w-[100%]"
+    //                   >
+    //                     <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[271px]  break-all">
+    //                       {each.controls}
+    //                     </td>
+    //                     <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center ">
+    //                       {each.actual}%
+    //                     </td>
+    //                     <td
+    //                       className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center"
+    //                       style={controlsLimitStyles(index)}
+    //                     >
+    //                       {each.limit}%
+    //                     </td>
+    //                   </tr>
+    //                 ))}
+    //               </tbody>
+    //             </table>
+    //           </div>
+    //           <div className="w-[100%] p-4  h-max border bg-[white] flex items-center flex-col  border-gray-100 rounded-xl ">
+    //             <div className="flex   justify-between w-[100%]">
+    //               <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
+    //                 Strategy Adherence Controls
+    //               </p>
+    //               <div className="flex items-center gap-4 mr-3">
+    //                 <div className="flex items-center gap-1 ">
+    //                   <div className="w-[13px] h-[14px] bg-[#34B53A] rounded-[10px]"></div>
+    //                   <div className=" text-[#000000] text-[12px] font-[400] font-['DM Sans']">
+    //                     Within CL
+    //                   </div>
+    //                 </div>
+    //                 <div className="flex items-center gap-1">
+    //                   <div className="w-[13px] h-[14px] bg-[#ED0E00] rounded-[10px]"></div>
+    //                   <div className="text-[#000000] text-[12px] font-[400] font-['DM Sans']">
+    //                     Exceed CL
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //             <div className="w-[113%] h-[410px] flex items-centerr">
+    //               <ResponsiveContainer className=" flex items-center  w-[100%]">
+    //                 <BarChart
+    //                   width={800}
+    //                   // height={100}
+    //                   data={data}
+    //                   margin={{
+    //                     top: 20,
+    //                     right: 45,
+    //                     left: 0,
+    //                     bottom: 0,
+    //                   }}
+    //                 >
+    //                   <CartesianGrid strokeDasharray="3 3" vertical={false} />
+    //                   <XAxis
+    //                     dataKey="name"
+    //                     axisLine={false}
+    //                     tickLine={false}
+    //                     className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
+    //                   />
+    //                   <YAxis
+    //                     axisLine={false}
+    //                     tickLine={false}
+    //                     domain={[0, 9]}
+    //                     ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    //                     className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
+    //                   />
+    //                   <Tooltip />
+    //                   <Bar
+    //                     dataKey="pv"
+    //                     stackId="a"
+    //                     fill="#34B53A"
+    //                     barSize={10}
+    //                     shape={(props: any) => {
+    //                       const { x, y, width, height, ...rest } = props;
+    //                       const radius =
+    //                         props.payload.name === "Feb"
+    //                           ? [10, 10, 10, 10]
+    //                           : [0, 0, 10, 10];
+    //                       return (
+    //                         <Rectangle
+    //                           x={x}
+    //                           y={y}
+    //                           width={width}
+    //                           height={height}
+    //                           {...rest}
+    //                           radius={radius}
+    //                         />
+    //                       );
+    //                     }}
+    //                   />
+    //                   <Bar
+    //                     dataKey="uv"
+    //                     stackId="a"
+    //                     fill="#ED0E00"
+    //                     barSize={10}
+    //                     shape={(props: any) => {
+    //                       const { x, y, width, height, ...rest } = props;
+    //                       const radius =
+    //                         props.payload.name === "Feb"
+    //                           ? [10, 10, 0, 0]
+    //                           : [10, 10, 0, 0];
+    //                       return (
+    //                         <Rectangle
+    //                           x={x}
+    //                           y={y}
+    //                           width={width}
+    //                           height={height}
+    //                           {...rest}
+    //                           radius={radius}
+    //                         />
+    //                       );
+    //                     }}
+    //                   />
+    //                 </BarChart>
+    //               </ResponsiveContainer>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       )}
+    //       {activeTabs === "compliance" && (
+    //         <div className="flex w-[100%] -mt-4 gap-7">
+    //           <div className="w-[100%] h-full  rounded-xl py-5 px-4 gap-1 border bg-[white]  border-gray-100">
+    //             <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
+    //               Operational Controls
+    //             </p>
+    //             <table className="w-[100%]">
+    //               <thead className="flex justify-between w-[100%] p-3 border-b border-gray-100">
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[271px] text-left">
+    //                   Controls
+    //                 </th>
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
+    //                   Limit
+    //                 </th>
+    //                 <th className="text-[#9CA4B6] text-[12px] font-[400] font-['DM Sans'] leading-[18px] w-[59px]">
+    //                   Actual
+    //                 </th>
+    //               </thead>
+    //               <tbody className="mt-5 w-[100%]">
+    //                 {OperationalControlsData.map((each, index) => (
+    //                   <tr
+    //                     key={index}
+    //                     className="border-b border-gray-100 flex justify-between py-3 px-3 w-[100%]"
+    //                   >
+    //                     <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[271px] text-left">
+    //                       {each.controls}
+    //                     </td>
+    //                     <td className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center ">
+    //                       {each.limit}%
+    //                     </td>
+    //                     <td
+    //                       className="text-[#161D29] text-[14px] font-[400] font-['DM Sans'] leading-[21px] w-[59px] text-center"
+    //                       style={complianceLimitStyles(index)}
+    //                     >
+    //                       {each.actual}%
+    //                     </td>
+    //                   </tr>
+    //                 ))}
+    //               </tbody>
+    //             </table>
+    //           </div>
+    //           <div className="w-[100%]  p-4  h-max border bg-[white] flex items-center flex-col  border-gray-100 rounded-xl ">
+    //             <div className="flex justify-between w-[100%]">
+    //               <p className="font-[DM Sans] font-[500] text-[16px] leading-[18px]">
+    //                 Strategy Adherence Controls
+    //               </p>
+    //               <div className="flex items-center gap-4 mr-3">
+    //                 <div className="flex items-center gap-1 ">
+    //                   <div className="w-[13px] h-[14px] bg-[#34B53A] rounded-[10px]"></div>
+    //                   <div className=" text-[#000000] text-[12px] font-[400] font-['DM Sans']">
+    //                     Within CL
+    //                   </div>
+    //                 </div>
+    //                 <div className="flex items-center gap-1">
+    //                   <div className="w-[13px] h-[14px] bg-[#ED0E00] rounded-[10px]"></div>
+    //                   <div className="text-[#000000] text-[12px] font-[400] font-['DM Sans']">
+    //                     Exceed CL
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //             <div className="w-[113%] h-[410px] flex items-center">
+    //               <ResponsiveContainer className=" flex items-center  w-[100%]">
+    //                 <BarChart
+    //                   // width={400}
+    //                   // height={100}
+    //                   data={data}
+    //                   margin={{
+    //                     top: 20,
+    //                     right: 45,
+    //                     left: 0,
+    //                     bottom: 0,
+    //                   }}
+    //                 >
+    //                   <CartesianGrid strokeDasharray="3 3" vertical={false} />
+    //                   <XAxis
+    //                     dataKey="name"
+    //                     axisLine={false}
+    //                     tickLine={false}
+    //                     className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
+    //                   />
+    //                   <YAxis
+    //                     axisLine={false}
+    //                     tickLine={false}
+    //                     domain={[0, 9]}
+    //                     ticks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    //                     className="text-[#3B414B] text-[12px] font['DM Sans'] font-[400]"
+    //                   />
+    //                   <Tooltip />
+    //                   <Bar
+    //                     dataKey="pv"
+    //                     stackId="a"
+    //                     fill="#34B53A"
+    //                     barSize={10}
+    //                     shape={(props: any) => {
+    //                       const { x, y, width, height, ...rest } = props;
+    //                       const radius =
+    //                         props.payload.name === "Feb"
+    //                           ? [10, 10, 10, 10]
+    //                           : [0, 0, 10, 10];
+    //                       return (
+    //                         <Rectangle
+    //                           x={x}
+    //                           y={y}
+    //                           width={width}
+    //                           height={height}
+    //                           {...rest}
+    //                           radius={radius}
+    //                         />
+    //                       );
+    //                     }}
+    //                   />
+    //                   <Bar
+    //                     dataKey="uv"
+    //                     stackId="a"
+    //                     fill="#ED0E00"
+    //                     barSize={10}
+    //                     shape={(props: any) => {
+    //                       const { x, y, width, height, ...rest } = props;
+    //                       const radius =
+    //                         props.payload.name === "Feb"
+    //                           ? [10, 10, 0, 0]
+    //                           : [10, 10, 0, 0];
+    //                       return (
+    //                         <Rectangle
+    //                           x={x}
+    //                           y={y}
+    //                           width={width}
+    //                           height={height}
+    //                           {...rest}
+    //                           radius={radius}
+    //                         />
+    //                       );
+    //                     }}
+    //                   />
+    //                 </BarChart>
+    //               </ResponsiveContainer>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       )}
+    //     </div>
+    //   </div>
+    // </div>
+    <div className="CommonBodyWrap">
+    <div className="h-[80vh] flex items-center justify-center">
+      <div className="bg-yellow-200 p-6 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-2">Work in Progress</h1>
+        <p className="text-gray-700">This page is under construction.</p>
       </div>
     </div>
-   
+  </div>
   );
 };
 

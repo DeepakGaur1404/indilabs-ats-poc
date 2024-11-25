@@ -505,7 +505,7 @@ const VintageRecoveryChart = ({
     <div className="w-full xl:w-[100%] h-[500px]  rounded-lg py-1 p-4 ml-2 shadow-md bg-white">
       <div className="w-full flex flex-wrap  md:flex justify-between lg: px-0 my-3">
         <h1 className="text-start text-[16px] font-[500] text-[#000000] font-['DM Sans'] leading-normal">
-          Vintage Recovery
+        Cumulative Retention %
         </h1>
         <div className="flex items-center gap-2 first-letter:lg:gap-3 ColorIndicator lg:gap-7" >
           <div className="flex items-center">

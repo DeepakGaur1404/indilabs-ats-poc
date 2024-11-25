@@ -49,7 +49,7 @@ const Header = ({
       setPageName("Distribution");
       setlogo(SentinelImage);
     } else if (pathName === "/monitoring/recovery/vintage") {
-      setPageName("Vintage");
+      setPageName("Retention");
       setlogo(SentinelImage);
     } else if (pathName === "/monitoring/recovery/placement") {
       setPageName("Placement");
