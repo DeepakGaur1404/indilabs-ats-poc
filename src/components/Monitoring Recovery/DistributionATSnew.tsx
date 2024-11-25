@@ -344,7 +344,7 @@ const DistributionATSnew = ({
         <h1 className="text-start text-[16px] font-[500] text-[#000000] font-['DM Sans']">
           Contribution %
         </h1>
-        <div className="flex items-center gap-2 first-letter:lg:gap-3 ColorIndicator lg:gap-7">
+        <div className="flex flex-wrap justify-between items-center gap-2  ColorIndicator ">
          
            {activeTabs === "All" &&
       newselectedAllCategory === "Lapse Bkt" &&
