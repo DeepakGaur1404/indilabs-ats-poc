@@ -1272,7 +1272,7 @@ const DistributionRecovery: React.FC = () => {
       setnewselectedCategory("Prem_OS")
     // }
   };
-  const [activeTabs, SetActiveTabs] = useState("Pre-Due");
+  const [activeTabs, SetActiveTabs] = useState("All");
   return (
     <div className="CommonBodyWrap bg-[#fafafb]">
       <div className="px-[6px] lg:px-[59px] lg:pt-[59px] bg-[#fafafb] flex flex-col gap-5 w-full">
