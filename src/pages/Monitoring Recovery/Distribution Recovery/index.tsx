@@ -1090,8 +1090,2618 @@ const PreDueData=
       ]
   }
 }
-// { label: "Early Lapse", width: "92px" },
-// { label: "Late Lapse", width: "92px" },
+const ELData=
+{
+  "Early-Lapse": {
+      "Premium Outstanding bucket": [
+          [
+              {
+                  "COUNT_<=20k_percentage": 14.29,
+                  "COUNT_>20k, <=50k_percentage": 42.86,
+                  "COUNT_>50k, <=150k_percentage": 42.86,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 36.36,
+                  "COUNT_>20k, <=50k_percentage": 45.45,
+                  "COUNT_>50k, <=150k_percentage": 18.18,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 27.27,
+                  "COUNT_>20k, <=50k_percentage": 72.73,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 50.0,
+                  "COUNT_>50k, <=150k_percentage": 50.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 33.33,
+                  "COUNT_>20k, <=50k_percentage": 66.67,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 41.04,
+                  "COUNT_>20k, <=50k_percentage": 30.41,
+                  "COUNT_>50k, <=150k_percentage": 16.79,
+                  "COUNT_>150k_percentage": 11.76
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 48.01,
+                  "COUNT_>20k, <=50k_percentage": 27.87,
+                  "COUNT_>50k, <=150k_percentage": 17.92,
+                  "COUNT_>150k_percentage": 6.2
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 54.8,
+                  "COUNT_>20k, <=50k_percentage": 23.26,
+                  "COUNT_>50k, <=150k_percentage": 15.89,
+                  "COUNT_>150k_percentage": 6.05
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 43.05,
+                  "COUNT_>20k, <=50k_percentage": 34.25,
+                  "COUNT_>50k, <=150k_percentage": 18.89,
+                  "COUNT_>150k_percentage": 3.82
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 46.63,
+                  "COUNT_>20k, <=50k_percentage": 27.99,
+                  "COUNT_>50k, <=150k_percentage": 18.92,
+                  "COUNT_>150k_percentage": 6.46
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 20.0,
+                  "COUNT_>20k, <=50k_percentage": 40.0,
+                  "COUNT_>50k, <=150k_percentage": 40.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 25.0,
+                  "COUNT_>20k, <=50k_percentage": 50.0,
+                  "COUNT_>50k, <=150k_percentage": 25.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 66.67,
+                  "COUNT_>20k, <=50k_percentage": 0.0,
+                  "COUNT_>50k, <=150k_percentage": 33.33,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 66.67,
+                  "COUNT_>50k, <=150k_percentage": 33.33,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 52.74,
+                  "COUNT_>20k, <=50k_percentage": 38.31,
+                  "COUNT_>50k, <=150k_percentage": 7.96,
+                  "COUNT_>150k_percentage": 1.0
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 0.0,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 0.0,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 66.67,
+                  "COUNT_>50k, <=150k_percentage": 33.33,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 22.94,
+                  "COUNT_>20k, <=50k_percentage": 39.08,
+                  "COUNT_>50k, <=150k_percentage": 31.39,
+                  "COUNT_>150k_percentage": 6.59
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 0.0,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 0.0,
+                  "COUNT_>20k, <=50k_percentage": 100.0,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 100.0,
+                  "COUNT_>20k, <=50k_percentage": 0.0,
+                  "COUNT_>50k, <=150k_percentage": 0.0,
+                  "COUNT_>150k_percentage": 0.0
+              },
+              "Oct2024"
+          ]
+      ],
+      "Premium Frequency bucket": [
+          [
+              {
+                  "1_percentage": 57.14,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 42.86
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "1_percentage": 18.18,
+                  "3_percentage": 0.0,
+                  "6_percentage": 9.09,
+                  "12_percentage": 72.73
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "1_percentage": 9.09,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 90.91
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "1_percentage": 75.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 25.0
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 100.0
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "1_percentage": 10.5,
+                  "3_percentage": 1.96,
+                  "6_percentage": 8.46,
+                  "12_percentage": 79.08
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "1_percentage": 19.71,
+                  "3_percentage": 2.43,
+                  "6_percentage": 12.31,
+                  "12_percentage": 65.56
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "1_percentage": 32.68,
+                  "3_percentage": 2.22,
+                  "6_percentage": 10.46,
+                  "12_percentage": 54.64
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "1_percentage": 11.4,
+                  "3_percentage": 2.36,
+                  "6_percentage": 12.47,
+                  "12_percentage": 73.77
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "1_percentage": 20.64,
+                  "3_percentage": 3.02,
+                  "6_percentage": 13.45,
+                  "12_percentage": 62.89
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "1_percentage": 20.0,
+                  "3_percentage": 20.0,
+                  "6_percentage": 20.0,
+                  "12_percentage": 40.0
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "1_percentage": 50.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 50.0
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "1_percentage": 33.33,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 66.67
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 33.33,
+                  "12_percentage": 66.67
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "1_percentage": 22.39,
+                  "3_percentage": 1.99,
+                  "6_percentage": 11.44,
+                  "12_percentage": 64.18
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 0.0
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 0.0
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 16.67,
+                  "12_percentage": 83.33
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "1_percentage": 4.04,
+                  "3_percentage": 0.98,
+                  "6_percentage": 4.26,
+                  "12_percentage": 90.72
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 0.0,
+                  "12_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 100.0,
+                  "12_percentage": 0.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "1_percentage": 0.0,
+                  "3_percentage": 0.0,
+                  "6_percentage": 50.0,
+                  "12_percentage": 50.0
+              },
+              "Oct2024"
+          ]
+      ],
+      "Product Type bucket": [
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 87.43,
+                  "contribution_ULIP_percentage": 12.57
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 86.81,
+                  "contribution_ULIP_percentage": 13.19
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 91.21,
+                  "contribution_ULIP_percentage": 8.79
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 96.44,
+                  "contribution_ULIP_percentage": 3.56
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.3,
+                  "contribution_ULIP_percentage": 6.7
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 98.51,
+                  "contribution_ULIP_percentage": 1.49
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 0.0
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 0.0
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 75.22,
+                  "contribution_ULIP_percentage": 24.78
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 0.0,
+                  "contribution_ULIP_percentage": 100.0
+              },
+              "Oct2024"
+          ]
+      ],
+      "Policy Year bucket": [
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 42.86,
+                  "contribution_49M_percentage": 57.14,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 18.18,
+                  "contribution_49M_percentage": 81.82,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 18.18,
+                  "contribution_49M_percentage": 81.82,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 25.0,
+                  "contribution_49M_percentage": 75.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 66.67,
+                  "contribution_49M_percentage": 33.33,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 45.72,
+                  "contribution_13M_percentage": 17.96,
+                  "contribution_25M_percentage": 10.99,
+                  "contribution_37M_percentage": 6.58,
+                  "contribution_49M_percentage": 7.55,
+                  "contribution_61M_percentage": 5.86,
+                  "contribution_FYRP_percentage": 5.34
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 47.73,
+                  "contribution_13M_percentage": 12.13,
+                  "contribution_25M_percentage": 8.59,
+                  "contribution_37M_percentage": 6.5,
+                  "contribution_49M_percentage": 9.82,
+                  "contribution_61M_percentage": 7.46,
+                  "contribution_FYRP_percentage": 7.77
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 45.0,
+                  "contribution_13M_percentage": 15.61,
+                  "contribution_25M_percentage": 7.82,
+                  "contribution_37M_percentage": 7.82,
+                  "contribution_49M_percentage": 6.24,
+                  "contribution_61M_percentage": 4.26,
+                  "contribution_FYRP_percentage": 13.25
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 40.42,
+                  "contribution_13M_percentage": 19.95,
+                  "contribution_25M_percentage": 8.81,
+                  "contribution_37M_percentage": 9.63,
+                  "contribution_49M_percentage": 8.14,
+                  "contribution_61M_percentage": 6.51,
+                  "contribution_FYRP_percentage": 6.53
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 49.18,
+                  "contribution_13M_percentage": 8.84,
+                  "contribution_25M_percentage": 11.77,
+                  "contribution_37M_percentage": 11.96,
+                  "contribution_49M_percentage": 8.04,
+                  "contribution_61M_percentage": 1.11,
+                  "contribution_FYRP_percentage": 9.09
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 100.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 100.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 100.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 100.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 61.86,
+                  "contribution_13M_percentage": 7.9,
+                  "contribution_25M_percentage": 4.81,
+                  "contribution_37M_percentage": 5.15,
+                  "contribution_49M_percentage": 3.44,
+                  "contribution_61M_percentage": 4.81,
+                  "contribution_FYRP_percentage": 12.03
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Oct2024"
+          ]
+      ]
+  }
+}
+const LLData={
+  "Late-Lapse": {
+      "Premium Outstanding bucket": [
+          [
+              {
+                  "COUNT_<=20k_percentage": 17.4,
+                  "COUNT_>20k, <=50k_percentage": 37.51,
+                  "COUNT_>50k, <=150k_percentage": 32.08,
+                  "COUNT_>150k_percentage": 13.02
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 16.87,
+                  "COUNT_>20k, <=50k_percentage": 41.33,
+                  "COUNT_>50k, <=150k_percentage": 31.4,
+                  "COUNT_>150k_percentage": 10.4
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 14.31,
+                  "COUNT_>20k, <=50k_percentage": 39.44,
+                  "COUNT_>50k, <=150k_percentage": 35.29,
+                  "COUNT_>150k_percentage": 10.96
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 26.45,
+                  "COUNT_>20k, <=50k_percentage": 35.27,
+                  "COUNT_>50k, <=150k_percentage": 28.88,
+                  "COUNT_>150k_percentage": 9.39
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 25.28,
+                  "COUNT_>20k, <=50k_percentage": 34.24,
+                  "COUNT_>50k, <=150k_percentage": 30.23,
+                  "COUNT_>150k_percentage": 10.25
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 28.09,
+                  "COUNT_>20k, <=50k_percentage": 41.15,
+                  "COUNT_>50k, <=150k_percentage": 24.08,
+                  "COUNT_>150k_percentage": 6.68
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 13.03,
+                  "COUNT_>20k, <=50k_percentage": 30.17,
+                  "COUNT_>50k, <=150k_percentage": 45.97,
+                  "COUNT_>150k_percentage": 10.83
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 31.15,
+                  "COUNT_>20k, <=50k_percentage": 38.51,
+                  "COUNT_>50k, <=150k_percentage": 24.13,
+                  "COUNT_>150k_percentage": 6.2
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 30.81,
+                  "COUNT_>20k, <=50k_percentage": 37.82,
+                  "COUNT_>50k, <=150k_percentage": 24.57,
+                  "COUNT_>150k_percentage": 6.81
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 24.53,
+                  "COUNT_>20k, <=50k_percentage": 38.52,
+                  "COUNT_>50k, <=150k_percentage": 25.81,
+                  "COUNT_>150k_percentage": 11.13
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 25.15,
+                  "COUNT_>20k, <=50k_percentage": 36.71,
+                  "COUNT_>50k, <=150k_percentage": 26.97,
+                  "COUNT_>150k_percentage": 11.18
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 26.97,
+                  "COUNT_>20k, <=50k_percentage": 35.6,
+                  "COUNT_>50k, <=150k_percentage": 25.68,
+                  "COUNT_>150k_percentage": 11.75
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 30.06,
+                  "COUNT_>20k, <=50k_percentage": 33.55,
+                  "COUNT_>50k, <=150k_percentage": 24.99,
+                  "COUNT_>150k_percentage": 11.41
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 44.11,
+                  "COUNT_>20k, <=50k_percentage": 33.85,
+                  "COUNT_>50k, <=150k_percentage": 15.75,
+                  "COUNT_>150k_percentage": 6.29
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 39.42,
+                  "COUNT_>20k, <=50k_percentage": 33.23,
+                  "COUNT_>50k, <=150k_percentage": 21.48,
+                  "COUNT_>150k_percentage": 5.88
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 38.7,
+                  "COUNT_>20k, <=50k_percentage": 31.7,
+                  "COUNT_>50k, <=150k_percentage": 21.92,
+                  "COUNT_>150k_percentage": 7.68
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 29.25,
+                  "COUNT_>20k, <=50k_percentage": 37.21,
+                  "COUNT_>50k, <=150k_percentage": 23.74,
+                  "COUNT_>150k_percentage": 9.8
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 36.79,
+                  "COUNT_>20k, <=50k_percentage": 43.6,
+                  "COUNT_>50k, <=150k_percentage": 17.41,
+                  "COUNT_>150k_percentage": 2.2
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 42.64,
+                  "COUNT_>20k, <=50k_percentage": 30.88,
+                  "COUNT_>50k, <=150k_percentage": 21.16,
+                  "COUNT_>150k_percentage": 5.32
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 40.75,
+                  "COUNT_>20k, <=50k_percentage": 30.75,
+                  "COUNT_>50k, <=150k_percentage": 20.55,
+                  "COUNT_>150k_percentage": 7.96
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 36.71,
+                  "COUNT_>20k, <=50k_percentage": 34.33,
+                  "COUNT_>50k, <=150k_percentage": 23.26,
+                  "COUNT_>150k_percentage": 5.7
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 51.01,
+                  "COUNT_>20k, <=50k_percentage": 25.07,
+                  "COUNT_>50k, <=150k_percentage": 19.06,
+                  "COUNT_>150k_percentage": 4.86
+              },
+              "Oct2024"
+          ]
+      ],
+      "Premium Frequency bucket": [
+          [
+              {
+                  "1_percentage": 8.25,
+                  "3_percentage": 1.82,
+                  "6_percentage": 7.32,
+                  "12_percentage": 82.6
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "1_percentage": 16.3,
+                  "3_percentage": 2.14,
+                  "6_percentage": 7.66,
+                  "12_percentage": 73.9
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "1_percentage": 16.19,
+                  "3_percentage": 2.48,
+                  "6_percentage": 11.47,
+                  "12_percentage": 69.86
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "1_percentage": 18.36,
+                  "3_percentage": 3.12,
+                  "6_percentage": 10.03,
+                  "12_percentage": 68.48
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "1_percentage": 4.83,
+                  "3_percentage": 1.85,
+                  "6_percentage": 6.92,
+                  "12_percentage": 86.39
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "1_percentage": 17.93,
+                  "3_percentage": 2.17,
+                  "6_percentage": 7.45,
+                  "12_percentage": 72.44
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "1_percentage": 4.42,
+                  "3_percentage": 1.62,
+                  "6_percentage": 5.54,
+                  "12_percentage": 88.42
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "1_percentage": 14.79,
+                  "3_percentage": 2.51,
+                  "6_percentage": 8.37,
+                  "12_percentage": 74.33
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "1_percentage": 14.3,
+                  "3_percentage": 2.54,
+                  "6_percentage": 8.82,
+                  "12_percentage": 74.35
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "1_percentage": 14.97,
+                  "3_percentage": 2.9,
+                  "6_percentage": 9.09,
+                  "12_percentage": 73.04
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "1_percentage": 11.28,
+                  "3_percentage": 2.36,
+                  "6_percentage": 10.56,
+                  "12_percentage": 75.8
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "1_percentage": 21.06,
+                  "3_percentage": 3.43,
+                  "6_percentage": 9.96,
+                  "12_percentage": 65.55
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "1_percentage": 16.15,
+                  "3_percentage": 2.92,
+                  "6_percentage": 12.7,
+                  "12_percentage": 68.23
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "1_percentage": 7.34,
+                  "3_percentage": 2.79,
+                  "6_percentage": 13.79,
+                  "12_percentage": 76.08
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "1_percentage": 17.54,
+                  "3_percentage": 2.34,
+                  "6_percentage": 11.89,
+                  "12_percentage": 68.23
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "1_percentage": 7.0,
+                  "3_percentage": 2.76,
+                  "6_percentage": 9.32,
+                  "12_percentage": 80.92
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "1_percentage": 12.27,
+                  "3_percentage": 2.31,
+                  "6_percentage": 7.39,
+                  "12_percentage": 78.03
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "1_percentage": 35.12,
+                  "3_percentage": 5.68,
+                  "6_percentage": 9.24,
+                  "12_percentage": 49.96
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "1_percentage": 10.7,
+                  "3_percentage": 1.68,
+                  "6_percentage": 6.6,
+                  "12_percentage": 81.02
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "1_percentage": 19.38,
+                  "3_percentage": 3.3,
+                  "6_percentage": 8.38,
+                  "12_percentage": 68.94
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "1_percentage": 17.03,
+                  "3_percentage": 2.19,
+                  "6_percentage": 8.76,
+                  "12_percentage": 72.02
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "1_percentage": 19.68,
+                  "3_percentage": 3.48,
+                  "6_percentage": 10.21,
+                  "12_percentage": 66.63
+              },
+              "Oct2024"
+          ]
+      ],
+      "Product Type bucket": [
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 90.85,
+                  "contribution_ULIP_percentage": 9.15
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 92.06,
+                  "contribution_ULIP_percentage": 7.94
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 90.89,
+                  "contribution_ULIP_percentage": 9.11
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 90.36,
+                  "contribution_ULIP_percentage": 9.64
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 90.92,
+                  "contribution_ULIP_percentage": 9.08
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 94.2,
+                  "contribution_ULIP_percentage": 5.8
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 96.54,
+                  "contribution_ULIP_percentage": 3.46
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 92.57,
+                  "contribution_ULIP_percentage": 7.43
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 95.97,
+                  "contribution_ULIP_percentage": 4.03
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 87.68,
+                  "contribution_ULIP_percentage": 12.32
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.95,
+                  "contribution_ULIP_percentage": 6.05
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 91.95,
+                  "contribution_ULIP_percentage": 8.05
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.88,
+                  "contribution_ULIP_percentage": 6.12
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 94.1,
+                  "contribution_ULIP_percentage": 5.9
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 96.42,
+                  "contribution_ULIP_percentage": 3.58
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.16,
+                  "contribution_ULIP_percentage": 6.84
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 89.8,
+                  "contribution_ULIP_percentage": 10.2
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 95.31,
+                  "contribution_ULIP_percentage": 4.69
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 96.64,
+                  "contribution_ULIP_percentage": 3.36
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 79.26,
+                  "contribution_ULIP_percentage": 20.74
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 85.38,
+                  "contribution_ULIP_percentage": 14.62
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.83,
+                  "contribution_ULIP_percentage": 6.17
+              },
+              "Oct2024"
+          ]
+      ],
+      "Policy Year bucket": [
+          [
+              {
+                  "contribution_1_percentage": 24.03,
+                  "contribution_13M_percentage": 26.14,
+                  "contribution_25M_percentage": 19.89,
+                  "contribution_37M_percentage": 19.3,
+                  "contribution_49M_percentage": 6.44,
+                  "contribution_61M_percentage": 3.83,
+                  "contribution_FYRP_percentage": 0.37
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 25.09,
+                  "contribution_13M_percentage": 13.45,
+                  "contribution_25M_percentage": 19.3,
+                  "contribution_37M_percentage": 16.13,
+                  "contribution_49M_percentage": 8.82,
+                  "contribution_61M_percentage": 5.6,
+                  "contribution_FYRP_percentage": 11.61
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 24.37,
+                  "contribution_13M_percentage": 22.48,
+                  "contribution_25M_percentage": 13.42,
+                  "contribution_37M_percentage": 13.03,
+                  "contribution_49M_percentage": 8.26,
+                  "contribution_61M_percentage": 5.6,
+                  "contribution_FYRP_percentage": 12.83
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 28.79,
+                  "contribution_13M_percentage": 17.17,
+                  "contribution_25M_percentage": 15.59,
+                  "contribution_37M_percentage": 13.98,
+                  "contribution_49M_percentage": 7.21,
+                  "contribution_61M_percentage": 4.93,
+                  "contribution_FYRP_percentage": 12.32
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 17.92,
+                  "contribution_13M_percentage": 35.46,
+                  "contribution_25M_percentage": 17.01,
+                  "contribution_37M_percentage": 14.44,
+                  "contribution_49M_percentage": 7.0,
+                  "contribution_61M_percentage": 3.76,
+                  "contribution_FYRP_percentage": 4.42
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 36.05,
+                  "contribution_13M_percentage": 21.29,
+                  "contribution_25M_percentage": 10.4,
+                  "contribution_37M_percentage": 9.71,
+                  "contribution_49M_percentage": 7.35,
+                  "contribution_61M_percentage": 4.02,
+                  "contribution_FYRP_percentage": 11.17
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 16.15,
+                  "contribution_13M_percentage": 46.6,
+                  "contribution_25M_percentage": 16.48,
+                  "contribution_37M_percentage": 10.09,
+                  "contribution_49M_percentage": 4.7,
+                  "contribution_61M_percentage": 2.68,
+                  "contribution_FYRP_percentage": 3.29
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 27.0,
+                  "contribution_13M_percentage": 30.71,
+                  "contribution_25M_percentage": 11.17,
+                  "contribution_37M_percentage": 8.54,
+                  "contribution_49M_percentage": 6.53,
+                  "contribution_61M_percentage": 4.83,
+                  "contribution_FYRP_percentage": 11.22
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 31.26,
+                  "contribution_13M_percentage": 24.67,
+                  "contribution_25M_percentage": 12.16,
+                  "contribution_37M_percentage": 10.23,
+                  "contribution_49M_percentage": 8.39,
+                  "contribution_61M_percentage": 6.76,
+                  "contribution_FYRP_percentage": 6.52
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 31.03,
+                  "contribution_13M_percentage": 31.09,
+                  "contribution_25M_percentage": 9.53,
+                  "contribution_37M_percentage": 10.92,
+                  "contribution_49M_percentage": 6.23,
+                  "contribution_61M_percentage": 3.96,
+                  "contribution_FYRP_percentage": 7.23
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 24.0,
+                  "contribution_13M_percentage": 36.66,
+                  "contribution_25M_percentage": 12.12,
+                  "contribution_37M_percentage": 8.51,
+                  "contribution_49M_percentage": 7.49,
+                  "contribution_61M_percentage": 4.18,
+                  "contribution_FYRP_percentage": 7.04
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 22.73,
+                  "contribution_13M_percentage": 29.29,
+                  "contribution_25M_percentage": 15.08,
+                  "contribution_37M_percentage": 10.28,
+                  "contribution_49M_percentage": 7.07,
+                  "contribution_61M_percentage": 2.74,
+                  "contribution_FYRP_percentage": 12.82
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 37.62,
+                  "contribution_13M_percentage": 21.55,
+                  "contribution_25M_percentage": 10.62,
+                  "contribution_37M_percentage": 7.93,
+                  "contribution_49M_percentage": 8.46,
+                  "contribution_61M_percentage": 5.45,
+                  "contribution_FYRP_percentage": 8.37
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 42.07,
+                  "contribution_13M_percentage": 18.0,
+                  "contribution_25M_percentage": 10.93,
+                  "contribution_37M_percentage": 9.78,
+                  "contribution_49M_percentage": 7.98,
+                  "contribution_61M_percentage": 5.32,
+                  "contribution_FYRP_percentage": 5.92
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 43.55,
+                  "contribution_13M_percentage": 14.9,
+                  "contribution_25M_percentage": 11.2,
+                  "contribution_37M_percentage": 8.12,
+                  "contribution_49M_percentage": 6.46,
+                  "contribution_61M_percentage": 5.15,
+                  "contribution_FYRP_percentage": 10.61
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 36.21,
+                  "contribution_13M_percentage": 24.06,
+                  "contribution_25M_percentage": 12.7,
+                  "contribution_37M_percentage": 10.49,
+                  "contribution_49M_percentage": 6.04,
+                  "contribution_61M_percentage": 5.47,
+                  "contribution_FYRP_percentage": 5.02
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 2.51,
+                  "contribution_13M_percentage": 47.08,
+                  "contribution_25M_percentage": 23.61,
+                  "contribution_37M_percentage": 22.71,
+                  "contribution_49M_percentage": 0.17,
+                  "contribution_61M_percentage": 0.2,
+                  "contribution_FYRP_percentage": 3.73
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Oct2024"
+          ]
+      ]
+  }
+}
+const DLData={
+  "Deep-Lapse": {
+      "Premium Outstanding bucket": [
+          [
+              {
+                  "COUNT_<=20k_percentage": 4.38,
+                  "COUNT_>20k, <=50k_percentage": 23.91,
+                  "COUNT_>50k, <=150k_percentage": 43.08,
+                  "COUNT_>150k_percentage": 28.64
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 12.87,
+                  "COUNT_>20k, <=50k_percentage": 29.79,
+                  "COUNT_>50k, <=150k_percentage": 42.21,
+                  "COUNT_>150k_percentage": 15.12
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 13.92,
+                  "COUNT_>20k, <=50k_percentage": 34.05,
+                  "COUNT_>50k, <=150k_percentage": 38.42,
+                  "COUNT_>150k_percentage": 13.61
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 43.4,
+                  "COUNT_>20k, <=50k_percentage": 26.01,
+                  "COUNT_>50k, <=150k_percentage": 23.68,
+                  "COUNT_>150k_percentage": 6.91
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 39.96,
+                  "COUNT_>20k, <=50k_percentage": 28.6,
+                  "COUNT_>50k, <=150k_percentage": 21.02,
+                  "COUNT_>150k_percentage": 10.42
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 18.89,
+                  "COUNT_>20k, <=50k_percentage": 56.07,
+                  "COUNT_>50k, <=150k_percentage": 20.57,
+                  "COUNT_>150k_percentage": 4.47
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 15.67,
+                  "COUNT_>20k, <=50k_percentage": 34.23,
+                  "COUNT_>50k, <=150k_percentage": 36.29,
+                  "COUNT_>150k_percentage": 13.81
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 11.07,
+                  "COUNT_>20k, <=50k_percentage": 22.37,
+                  "COUNT_>50k, <=150k_percentage": 38.38,
+                  "COUNT_>150k_percentage": 28.18
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 20.69,
+                  "COUNT_>20k, <=50k_percentage": 36.05,
+                  "COUNT_>50k, <=150k_percentage": 31.97,
+                  "COUNT_>150k_percentage": 11.29
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 11.59,
+                  "COUNT_>20k, <=50k_percentage": 27.86,
+                  "COUNT_>50k, <=150k_percentage": 35.57,
+                  "COUNT_>150k_percentage": 24.98
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 9.9,
+                  "COUNT_>20k, <=50k_percentage": 24.48,
+                  "COUNT_>50k, <=150k_percentage": 41.26,
+                  "COUNT_>150k_percentage": 24.37
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 12.44,
+                  "COUNT_>20k, <=50k_percentage": 26.9,
+                  "COUNT_>50k, <=150k_percentage": 29.36,
+                  "COUNT_>150k_percentage": 31.31
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 16.03,
+                  "COUNT_>20k, <=50k_percentage": 23.36,
+                  "COUNT_>50k, <=150k_percentage": 39.46,
+                  "COUNT_>150k_percentage": 21.14
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 7.18,
+                  "COUNT_>20k, <=50k_percentage": 44.1,
+                  "COUNT_>50k, <=150k_percentage": 35.25,
+                  "COUNT_>150k_percentage": 13.47
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 24.43,
+                  "COUNT_>20k, <=50k_percentage": 36.25,
+                  "COUNT_>50k, <=150k_percentage": 26.68,
+                  "COUNT_>150k_percentage": 12.64
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 21.46,
+                  "COUNT_>20k, <=50k_percentage": 31.99,
+                  "COUNT_>50k, <=150k_percentage": 31.99,
+                  "COUNT_>150k_percentage": 14.55
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 6.91,
+                  "COUNT_>20k, <=50k_percentage": 27.22,
+                  "COUNT_>50k, <=150k_percentage": 48.59,
+                  "COUNT_>150k_percentage": 17.28
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 7.79,
+                  "COUNT_>20k, <=50k_percentage": 19.15,
+                  "COUNT_>50k, <=150k_percentage": 50.8,
+                  "COUNT_>150k_percentage": 22.25
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 8.87,
+                  "COUNT_>20k, <=50k_percentage": 35.39,
+                  "COUNT_>50k, <=150k_percentage": 42.41,
+                  "COUNT_>150k_percentage": 13.33
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 10.51,
+                  "COUNT_>20k, <=50k_percentage": 23.2,
+                  "COUNT_>50k, <=150k_percentage": 45.36,
+                  "COUNT_>150k_percentage": 20.92
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 5.74,
+                  "COUNT_>20k, <=50k_percentage": 26.38,
+                  "COUNT_>50k, <=150k_percentage": 34.81,
+                  "COUNT_>150k_percentage": 33.07
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "COUNT_<=20k_percentage": 14.96,
+                  "COUNT_>20k, <=50k_percentage": 39.19,
+                  "COUNT_>50k, <=150k_percentage": 30.64,
+                  "COUNT_>150k_percentage": 15.22
+              },
+              "Oct2024"
+          ]
+      ],
+      "Premium Frequency bucket": [
+          [
+              {
+                  "1_percentage": 9.35,
+                  "3_percentage": 1.07,
+                  "6_percentage": 6.15,
+                  "12_percentage": 83.43
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "1_percentage": 11.7,
+                  "3_percentage": 2.25,
+                  "6_percentage": 5.76,
+                  "12_percentage": 80.29
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "1_percentage": 15.53,
+                  "3_percentage": 2.13,
+                  "6_percentage": 9.47,
+                  "12_percentage": 72.87
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "1_percentage": 10.56,
+                  "3_percentage": 1.32,
+                  "6_percentage": 4.66,
+                  "12_percentage": 83.46
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "1_percentage": 7.58,
+                  "3_percentage": 0.95,
+                  "6_percentage": 4.36,
+                  "12_percentage": 87.12
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "1_percentage": 4.79,
+                  "3_percentage": 1.05,
+                  "6_percentage": 4.33,
+                  "12_percentage": 89.83
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "1_percentage": 14.64,
+                  "3_percentage": 2.89,
+                  "6_percentage": 4.12,
+                  "12_percentage": 78.35
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "1_percentage": 6.25,
+                  "3_percentage": 2.96,
+                  "6_percentage": 4.61,
+                  "12_percentage": 86.18
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "1_percentage": 14.73,
+                  "3_percentage": 1.25,
+                  "6_percentage": 8.46,
+                  "12_percentage": 75.55
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "1_percentage": 11.35,
+                  "3_percentage": 1.91,
+                  "6_percentage": 6.97,
+                  "12_percentage": 79.77
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "1_percentage": 15.31,
+                  "3_percentage": 2.09,
+                  "6_percentage": 6.84,
+                  "12_percentage": 75.76
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "1_percentage": 16.2,
+                  "3_percentage": 2.53,
+                  "6_percentage": 7.23,
+                  "12_percentage": 74.04
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "1_percentage": 23.38,
+                  "3_percentage": 3.1,
+                  "6_percentage": 8.8,
+                  "12_percentage": 64.72
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "1_percentage": 6.66,
+                  "3_percentage": 1.91,
+                  "6_percentage": 10.58,
+                  "12_percentage": 80.84
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "1_percentage": 10.47,
+                  "3_percentage": 0.81,
+                  "6_percentage": 12.95,
+                  "12_percentage": 75.77
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "1_percentage": 10.41,
+                  "3_percentage": 3.39,
+                  "6_percentage": 15.43,
+                  "12_percentage": 70.77
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "1_percentage": 23.55,
+                  "3_percentage": 3.73,
+                  "6_percentage": 10.34,
+                  "12_percentage": 62.38
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "1_percentage": 15.49,
+                  "3_percentage": 3.1,
+                  "6_percentage": 8.83,
+                  "12_percentage": 72.58
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "1_percentage": 3.39,
+                  "3_percentage": 0.69,
+                  "6_percentage": 2.61,
+                  "12_percentage": 93.31
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "1_percentage": 12.05,
+                  "3_percentage": 1.75,
+                  "6_percentage": 5.37,
+                  "12_percentage": 80.83
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "1_percentage": 11.3,
+                  "3_percentage": 2.4,
+                  "6_percentage": 6.51,
+                  "12_percentage": 79.79
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "1_percentage": 21.68,
+                  "3_percentage": 3.5,
+                  "6_percentage": 11.52,
+                  "12_percentage": 63.3
+              },
+              "Oct2024"
+          ]
+      ],
+      "Product Type bucket": [
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 89.23,
+                  "contribution_ULIP_percentage": 10.77
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 94.6,
+                  "contribution_ULIP_percentage": 5.4
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.71,
+                  "contribution_ULIP_percentage": 6.29
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 94.18,
+                  "contribution_ULIP_percentage": 5.82
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.56,
+                  "contribution_ULIP_percentage": 6.44
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 98.95,
+                  "contribution_ULIP_percentage": 1.05
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 95.05,
+                  "contribution_ULIP_percentage": 4.95
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 76.43,
+                  "contribution_ULIP_percentage": 23.57
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 95.61,
+                  "contribution_ULIP_percentage": 4.39
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 96.22,
+                  "contribution_ULIP_percentage": 3.78
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 86.68,
+                  "contribution_ULIP_percentage": 13.32
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 84.53,
+                  "contribution_ULIP_percentage": 15.47
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 88.71,
+                  "contribution_ULIP_percentage": 11.29
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 99.75,
+                  "contribution_ULIP_percentage": 0.25
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 92.67,
+                  "contribution_ULIP_percentage": 7.33
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 78.42,
+                  "contribution_ULIP_percentage": 21.58
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 84.36,
+                  "contribution_ULIP_percentage": 15.64
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 93.62,
+                  "contribution_ULIP_percentage": 6.38
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 78.52,
+                  "contribution_ULIP_percentage": 21.48
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 84.44,
+                  "contribution_ULIP_percentage": 15.56
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 87.62,
+                  "contribution_ULIP_percentage": 12.38
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 0.0,
+                  "contribution_TERM_percentage": 0.0,
+                  "contribution_TRADITIONAL_percentage": 90.1,
+                  "contribution_ULIP_percentage": 9.9
+              },
+              "Oct2024"
+          ]
+      ],
+      "Policy Year bucket": [
+          [
+              {
+                  "contribution_1_percentage": 22.29,
+                  "contribution_13M_percentage": 25.34,
+                  "contribution_25M_percentage": 21.87,
+                  "contribution_37M_percentage": 14.51,
+                  "contribution_49M_percentage": 10.83,
+                  "contribution_61M_percentage": 4.73,
+                  "contribution_FYRP_percentage": 0.42
+              },
+              "Jan2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 34.43,
+                  "contribution_13M_percentage": 8.64,
+                  "contribution_25M_percentage": 19.52,
+                  "contribution_37M_percentage": 14.46,
+                  "contribution_49M_percentage": 15.13,
+                  "contribution_61M_percentage": 7.68,
+                  "contribution_FYRP_percentage": 0.15
+              },
+              "Feb2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 51.01,
+                  "contribution_13M_percentage": 9.47,
+                  "contribution_25M_percentage": 7.68,
+                  "contribution_37M_percentage": 9.86,
+                  "contribution_49M_percentage": 11.39,
+                  "contribution_61M_percentage": 8.41,
+                  "contribution_FYRP_percentage": 2.18
+              },
+              "Mar2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 15.87,
+                  "contribution_13M_percentage": 57.18,
+                  "contribution_25M_percentage": 8.43,
+                  "contribution_37M_percentage": 6.5,
+                  "contribution_49M_percentage": 6.58,
+                  "contribution_61M_percentage": 2.93,
+                  "contribution_FYRP_percentage": 2.5
+              },
+              "Apr2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 15.71,
+                  "contribution_13M_percentage": 61.78,
+                  "contribution_25M_percentage": 8.55,
+                  "contribution_37M_percentage": 4.71,
+                  "contribution_49M_percentage": 5.41,
+                  "contribution_61M_percentage": 2.79,
+                  "contribution_FYRP_percentage": 1.05
+              },
+              "May2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 16.42,
+                  "contribution_13M_percentage": 75.63,
+                  "contribution_25M_percentage": 1.38,
+                  "contribution_37M_percentage": 1.42,
+                  "contribution_49M_percentage": 1.72,
+                  "contribution_61M_percentage": 2.01,
+                  "contribution_FYRP_percentage": 1.42
+              },
+              "Jun2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 21.03,
+                  "contribution_13M_percentage": 41.7,
+                  "contribution_25M_percentage": 6.46,
+                  "contribution_37M_percentage": 15.5,
+                  "contribution_49M_percentage": 9.78,
+                  "contribution_61M_percentage": 4.61,
+                  "contribution_FYRP_percentage": 0.92
+              },
+              "Jul2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 20.83,
+                  "contribution_13M_percentage": 19.74,
+                  "contribution_25M_percentage": 23.58,
+                  "contribution_37M_percentage": 19.06,
+                  "contribution_49M_percentage": 9.92,
+                  "contribution_61M_percentage": 5.6,
+                  "contribution_FYRP_percentage": 1.28
+              },
+              "Aug2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 31.66,
+                  "contribution_13M_percentage": 31.66,
+                  "contribution_25M_percentage": 13.98,
+                  "contribution_37M_percentage": 9.23,
+                  "contribution_49M_percentage": 6.07,
+                  "contribution_61M_percentage": 5.8,
+                  "contribution_FYRP_percentage": 1.58
+              },
+              "Sep2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 21.55,
+                  "contribution_13M_percentage": 23.53,
+                  "contribution_25M_percentage": 14.24,
+                  "contribution_37M_percentage": 19.75,
+                  "contribution_49M_percentage": 12.38,
+                  "contribution_61M_percentage": 4.46,
+                  "contribution_FYRP_percentage": 4.09
+              },
+              "Oct2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 21.14,
+                  "contribution_13M_percentage": 15.68,
+                  "contribution_25M_percentage": 27.34,
+                  "contribution_37M_percentage": 18.51,
+                  "contribution_49M_percentage": 11.07,
+                  "contribution_61M_percentage": 5.52,
+                  "contribution_FYRP_percentage": 0.75
+              },
+              "Nov2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 39.65,
+                  "contribution_13M_percentage": 12.81,
+                  "contribution_25M_percentage": 15.83,
+                  "contribution_37M_percentage": 12.29,
+                  "contribution_49M_percentage": 11.19,
+                  "contribution_61M_percentage": 5.51,
+                  "contribution_FYRP_percentage": 2.72
+              },
+              "Dec2023"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 34.68,
+                  "contribution_13M_percentage": 12.1,
+                  "contribution_25M_percentage": 20.78,
+                  "contribution_37M_percentage": 12.37,
+                  "contribution_49M_percentage": 11.12,
+                  "contribution_61M_percentage": 7.33,
+                  "contribution_FYRP_percentage": 1.63
+              },
+              "Jan2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 59.43,
+                  "contribution_13M_percentage": 0.36,
+                  "contribution_25M_percentage": 28.63,
+                  "contribution_37M_percentage": 6.17,
+                  "contribution_49M_percentage": 2.78,
+                  "contribution_61M_percentage": 2.54,
+                  "contribution_FYRP_percentage": 0.08
+              },
+              "Feb2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 71.76,
+                  "contribution_13M_percentage": 3.41,
+                  "contribution_25M_percentage": 8.01,
+                  "contribution_37M_percentage": 6.32,
+                  "contribution_49M_percentage": 6.09,
+                  "contribution_61M_percentage": 4.18,
+                  "contribution_FYRP_percentage": 0.25
+              },
+              "Mar2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 60.79,
+                  "contribution_13M_percentage": 12.49,
+                  "contribution_25M_percentage": 9.0,
+                  "contribution_37M_percentage": 6.11,
+                  "contribution_49M_percentage": 5.68,
+                  "contribution_61M_percentage": 4.45,
+                  "contribution_FYRP_percentage": 1.48
+              },
+              "Apr2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 3.3,
+                  "contribution_13M_percentage": 22.92,
+                  "contribution_25M_percentage": 37.12,
+                  "contribution_37M_percentage": 23.1,
+                  "contribution_49M_percentage": 12.84,
+                  "contribution_61M_percentage": 0.66,
+                  "contribution_FYRP_percentage": 0.06
+              },
+              "May2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jun2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Jul2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Aug2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Sep2024"
+          ],
+          [
+              {
+                  "contribution_1_percentage": 100.0,
+                  "contribution_13M_percentage": 0.0,
+                  "contribution_25M_percentage": 0.0,
+                  "contribution_37M_percentage": 0.0,
+                  "contribution_49M_percentage": 0.0,
+                  "contribution_61M_percentage": 0.0,
+                  "contribution_FYRP_percentage": 0.0
+              },
+              "Oct2024"
+          ]
+      ]
+  }
+}
+
 // { label: "Deep Lapse", width: "92px" },
 // const 
 
@@ -1261,8 +3871,8 @@ const DistributionRecovery: React.FC = () => {
   const tabs = [
     { label: "All", width: "65px" },
     { label: "Pre-Due", width: "65px" },
-    // { label: "Early Lapse", width: "92px" },
-    // { label: "Late Lapse", width: "92px" },
+    { label: "Early Lapse", width: "92px" },
+    { label: "Late Lapse", width: "92px" },
     // { label: "Deep Lapse", width: "92px" },
   ];
   
@@ -1995,6 +4605,9 @@ const DistributionRecovery: React.FC = () => {
           newselectedAllCategory={newselectedAllCategory}
           AllData={AllData}
           PreDueData={PreDueData}
+          ELData={ELData}
+          LLData={LLData}
+          DLData={DLData}
           activeTabs={activeTabs}
           newselectedCategory={newselectedCategory}
           />

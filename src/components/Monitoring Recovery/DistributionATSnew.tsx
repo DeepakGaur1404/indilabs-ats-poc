@@ -18,6 +18,9 @@ type Props = {
   
   AllData:any
     PreDueData:any
+    ELData:any
+    LLData:any
+    DLData:any
     activeTabs:any
     newselectedCategory:any
     newselectedAllCategory:any
@@ -62,6 +65,10 @@ interface DataPoint {
     "contribution_49M_percentage"?: number,
     "contribution_61M_percentage"?: number,
     "contribution_FYRP_percentage"?: number,
+    // "contribution_1_percentage": 0.0,
+    "contribution_TERM_percentage": number,
+    "contribution_TRADITIONAL_percentage": number,
+    "contribution_ULIP_percentage": number,
   }
   
   interface ChartData {
@@ -74,7 +81,7 @@ interface DataPoint {
 //  const allData: ChartData[] = processData(staticRevisedJsonDataSettlement.all);
 
 const DistributionATSnew = ({
-  AllData, PreDueData,
+  AllData, PreDueData,ELData,LLData,DLData,
     activeTabs,
     newselectedCategory,
     newselectedAllCategory
@@ -88,7 +95,7 @@ const DistributionATSnew = ({
   const [error, setError] = useState<string | null>(null);
 
   const processDataPreDue  = (data: [DataPoint, string][]): ChartData[] => {
-    return data.map(([dataPoint, period]) => {
+    return data?.map(([dataPoint, period]) => {
       return {
         name: period, 
         ...dataPoint, 
@@ -169,158 +176,158 @@ const DistributionATSnew = ({
       }
 
       
-      // else if (
-      //   activeTabs === "Early Lapse" &&
-      //   newselectedCategory === "Prem_OS" &&
-      //   PreDueData &&
-      //   PreDueData["pre-due"]["Principal Outstanding bucket"]?.length > 0
-      // ) {
-      //   const allData: ChartData[] = processDataPreDue(
-      //     PreDueData["pre-due"]["Principal Outstanding bucket"]
-      //   );
+      else if (
+        activeTabs === "Early Lapse" &&
+        newselectedCategory === "Prem_OS" &&
+        ELData &&
+        ELData["Early-Lapse"]["Premium Outstanding bucket"]?.length > 0
+      ) {
+        const allData: ChartData[] = processDataPreDue(
+          ELData["Early-Lapse"]["Premium Outstanding bucket"]
+        );
         
-      //   setData(allData);
-      // } 
-      // else if (
-      //     activeTabs === "Early Lapse" &&
-      //     newselectedCategory === "Prem_Frequency" &&
-      //     PreDueData &&
-      //     PreDueData["pre-due"]["Premium Frequency bucket"]?.length > 0
-      //   ) {
-      //     const allData: ChartData[] = processDataPreDue(
-      //       PreDueData["pre-due"]["Premium Frequency bucket"]
-      //     );
-      //     console.log("Processed allData:........", allData);
-      //     setData(allData);
-      //   }
-      //   else if (
-      //     activeTabs === "Early Lapse" &&
-      //     newselectedCategory === "Product" &&
-      //     PreDueData &&
-      //     PreDueData["pre-due"]["Product Type bucket"]?.length > 0
-      //   ) {
-      //     const allData: ChartData[] = processDataPreDue(
-      //       PreDueData["pre-due"]["Product Type bucket"]
-      //     );
-      //     console.log("Processed allData Product.......................:", allData);
-      //     setData(allData);
-      //   } 
-      //   else if (
-      //     activeTabs === "Early Lapse" &&
-      //     newselectedCategory === "Policy_Year" &&
-      //     PreDueData &&
-      //     PreDueData["pre-due"]["Policy Year bucket"]?.length > 0
-      //   ) {
-      //     const allData: ChartData[] = processDataPreDue(
-      //       PreDueData["pre-due"]["Policy Year bucket"]
-      //     );
-      //     console.log("Processed allData:", allData);
-      //     setData(allData);
-      //   }
+        setData(allData);
+      } 
+      else if (
+          activeTabs === "Early Lapse" &&
+          newselectedCategory === "Prem_Frequency" &&
+          ELData &&
+          ELData["Early-Lapse"]["Premium Frequency bucket"]?.length > 0
+        ) {
+          const allData: ChartData[] = processDataPreDue(
+            ELData["Early-Lapse"]["Premium Frequency bucket"]
+          );
+          console.log("Processed allData:........", allData);
+          setData(allData);
+        }
+        else if (
+          activeTabs === "Early Lapse" &&
+          newselectedCategory === "Product" &&
+          ELData &&
+          ELData["Early-Lapse"]["Product Type bucket"]?.length > 0
+        ) {
+          const allData: ChartData[] = processDataPreDue(
+            ELData["Early-Lapse"]["Product Type bucket"]
+          );
+          console.log("Processed allData Product.......................:", allData);
+          setData(allData);
+        } 
+        else if (
+          activeTabs === "Early Lapse" &&
+          newselectedCategory === "Policy_Year" &&
+          ELData &&
+          ELData["Early-Lapse"]["Policy Year bucket"]?.length > 0
+        ) {
+          const allData: ChartData[] = processDataPreDue(
+            ELData["Early-Lapse"]["Policy Year bucket"]
+          );
+          console.log("Processed allData:", allData);
+          setData(allData);
+        }
 
 
-      //   else if (
-      //     activeTabs === "Deep Lapse" &&
-      //     newselectedCategory === "Prem_OS" &&
-      //     PreDueData &&
-      //     PreDueData["pre-due"]["Principal Outstanding bucket"]?.length > 0
-      //   ) {
-      //     const allData: ChartData[] = processDataPreDue(
-      //       PreDueData["pre-due"]["Principal Outstanding bucket"]
-      //     );
+        else if (
+          activeTabs === "Deep Lapse" &&
+          newselectedCategory === "Prem_OS" &&
+          DLData &&
+          DLData["Deep-Lapse"]["Premium Outstanding bucket"]?.length > 0
+        ) {
+          const allData: ChartData[] = processDataPreDue(
+            DLData["Deep-Lapse"]["Premium Outstanding bucket"]
+          );
           
-      //     setData(allData);
-      //   } 
-      //   else if (
-      //       activeTabs === "Deep Lapse" &&
-      //       newselectedCategory === "Prem_Frequency" &&
-      //       PreDueData &&
-      //       PreDueData["pre-due"]["Premium Frequency bucket"]?.length > 0
-      //     ) {
-      //       const allData: ChartData[] = processDataPreDue(
-      //         PreDueData["pre-due"]["Premium Frequency bucket"]
-      //       );
-      //       console.log("Processed allData:........", allData);
-      //       setData(allData);
-      //     }
-      //     else if (
-      //       activeTabs === "Deep Lapse" &&
-      //       newselectedCategory === "Product" &&
-      //       PreDueData &&
-      //       PreDueData["pre-due"]["Product Type bucket"]?.length > 0
-      //     ) {
-      //       const allData: ChartData[] = processDataPreDue(
-      //         PreDueData["pre-due"]["Product Type bucket"]
-      //       );
-      //       console.log("Processed allData Product.......................:", allData);
-      //       setData(allData);
-      //     } 
-      //     else if (
-      //       activeTabs === "Deep Lapse" &&
-      //       newselectedCategory === "Policy_Year" &&
-      //       PreDueData &&
-      //       PreDueData["pre-due"]["Policy Year bucket"]?.length > 0
-      //     ) {
-      //       const allData: ChartData[] = processDataPreDue(
-      //         PreDueData["pre-due"]["Policy Year bucket"]
-      //       );
-      //       console.log("Processed allData:", allData);
-      //       setData(allData);
-      //     }
+          setData(allData);
+        } 
+        else if (
+            activeTabs === "Deep Lapse" &&
+            newselectedCategory === "Prem_Frequency" &&
+            DLData &&
+            DLData["Deep-Lapse"]["Premium Frequency bucket"]?.length > 0
+          ) {
+            const allData: ChartData[] = processDataPreDue(
+              DLData["Deep-Lapse"]["Premium Frequency bucket"]
+            );
+            console.log("Processed allData:........", allData);
+            setData(allData);
+          }
+          else if (
+            activeTabs === "Deep Lapse" &&
+            newselectedCategory === "Product" &&
+            DLData &&
+            DLData["Deep-Lapse"]["Product Type bucket"]?.length > 0
+          ) {
+            const allData: ChartData[] = processDataPreDue(
+              DLData["Deep-Lapse"]["Product Type bucket"]
+            );
+            console.log("Processed allData Product.......................:", allData);
+            setData(allData);
+          } 
+          else if (
+            activeTabs === "Deep Lapse" &&
+            newselectedCategory === "Policy_Year" &&
+            DLData &&
+            DLData["Deep-Lapse"]["Policy Year bucket"]?.length > 0
+          ) {
+            const allData: ChartData[] = processDataPreDue(
+              DLData["Deep-Lapse"]["Policy Year bucket"]
+            );
+            console.log("Processed allData:", allData);
+            setData(allData);
+          }
 
 
-      //     else if (
-      //       activeTabs === "Late Lapse" &&
-      //       newselectedCategory === "Prem_OS" &&
-      //       PreDueData &&
-      //       PreDueData["pre-due"]["Principal Outstanding bucket"]?.length > 0
-      //     ) {
-      //       const allData: ChartData[] = processDataPreDue(
-      //         PreDueData["pre-due"]["Principal Outstanding bucket"]
-      //       );
+          else if (
+            activeTabs === "Late Lapse" &&
+            newselectedCategory === "Prem_OS" &&
+            LLData &&
+            LLData["Late-Lapse"]["Premium Outstanding bucket"]?.length > 0
+          ) {
+            const allData: ChartData[] = processDataPreDue(
+              LLData["Late-Lapse"]["Premium Outstanding bucket"]
+            );
             
-      //       setData(allData);
-      //     } 
-      //     else if (
-      //         activeTabs === "Late Lapse" &&
-      //         newselectedCategory === "Prem_Frequency" &&
-      //         PreDueData &&
-      //         PreDueData["pre-due"]["Premium Frequency bucket"]?.length > 0
-      //       ) {
-      //         const allData: ChartData[] = processDataPreDue(
-      //           PreDueData["pre-due"]["Premium Frequency bucket"]
-      //         );
-      //         console.log("Processed allData:........", allData);
-      //         setData(allData);
-      //       }
-      //       else if (
-      //         activeTabs === "Late Lapse" &&
-      //         newselectedCategory === "Product" &&
-      //         PreDueData &&
-      //         PreDueData["pre-due"]["Product Type bucket"]?.length > 0
-      //       ) {
-      //         const allData: ChartData[] = processDataPreDue(
-      //           PreDueData["pre-due"]["Product Type bucket"]
-      //         );
-      //         console.log("Processed allData Product.......................:", allData);
-      //         setData(allData);
-      //       } 
-      //       else if (
-      //         activeTabs === "Late Lapse" &&
-      //         newselectedCategory === "Policy_Year" &&
-      //         PreDueData &&
-      //         PreDueData["pre-due"]["Policy Year bucket"]?.length > 0
-      //       ) {
-      //         const allData: ChartData[] = processDataPreDue(
-      //           PreDueData["pre-due"]["Policy Year bucket"]
-      //         );
-      //         console.log("Processed allData:", allData);
-      //         setData(allData);
-      //       }
+            setData(allData);
+          } 
+          else if (
+              activeTabs === "Late Lapse" &&
+              newselectedCategory === "Prem_Frequency" &&
+              LLData &&
+              LLData["Late-Lapse"]["Premium Frequency bucket"]?.length > 0
+            ) {
+              const allData: ChartData[] = processDataPreDue(
+                LLData["Late-Lapse"]["Premium Frequency bucket"]
+              );
+              console.log("Processed allData:........", allData);
+              setData(allData);
+            }
+            else if (
+              activeTabs === "Late Lapse" &&
+              newselectedCategory === "Product" &&
+              LLData &&
+              LLData["Late-Lapse"]["Product Type bucket"]?.length > 0
+            ) {
+              const allData: ChartData[] = processDataPreDue(
+                LLData["Late-Lapse"]["Product Type bucket"]
+              );
+              console.log("Processed allData Product.......................:", allData);
+              setData(allData);
+            } 
+            else if (
+              activeTabs === "Late Lapse" &&
+              newselectedCategory === "Policy_Year" &&
+              LLData &&
+              LLData["Late-Lapse"]["Policy Year bucket"]?.length > 0
+            ) {
+              const allData: ChartData[] = processDataPreDue(
+                LLData["Late-Lapse"]["Policy Year bucket"]
+              );
+              console.log("Processed allData:", allData);
+              setData(allData);
+            }
         else{
           setData(PreDueData)
         }
-  }, [activeTabs, newselectedCategory, PreDueData,newselectedAllCategory,AllData]);
+  }, [activeTabs, newselectedCategory, newselectedAllCategory,AllData]);
   
   console.log("Rendered data:", data);
   const formatYAxisTick = (tick: any) => {
@@ -422,7 +429,7 @@ const DistributionATSnew = ({
                         backgroundColor: colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
-                        marginRight: "5px",
+                        marginRight: "3px",
                         borderRadius: "3px",
                       }}
                     />
@@ -456,286 +463,286 @@ const DistributionATSnew = ({
                 )
               )
 
-            // : activeTabs === "Early Lapse" &&
-            // newselectedCategory === "Prem_OS" &&
-            // PreDueData &&
-            // PreDueData["Pre-due"]["Principal Outstanding bucket"]?
-            //    Object.keys(PreDueData["pre-due"]["Principal Outstanding bucket"][0][0]).map(
-            //       (series: any, index: any) => (
-            //         <div className="flex items-center" key={index}>
-            //           <div
-            //             className="legend-color"
-            //             style={{
-            //               backgroundColor: colorvintage[index % colorvintage.length],
-            //               width: "13px",
-            //               height: "13px",
-            //               marginRight: "5px",
-            //               borderRadius: "3px",
-            //             }}
-            //           />
-            //           <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //             {series}
-            //           </span>
-            //         </div>
-            //       )
-            //     )
-            //     :activeTabs === "Early Lapse" &&
-            //     newselectedCategory === "Product" &&
-            //     PreDueData &&
-            //     PreDueData["pre-due"]["Product Type bucket"]?
-            //        Object.keys(PreDueData["pre-due"]["Product Type bucket"][0][0]).map(
-            //           (series: any, index: any) => (
-            //             <div className="flex items-center" key={index}>
-            //               <div
-            //                 className="legend-color"
-            //                 style={{
-            //                   backgroundColor: colorvintage[index % colorvintage.length],
-            //                   width: "13px",
-            //                   height: "13px",
-            //                   marginRight: "5px",
-            //                   borderRadius: "3px",
-            //                 }}
-            //               />
-            //               <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                 {series}
-            //               </span>
-            //             </div>
-            //           )
-            //         ):
-            //         activeTabs === "Early Lapse" &&
-            // newselectedCategory === "Policy_Year" &&
-            // PreDueData &&
-            // PreDueData["pre-due"]["Policy Year bucket"]?
-            //    Object.keys(PreDueData["pre-due"]["Policy Year bucket"][0][0]).map(
-            //       (series: any, index: any) => (
-            //         <div className="flex items-center" key={index}>
-            //           <div
-            //             className="legend-color"
-            //             style={{
-            //               backgroundColor: colorvintage[index % colorvintage.length],
-            //               width: "13px",
-            //               height: "13px",
-            //               marginRight: "5px",
-            //               borderRadius: "3px",
-            //             }}
-            //           />
-            //           <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //             {series}
-            //           </span>
-            //         </div>
-            //       )
-            //     ):
-            //     activeTabs === "Early Lapse" &&
-            // newselectedCategory === "Prem_Frequency" &&
-            // PreDueData &&
-            // PreDueData["pre-due"]["Premium Frequency bucket"]?
-            //    Object.keys(PreDueData["pre-due"]["Premium Frequency bucket"][0][0]).map(
-            //       (series: any, index: any) => (
-            //         <div className="flex items-center" key={index}>
-            //           <div
-            //             className="legend-color"
-            //             style={{
-            //               backgroundColor: colorvintage[index % colorvintage.length],
-            //               width: "13px",
-            //               height: "13px",
-            //               marginRight: "5px",
-            //               borderRadius: "3px",
-            //             }}
-            //           />
-            //           <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //             {series}
-            //           </span>
-            //         </div>
-            //       )
-            //     )
+            : activeTabs === "Early Lapse" &&
+            newselectedCategory === "Prem_OS" &&
+            ELData &&
+            ELData["Early-Lapse"]["Premium Outstanding bucket"]?
+               Object.keys(ELData["Early-Lapse"]["Premium Outstanding bucket"][0][0]).map(
+                  (series: any, index: any) => (
+                    <div className="flex items-center" key={index}>
+                      <div
+                        className="legend-color"
+                        style={{
+                          backgroundColor: colorvintage[index % colorvintage.length],
+                          width: "13px",
+                          height: "13px",
+                          marginRight: "5px",
+                          borderRadius: "3px",
+                        }}
+                      />
+                      <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                        {series}
+                      </span>
+                    </div>
+                  )
+                )
+                :activeTabs === "Early Lapse" &&
+                newselectedCategory === "Product" &&
+                ELData &&
+                ELData["Early-Lapse"]["Product Type bucket"]?
+                   Object.keys(ELData["Early-Lapse"]["Product Type bucket"][0][0]).map(
+                      (series: any, index: any) => (
+                        <div className="flex items-center" key={index}>
+                          <div
+                            className="legend-color"
+                            style={{
+                              backgroundColor: colorvintage[index % colorvintage.length],
+                              width: "13px",
+                              height: "13px",
+                              marginRight: "5px",
+                              borderRadius: "3px",
+                            }}
+                          />
+                          <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                            {series}
+                          </span>
+                        </div>
+                      )
+                    ):
+                    activeTabs === "Early Lapse" &&
+            newselectedCategory === "Policy_Year" &&
+            ELData &&
+            ELData["Early-Lapse"]["Policy Year bucket"]?
+               Object.keys(ELData["Early-Lapse"]["Policy Year bucket"][0][0]).map(
+                  (series: any, index: any) => (
+                    <div className="flex items-center" key={index}>
+                      <div
+                        className="legend-color"
+                        style={{
+                          backgroundColor: colorvintage[index % colorvintage.length],
+                          width: "13px",
+                          height: "13px",
+                          marginRight: "3px",
+                          borderRadius: "3px",
+                        }}
+                      />
+                      <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                        {series}
+                      </span>
+                    </div>
+                  )
+                ):
+                activeTabs === "Early Lapse" &&
+            newselectedCategory === "Prem_Frequency" &&
+            ELData&&
+            ELData["Early-Lapse"]["Premium Frequency bucket"]?
+               Object.keys(ELData["Early-Lapse"]["Premium Frequency bucket"][0][0]).map(
+                  (series: any, index: any) => (
+                    <div className="flex items-center" key={index}>
+                      <div
+                        className="legend-color"
+                        style={{
+                          backgroundColor: colorvintage[index % colorvintage.length],
+                          width: "13px",
+                          height: "13px",
+                          marginRight: "5px",
+                          borderRadius: "3px",
+                        }}
+                      />
+                      <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                        {series}
+                      </span>
+                    </div>
+                  )
+                )
 
 
-            //   : activeTabs === "Late Lapse" &&
-            //   newselectedCategory === "Prem_OS" &&
-            //   PreDueData &&
-            //   PreDueData["pre-due"]["Principal Outstanding bucket"]?
-            //      Object.keys(PreDueData["pre-due"]["Principal Outstanding bucket"][0][0]).map(
-            //         (series: any, index: any) => (
-            //           <div className="flex items-center" key={index}>
-            //             <div
-            //               className="legend-color"
-            //               style={{
-            //                 backgroundColor: colorvintage[index % colorvintage.length],
-            //                 width: "13px",
-            //                 height: "13px",
-            //                 marginRight: "5px",
-            //                 borderRadius: "3px",
-            //               }}
-            //             />
-            //             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //               {series}
-            //             </span>
-            //           </div>
-            //         )
-            //       )
-            //       :activeTabs === "Late Lapse" &&
-            //       newselectedCategory === "Product" &&
-            //       PreDueData &&
-            //       PreDueData["pre-due"]["Product Type bucket"]?
-            //          Object.keys(PreDueData["pre-due"]["Product Type bucket"][0][0]).map(
-            //             (series: any, index: any) => (
-            //               <div className="flex items-center" key={index}>
-            //                 <div
-            //                   className="legend-color"
-            //                   style={{
-            //                     backgroundColor: colorvintage[index % colorvintage.length],
-            //                     width: "13px",
-            //                     height: "13px",
-            //                     marginRight: "5px",
-            //                     borderRadius: "3px",
-            //                   }}
-            //                 />
-            //                 <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                   {series}
-            //                 </span>
-            //               </div>
-            //             )
-            //           ):
-            //           activeTabs === "Late Lapse" &&
-            //   newselectedCategory === "Policy_Year" &&
-            //   PreDueData &&
-            //   PreDueData["pre-due"]["Policy Year bucket"]?
-            //      Object.keys(PreDueData["pre-due"]["Policy Year bucket"][0][0]).map(
-            //         (series: any, index: any) => (
-            //           <div className="flex items-center" key={index}>
-            //             <div
-            //               className="legend-color"
-            //               style={{
-            //                 backgroundColor: colorvintage[index % colorvintage.length],
-            //                 width: "13px",
-            //                 height: "13px",
-            //                 marginRight: "5px",
-            //                 borderRadius: "3px",
-            //               }}
-            //             />
-            //             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //               {series}
-            //             </span>
-            //           </div>
-            //         )
-            //       ):
-            //       activeTabs === "Late Lapse" &&
-            //   newselectedCategory === "Prem_Frequency" &&
-            //   PreDueData &&
-            //   PreDueData["pre-due"]["Premium Frequency bucket"]?
-            //      Object.keys(PreDueData["pre-due"]["Premium Frequency bucket"][0][0]).map(
-            //         (series: any, index: any) => (
-            //           <div className="flex items-center" key={index}>
-            //             <div
-            //               className="legend-color"
-            //               style={{
-            //                 backgroundColor: colorvintage[index % colorvintage.length],
-            //                 width: "13px",
-            //                 height: "13px",
-            //                 marginRight: "5px",
-            //                 borderRadius: "3px",
-            //               }}
-            //             />
-            //             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //               {series}
-            //             </span>
-            //           </div>
-            //         )
-            //       )
+              : activeTabs === "Late Lapse" &&
+              newselectedCategory === "Prem_OS" &&
+              LLData &&
+              LLData["Late-Lapse"]["Premium Outstanding bucket"]?
+                 Object.keys(LLData["Late-Lapse"]["Premium Outstanding bucket"][0][0]).map(
+                    (series: any, index: any) => (
+                      <div className="flex items-center" key={index}>
+                        <div
+                          className="legend-color"
+                          style={{
+                            backgroundColor: colorvintage[index % colorvintage.length],
+                            width: "13px",
+                            height: "13px",
+                            marginRight: "5px",
+                            borderRadius: "3px",
+                          }}
+                        />
+                        <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                          {series}
+                        </span>
+                      </div>
+                    )
+                  )
+                  :activeTabs === "Late Lapse" &&
+                  newselectedCategory === "Product" &&
+                  LLData &&
+                  LLData["Late-Lapse"]["Product Type bucket"]?
+                     Object.keys(LLData["Late-Lapse"]["Product Type bucket"][0][0]).map(
+                        (series: any, index: any) => (
+                          <div className="flex items-center" key={index}>
+                            <div
+                              className="legend-color"
+                              style={{
+                                backgroundColor: colorvintage[index % colorvintage.length],
+                                width: "13px",
+                                height: "13px",
+                                marginRight: "5px",
+                                borderRadius: "3px",
+                              }}
+                            />
+                            <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                              {series}
+                            </span>
+                          </div>
+                        )
+                      ):
+                      activeTabs === "Late Lapse" &&
+              newselectedCategory === "Policy_Year" &&
+              LLData &&
+              LLData["Late-Lapse"]["Policy Year bucket"]?
+                 Object.keys(LLData["Late-Lapse"]["Policy Year bucket"][0][0]).map(
+                    (series: any, index: any) => (
+                      <div className="flex items-center" key={index}>
+                        <div
+                          className="legend-color"
+                          style={{
+                            backgroundColor: colorvintage[index % colorvintage.length],
+                            width: "13px",
+                            height: "13px",
+                            marginRight: "3px",
+                            borderRadius: "3px",
+                          }}
+                        />
+                        <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                          {series}
+                        </span>
+                      </div>
+                    )
+                  ):
+                  activeTabs === "Late Lapse" &&
+              newselectedCategory === "Prem_Frequency" &&
+              LLData &&
+              LLData["Late-Lapse"]["Premium Frequency bucket"]?
+                 Object.keys(LLData["Late-Lapse"]["Premium Frequency bucket"][0][0]).map(
+                    (series: any, index: any) => (
+                      <div className="flex items-center" key={index}>
+                        <div
+                          className="legend-color"
+                          style={{
+                            backgroundColor: colorvintage[index % colorvintage.length],
+                            width: "13px",
+                            height: "13px",
+                            marginRight: "5px",
+                            borderRadius: "3px",
+                          }}
+                        />
+                        <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                          {series}
+                        </span>
+                      </div>
+                    )
+                  )
 
 
-            //     : activeTabs === "Deep Lapse" &&
-            //     newselectedCategory === "Prem_OS" &&
-            //     PreDueData &&
-            //     PreDueData["pre-due"]["Principal Outstanding bucket"]?
-            //        Object.keys(PreDueData["pre-due"]["Principal Outstanding bucket"][0][0]).map(
-            //           (series: any, index: any) => (
-            //             <div className="flex items-center" key={index}>
-            //               <div
-            //                 className="legend-color"
-            //                 style={{
-            //                   backgroundColor: colorvintage[index % colorvintage.length],
-            //                   width: "13px",
-            //                   height: "13px",
-            //                   marginRight: "5px",
-            //                   borderRadius: "3px",
-            //                 }}
-            //               />
-            //               <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                 {series}
-            //               </span>
-            //             </div>
-            //           )
-            //         )
-            //         :activeTabs === "Deep Lapse" &&
-            //         newselectedCategory === "Product" &&
-            //         PreDueData &&
-            //         PreDueData["pre-due"]["Product Type bucket"]?
-            //            Object.keys(PreDueData["pre-due"]["Product Type bucket"][0][0]).map(
-            //               (series: any, index: any) => (
-            //                 <div className="flex items-center" key={index}>
-            //                   <div
-            //                     className="legend-color"
-            //                     style={{
-            //                       backgroundColor: colorvintage[index % colorvintage.length],
-            //                       width: "13px",
-            //                       height: "13px",
-            //                       marginRight: "5px",
-            //                       borderRadius: "3px",
-            //                     }}
-            //                   />
-            //                   <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                     {series}
-            //                   </span>
-            //                 </div>
-            //               )
-            //             ):
-            //             activeTabs === "Deep Lapse" &&
-            //     newselectedCategory === "Policy_Year" &&
-            //     PreDueData &&
-            //     PreDueData["pre-due"]["Policy Year bucket"]?
-            //        Object.keys(PreDueData["pre-due"]["Policy Year bucket"][0][0]).map(
-            //           (series: any, index: any) => (
-            //             <div className="flex items-center" key={index}>
-            //               <div
-            //                 className="legend-color"
-            //                 style={{
-            //                   backgroundColor: colorvintage[index % colorvintage.length],
-            //                   width: "13px",
-            //                   height: "13px",
-            //                   marginRight: "5px",
-            //                   borderRadius: "3px",
-            //                 }}
-            //               />
-            //               <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                 {series}
-            //               </span>
-            //             </div>
-            //           )
-            //         ):
-            //         activeTabs === "Deep Lapse" &&
-            //     newselectedCategory === "Prem_Frequency" &&
-            //     PreDueData &&
-            //     PreDueData["pre-due"]["Premium Frequency bucket"]?
-            //        Object.keys(PreDueData["pre-due"]["Premium Frequency bucket"][0][0]).map(
-            //           (series: any, index: any) => (
-            //             <div className="flex items-center" key={index}>
-            //               <div
-            //                 className="legend-color"
-            //                 style={{
-            //                   backgroundColor: colorvintage[index % colorvintage.length],
-            //                   width: "13px",
-            //                   height: "13px",
-            //                   marginRight: "5px",
-            //                   borderRadius: "3px",
-            //                 }}
-            //               />
-            //               <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-            //                 {series}
-            //               </span>
-            //             </div>
-            //           )
-            //         )
+                : activeTabs === "Deep Lapse" &&
+                newselectedCategory === "Prem_OS" &&
+                DLData &&
+                DLData["Deep-Lapse"]["Premium Outstanding bucket"]?
+                   Object.keys(DLData["Deep-Lapse"]["Premium Outstanding bucket"][0][0]).map(
+                      (series: any, index: any) => (
+                        <div className="flex items-center" key={index}>
+                          <div
+                            className="legend-color"
+                            style={{
+                              backgroundColor: colorvintage[index % colorvintage.length],
+                              width: "13px",
+                              height: "13px",
+                              marginRight: "5px",
+                              borderRadius: "3px",
+                            }}
+                          />
+                          <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                            {series}
+                          </span>
+                        </div>
+                      )
+                    )
+                    :activeTabs === "Deep Lapse" &&
+                    newselectedCategory === "Product" &&
+                    DLData &&
+                    DLData["Deep-Lapse"]["Product Type bucket"]?
+                       Object.keys(DLData["Deep-Lapse"]["Product Type bucket"][0][0]).map(
+                          (series: any, index: any) => (
+                            <div className="flex items-center" key={index}>
+                              <div
+                                className="legend-color"
+                                style={{
+                                  backgroundColor: colorvintage[index % colorvintage.length],
+                                  width: "13px",
+                                  height: "13px",
+                                  marginRight: "5px",
+                                  borderRadius: "3px",
+                                }}
+                              />
+                              <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                                {series}
+                              </span>
+                            </div>
+                          )
+                        ):
+                        activeTabs === "Deep Lapse" &&
+                newselectedCategory === "Policy_Year" &&
+                DLData &&
+                DLData["Deep-Lapse"]["Policy Year bucket"]?
+                   Object.keys(DLData["Deep-Lapse"]["Policy Year bucket"][0][0]).map(
+                      (series: any, index: any) => (
+                        <div className="flex items-center" key={index}>
+                          <div
+                            className="legend-color"
+                            style={{
+                              backgroundColor: colorvintage[index % colorvintage.length],
+                              width: "13px",
+                              height: "13px",
+                              marginRight: "3px",
+                              borderRadius: "3px",
+                            }}
+                          />
+                          <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                            {series}
+                          </span>
+                        </div>
+                      )
+                    ):
+                    activeTabs === "Deep Lapse" &&
+                newselectedCategory === "Prem_Frequency" &&
+                DLData &&
+                DLData["Deep-Lapse"]["Premium Frequency bucket"]?
+                   Object.keys(DLData["Deep-Lapse"]["Premium Frequency bucket"][0][0]).map(
+                      (series: any, index: any) => (
+                        <div className="flex items-center" key={index}>
+                          <div
+                            className="legend-color"
+                            style={{
+                              backgroundColor: colorvintage[index % colorvintage.length],
+                              width: "13px",
+                              height: "13px",
+                              marginRight: "5px",
+                              borderRadius: "3px",
+                            }}
+                          />
+                          <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                            {series}
+                          </span>
+                        </div>
+                      )
+                    )
                   :null 
            }
         </div> 
@@ -869,6 +876,86 @@ const DistributionATSnew = ({
         <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
         <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
                 radius={[4, 4, 0, 0]} /></>)
+                :activeTabs === "Pre-Due" &&
+      newselectedCategory === "Prem_OS" ?
+      (<>
+            <Bar dataKey="COUNT_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                  radius={[0, 0, 4, 4]} />
+          <Bar dataKey="COUNT_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+          <Bar dataKey="COUNT_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+          <Bar dataKey="COUNT_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                  radius={[4, 4, 0, 0]} /></>)
+        : activeTabs === "Pre-Due" &&
+        newselectedCategory === "Product"  ?
+        (<>
+              <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                    radius={[0, 0, 4, 4]} />
+            <Bar dataKey="TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+            <Bar dataKey="TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+            <Bar dataKey="ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                    radius={[4, 4, 0, 0]} /></>)
+    :
+    activeTabs === "Pre-Due" &&
+    newselectedCategory ==="Policy_Year" ?
+    (<>
+          <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                radius={[0, 0, 4, 4]} />
+        <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+        <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+        <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
+        <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
+        <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
+        <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
+                radius={[4, 4, 0, 0]} /></>)
+    : activeTabs === "Pre-Due" &&
+    newselectedCategory === "Prem_Frequency" ?
+    (<> 
+          <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                radius={[0, 0, 4, 4]} />
+        <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+        <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+        <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                radius={[4, 4, 0, 0]} /></>)
+         :activeTabs === "Early Lapse" &&
+      newselectedCategory === "Prem_OS" ?
+      (<>
+            <Bar dataKey="COUNT_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                  radius={[0, 0, 4, 4]} />
+          <Bar dataKey="COUNT_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+          <Bar dataKey="COUNT_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+          <Bar dataKey="COUNT_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                  radius={[4, 4, 0, 0]} /></>)
+        : activeTabs === "Early Lapse" &&
+        newselectedCategory === "Product"  ?
+        (<>
+              <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                             radius={[0, 0, 4, 4]} />
+                      <Bar dataKey="contribution_TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                     <Bar dataKey="contribution_TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                     <Bar dataKey="contribution_ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                            radius={[4, 4, 0, 0]} /></>)
+    :
+    activeTabs === "Early Lapse" &&
+    newselectedCategory ==="Policy_Year" ?
+    (<>
+          <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                radius={[0, 0, 4, 4]} />
+        <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+        <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+        <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
+        <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
+        <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
+        <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
+                radius={[4, 4, 0, 0]} /></>)
+    : activeTabs === "Early Lapse" &&
+    newselectedCategory === "Prem_Frequency" ?
+    (<> 
+          <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                radius={[0, 0, 4, 4]} />
+        <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+        <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+        <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                radius={[4, 4, 0, 0]} /></>)
               //   :activeTabs === "Early Lapse" &&
               //   newselectedCategory === "Prem_OS" ?
               //   (<>
@@ -909,86 +996,86 @@ const DistributionATSnew = ({
               //     <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
               //     <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
               //             radius={[4, 4, 0, 0]} /></>)
-              //             :activeTabs === "Late Lapse" &&
-              //             newselectedCategory === "Prem_OS" ?
-              //             (<>
-              //                   <Bar dataKey="PREMIUM_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                         radius={[0, 0, 4, 4]} />
-              //                 <Bar dataKey="PREMIUM_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                 <Bar dataKey="PREMIUM_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                 <Bar dataKey="PREMIUM_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                         radius={[4, 4, 0, 0]} /></>)
-              //               : activeTabs === "Late Lapse" &&
-              //               newselectedCategory === "Product"  ?
-              //               (<>
-              //                     <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                           radius={[0, 0, 4, 4]} />
-              //                   <Bar dataKey="contribution_TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                   <Bar dataKey="contribution_TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                   <Bar dataKey="contribution_ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                           radius={[4, 4, 0, 0]} /></>)
-              //           :
-              //           activeTabs === "Late Lapse" &&
-              //           newselectedCategory ==="Policy_Year" ?
-              //           (<>
-              //                 <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                       radius={[0, 0, 4, 4]} />
-              //               <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //               <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //               <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
-              //               <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
-              //               <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
-              //               <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
-              //                       radius={[4, 4, 0, 0]} /></>)
-              //           : activeTabs === "Late Lapse" &&
-              //           newselectedCategory === "Prem_Frequency" ?
-              //           (<> 
-              //                 <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                       radius={[0, 0, 4, 4]} />
-              //               <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //               <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //               <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                       radius={[4, 4, 0, 0]} /></>)
-              //                       :activeTabs === "Deep Lapse" &&
-              //                       newselectedCategory === "Prem_OS" ?
-              //                       (<>
-              //                             <Bar dataKey="PREMIUM_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                                   radius={[0, 0, 4, 4]} />
-              //                           <Bar dataKey="PREMIUM_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                           <Bar dataKey="PREMIUM_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                           <Bar dataKey="PREMIUM_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                                   radius={[4, 4, 0, 0]} /></>)
-              //                         : activeTabs === "Deep Lapse" &&
-              //                         newselectedCategory === "Product"  ?
-              //                         (<>
-              //                               <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                                     radius={[0, 0, 4, 4]} />
-              //                             <Bar dataKey="contribution_TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                             <Bar dataKey="contribution_TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                             <Bar dataKey="contribution_ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                                     radius={[4, 4, 0, 0]} /></>)
-              //                     :
-              //                     activeTabs === "Deep Lapse" &&
-              //                     newselectedCategory ==="Policy_Year" ?
-              //                     (<>
-              //                           <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                                 radius={[0, 0, 4, 4]} />
-              //                         <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                         <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                         <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
-              //                         <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
-              //                         <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
-              //                         <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
-              //                                 radius={[4, 4, 0, 0]} /></>)
-              //                     : activeTabs === "Deep Lapse" &&
-              //                     newselectedCategory === "Prem_Frequency" ?
-              //                     (<> 
-              //                           <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-              //                                 radius={[0, 0, 4, 4]} />
-              //                         <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-              //                         <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-              //                         <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-              //                                 radius={[4, 4, 0, 0]} /></>)
+                          :activeTabs === "Late Lapse" &&
+                          newselectedCategory === "Prem_OS" ?
+                          (<>
+                               <Bar dataKey="COUNT_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                  radius={[0, 0, 4, 4]} />
+          <Bar dataKey="COUNT_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+          <Bar dataKey="COUNT_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+          <Bar dataKey="COUNT_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                  radius={[4, 4, 0, 0]} /></>)
+                            : activeTabs === "Late Lapse" &&
+                            newselectedCategory === "Product"  ?
+                            (<>
+                                  <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                        radius={[0, 0, 4, 4]} />
+                                <Bar dataKey="contribution_TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                                <Bar dataKey="contribution_TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                                <Bar dataKey="contribution_ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                                        radius={[4, 4, 0, 0]} /></>)
+                        :
+                        activeTabs === "Late Lapse" &&
+                        newselectedCategory ==="Policy_Year" ?
+                        (<>
+                              <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                    radius={[0, 0, 4, 4]} />
+                            <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                            <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                            <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
+                            <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
+                            <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
+                            <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
+                                    radius={[4, 4, 0, 0]} /></>)
+                        : activeTabs === "Late Lapse" &&
+                        newselectedCategory === "Prem_Frequency" ?
+                        (<> 
+                              <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                    radius={[0, 0, 4, 4]} />
+                            <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                            <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                            <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                                    radius={[4, 4, 0, 0]} /></>)
+                                    :activeTabs === "Deep Lapse" &&
+                                    newselectedCategory === "Prem_OS" ?
+                                    (<>
+                                           <Bar dataKey="COUNT_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                  radius={[0, 0, 4, 4]} />
+          <Bar dataKey="COUNT_>20k, <=50k_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+          <Bar dataKey="COUNT_>50k, <=150k_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+          <Bar dataKey="COUNT_>150k_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                  radius={[4, 4, 0, 0]} /></>)
+                                      : activeTabs === "Deep Lapse" &&
+                                      newselectedCategory === "Product"  ?
+                                      (<>
+                                            <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                                  radius={[0, 0, 4, 4]} />
+                                          <Bar dataKey="contribution_TERM_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                                          <Bar dataKey="contribution_TRADITIONAL_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                                          <Bar dataKey="contribution_ULIP_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                                                  radius={[4, 4, 0, 0]} /></>)
+                                  :
+                                  activeTabs === "Deep Lapse" &&
+                                  newselectedCategory ==="Policy_Year" ?
+                                  (<>
+                                        <Bar dataKey="contribution_1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                              radius={[0, 0, 4, 4]} />
+                                      <Bar dataKey="contribution_13M_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                                      <Bar dataKey="contribution_25M_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                                      <Bar dataKey="contribution_37M_percentage" stackId="a" fill={colorvintage[3] } barSize={35}/>
+                                      <Bar dataKey="contribution_49M_percentage" stackId="a" fill={colorvintage[4]} barSize={35}/>
+                                      <Bar dataKey="contribution_61M_percentage" stackId="a" fill={colorvintage[5]} barSize={35}/>
+                                      <Bar dataKey="contribution_FYRP_percentage" stackId="a" fill={colorvintage[6]}  barSize={35}
+                                              radius={[4, 4, 0, 0]} /></>)
+                                  : activeTabs === "Deep Lapse" &&
+                                  newselectedCategory === "Prem_Frequency" ?
+                                  (<> 
+                                        <Bar dataKey="1_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
+                                              radius={[0, 0, 4, 4]} />
+                                      <Bar dataKey="3_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
+                                      <Bar dataKey="6_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
+                                      <Bar dataKey="12_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
+                                              radius={[4, 4, 0, 0]} /></>)
                                               :null}
         </BarChart>
       </ResponsiveContainer>
