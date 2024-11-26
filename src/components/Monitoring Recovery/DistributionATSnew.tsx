@@ -115,14 +115,58 @@ const DistributionATSnew = ({
       activeTabs === "All" &&
       newselectedAllCategory === "Lapse Bkt" &&
       AllData &&
-      AllData.all?.length > 0
+      AllData.All["Lapse bucket"]?.length > 0
     ) {
       const allData: ChartData[] = processDataPreDue(
-        AllData.all
+        AllData.All["Lapse bucket"]
       );
-      
+
       setData(allData);
-    } 
+    } else if (
+      activeTabs === "All" &&
+      newselectedAllCategory === "Prem_OS" &&
+      AllData &&
+      AllData.All["Principal Outstanding bucket"]?.length > 0
+    ) {
+      const allData: ChartData[] = processDataPreDue(
+        AllData.All["Principal Outstanding bucket"]
+      );
+
+      setData(allData);
+    } else if (
+      activeTabs === "All" &&
+      newselectedAllCategory === "Prem_Frequency" &&
+      AllData &&
+      AllData.All["Premium Frequency bucket"]?.length > 0
+    ) {
+      const allData: ChartData[] = processDataPreDue(
+        AllData.All["Premium Frequency bucket"]
+      );
+
+      setData(allData);
+    } else if (
+      activeTabs === "All" &&
+      newselectedAllCategory === "Product" &&
+      AllData &&
+      AllData.All["Product Type bucket"]?.length > 0
+    ) {
+      const allData: ChartData[] = processDataPreDue(
+        AllData.All["Product Type bucket"]
+      );
+
+      setData(allData);
+    } else if (
+      activeTabs === "All" &&
+      newselectedAllCategory === "Policy_Year" &&
+      AllData &&
+      AllData.All["Policy Year bucket"]?.length > 0
+    ) {
+      const allData: ChartData[] = processDataPreDue(
+        AllData.All["Policy Year bucket"]
+      );
+
+      setData(allData);
+    }
     
       
      
@@ -346,17 +390,18 @@ const DistributionATSnew = ({
         </h1>
         <div className="flex flex-wrap justify-between items-center gap-2  ColorIndicator ">
          
-           {activeTabs === "All" &&
-      newselectedAllCategory === "Lapse Bkt" &&
-      AllData &&
-      AllData.all?
-             Object.keys(AllData.all[0][0]).map(
+        {activeTabs === "All" &&
+          newselectedAllCategory === "Lapse Bkt" &&
+          AllData &&
+          AllData.All["Lapse bucket"]
+            ? Object.keys(AllData.All["Lapse bucket"][0][0]).map(
                 (series: any, index: any) => (
                   <div className="flex items-center" key={index}>
                     <div
                       className="legend-color"
                       style={{
-                        backgroundColor: colorvintage[index % colorvintage.length],
+                        backgroundColor:
+                          colorvintage[index % colorvintage.length],
                         width: "13px",
                         height: "13px",
                         marginRight: "5px",
@@ -369,7 +414,103 @@ const DistributionATSnew = ({
                   </div>
                 )
               )
-              :
+            : activeTabs === "All" &&
+              newselectedAllCategory === "Prem_OS" &&
+              AllData &&
+              AllData.All["Principal Outstanding bucket"]
+            ? Object.keys(
+                AllData.All["Principal Outstanding bucket"][0][0]
+              ).map((series: any, index: any) => (
+                <div className="flex items-center" key={index}>
+                  <div
+                    className="legend-color"
+                    style={{
+                      backgroundColor:
+                        colorvintage[index % colorvintage.length],
+                      width: "13px",
+                      height: "13px",
+                      marginRight: "5px",
+                      borderRadius: "3px",
+                    }}
+                  />
+                  <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                    {series}
+                  </span>
+                </div>
+              ))
+            : activeTabs === "All" &&
+              newselectedAllCategory === "Policy_Year" &&
+              AllData &&
+              AllData.All["Policy Year bucket"]
+            ? Object.keys(AllData.All["Policy Year bucket"][0][0]).map(
+                (series: any, index: any) => (
+                  <div className="flex items-center" key={index}>
+                    <div
+                      className="legend-color"
+                      style={{
+                        backgroundColor:
+                          colorvintage[index % colorvintage.length],
+                        width: "13px",
+                        height: "13px",
+                        marginRight: "5px",
+                        borderRadius: "3px",
+                      }}
+                    />
+                    <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                      {series}
+                    </span>
+                  </div>
+                )
+              )
+            : activeTabs === "All" &&
+              newselectedAllCategory === "Prem_Frequency" &&
+              AllData &&
+              AllData.All["Premium Frequency bucket"]
+            ? Object.keys(AllData.All["Premium Frequency bucket"][0][0]).map(
+                (series: any, index: any) => (
+                  <div className="flex items-center" key={index}>
+                    <div
+                      className="legend-color"
+                      style={{
+                        backgroundColor:
+                          colorvintage[index % colorvintage.length],
+                        width: "13px",
+                        height: "13px",
+                        marginRight: "5px",
+                        borderRadius: "3px",
+                      }}
+                    />
+                    <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                      {series}
+                    </span>
+                  </div>
+                )
+              )
+            : activeTabs === "All" &&
+              newselectedAllCategory === "Product" &&
+              AllData &&
+              AllData.All["Product Type bucket"]
+            ? Object.keys(AllData.All["Product Type bucket"][0][0]).map(
+                (series: any, index: any) => (
+                  <div className="flex items-center" key={index}>
+                    <div
+                      className="legend-color"
+                      style={{
+                        backgroundColor:
+                          colorvintage[index % colorvintage.length],
+                        width: "13px",
+                        height: "13px",
+                        marginRight: "5px",
+                        borderRadius: "3px",
+                      }}
+                    />
+                    <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
+                      {series}
+                    </span>
+                  </div>
+                )
+              )
+            :
           activeTabs === "Pre-Due" &&
           newselectedCategory ==="Prem_OS" &&
           PreDueData &&
@@ -787,16 +928,173 @@ const DistributionATSnew = ({
             />
           {/* <Legend /> */}
           
-         {activeTabs === "All" &&
-      newselectedAllCategory === "Lapse Bkt"  ?
-      (<>
-            <Bar dataKey="Pre_due_policy_count_percentage" stackId="a" fill={colorvintage[0]} barSize={35}
-                  radius={[0, 0, 4, 4]} />
-          <Bar dataKey="Early_lapse_policy_count_percentage" stackId="a" fill={colorvintage[1] } barSize={35}/>
-          <Bar dataKey="Deep_lapse_policy_count_percentage" stackId="a" fill={colorvintage[2]} barSize={35}/>
-          <Bar dataKey="Late_lapse_policy_count_percentage" stackId="a" fill={colorvintage[3]}  barSize={35}
-                  radius={[4, 4, 0, 0]} /></>)
-        :activeTabs === "Pre-Due" &&
+          {activeTabs === "All" && newselectedAllCategory === "Lapse Bkt" ? (
+            <>
+              <Bar
+                dataKey="Pre_due_policy_count_percentage"
+                stackId="a"
+                fill={colorvintage[0]}
+                barSize={35}
+                radius={[0, 0, 4, 4]}
+              />
+              <Bar
+                dataKey="Early_lapse_policy_count_percentage"
+                stackId="a"
+                fill={colorvintage[1]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="Deep_lapse_policy_count_percentage"
+                stackId="a"
+                fill={colorvintage[2]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="Late_lapse_policy_count_percentage"
+                stackId="a"
+                fill={colorvintage[3]}
+                barSize={35}
+                radius={[4, 4, 0, 0]}
+              />
+            </>
+          ) : activeTabs === "All" && newselectedAllCategory === "Prem_OS" ? (
+            <>
+              <Bar
+                dataKey="COUNT_<=20k_percentage"
+                stackId="a"
+                fill={colorvintage[0]}
+                barSize={35}
+                radius={[0, 0, 4, 4]}
+              />
+              <Bar
+                dataKey="COUNT_>20k, <=50k_percentage"
+                stackId="a"
+                fill={colorvintage[1]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="COUNT_>50k, <=150k_percentage"
+                stackId="a"
+                fill={colorvintage[2]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="COUNT_>150k_percentage"
+                stackId="a"
+                fill={colorvintage[3]}
+                barSize={35}
+                radius={[4, 4, 0, 0]}
+              />
+            </>
+          ) : activeTabs === "All" && newselectedAllCategory === "Product" ? (
+            <>
+              <Bar
+                dataKey="1_percentage"
+                stackId="a"
+                fill={colorvintage[0]}
+                barSize={35}
+                radius={[0, 0, 4, 4]}
+              />
+              <Bar
+                dataKey="TERM_percentage"
+                stackId="a"
+                fill={colorvintage[1]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="TRADITIONAL_percentage"
+                stackId="a"
+                fill={colorvintage[2]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="ULIP_percentage"
+                stackId="a"
+                fill={colorvintage[3]}
+                barSize={35}
+                radius={[4, 4, 0, 0]}
+              />
+            </>
+          ) : activeTabs === "All" &&
+            newselectedAllCategory === "Policy_Year" ? (
+            <>
+              <Bar
+                dataKey="contribution_1_percentage"
+                stackId="a"
+                fill={colorvintage[0]}
+                barSize={35}
+                radius={[0, 0, 4, 4]}
+              />
+              <Bar
+                dataKey="contribution_13M_percentage"
+                stackId="a"
+                fill={colorvintage[1]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="contribution_25M_percentage"
+                stackId="a"
+                fill={colorvintage[2]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="contribution_37M_percentage"
+                stackId="a"
+                fill={colorvintage[3]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="contribution_49M_percentage"
+                stackId="a"
+                fill={colorvintage[4]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="contribution_61M_percentage"
+                stackId="a"
+                fill={colorvintage[5]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="contribution_FYRP_percentage"
+                stackId="a"
+                fill={colorvintage[6]}
+                barSize={35}
+                radius={[4, 4, 0, 0]}
+              />
+            </>
+          ) : activeTabs === "All" &&
+            newselectedAllCategory === "Prem_Frequency" ? (
+            <>
+              <Bar
+                dataKey="1_percentage"
+                stackId="a"
+                fill={colorvintage[0]}
+                barSize={35}
+                radius={[0, 0, 4, 4]}
+              />
+              <Bar
+                dataKey="3_percentage"
+                stackId="a"
+                fill={colorvintage[1]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="6_percentage"
+                stackId="a"
+                fill={colorvintage[2]}
+                barSize={35}
+              />
+              <Bar
+                dataKey="12_percentage"
+                stackId="a"
+                fill={colorvintage[3]}
+                barSize={35}
+                radius={[4, 4, 0, 0]}
+              />
+            </>
+          ) :
+        activeTabs === "Pre-Due" &&
       newselectedCategory === "Prem_OS" ?
       (<>
             <Bar dataKey="COUNT_<=20k_percentage" stackId="a" fill={colorvintage[0]} barSize={35}

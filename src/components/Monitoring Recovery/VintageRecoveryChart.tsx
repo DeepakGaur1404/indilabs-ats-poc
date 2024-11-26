@@ -362,13 +362,24 @@ type Props = {
   selectedSubCategory: string;
   selectedSubCategoryTwo: string;
   staticData:any;
+  PDData:any
+  newselectedCategory:any;
+   activeTabs:any;
+   PremOSCategorie:any
+   PremFrequency:any
+   PolicyYear :any
+   Product:any
 };
 const VintageRecoveryChart = ({
   activeButton,
   selectedCategory,
   selectedSubCategory,
   selectedSubCategoryTwo,
-  staticData
+  staticData,
+  PDData,
+  newselectedCategory,
+   activeTabs,
+   PremOSCategorie,PremFrequency,PolicyYear ,Product
 }: Props) => {
   const formatYAxisTick = (tick: any) => {
     if (tick == 0) {
@@ -408,7 +419,7 @@ const VintageRecoveryChart = ({
     let maxNum = 0;
     if (dataRecovery) {
       maxNum = Math.max(
-        ...dataRecovery?.map((item: any) => (item["Q1"] ? item["Q1"] : 0)),
+        ...dataRecovery?.map((item: any,i:any) => (item["Q1"] ? item["Q1"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q2"] ? item["Q2"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q3"] ? item["Q3"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q4"] ? item["Q4"] : 0)),
@@ -433,19 +444,19 @@ const VintageRecoveryChart = ({
 
   const tooltipFormatter = (value: any, name: any) => {
     if (name === "Q1") {
-      return [`${value.toFixed(2)}%`, `Q4 FY2023`];
+      return [`${value.toFixed(2)}%`, `2023Q2`];
     } else if (name === "Q2") {
-      return [`${value.toFixed(2)}%`, `Q1 FY2024`];
+      return [`${value.toFixed(2)}%`, `2023Q3`];
     } else if (name === "Q3") {
-      return [`${value.toFixed(2)}%`, `Q2 FY2024`];
+      return [`${value.toFixed(2)}%`, `2023Q4`];
     } else if (name === "Q4") {
-      return [`${value.toFixed(2)}%`, `Q3 FY2024`];
+      return [`${value.toFixed(2)}%`, `2024Q1`];
     } else if (name === "Q5") {
-      return [`${value.toFixed(2)}%`, `Q4 FY2024`];
+      return [`${value.toFixed(2)}%`, `2024Q2`];
     } else if (name === "Q6") {
-      return [`${value.toFixed(2)}%`, `Q1 FY2025`];
+      return [`${value.toFixed(2)}%`, `2024Q3`];
     } else if (name === "Q_Benchmark") {
-      return [`${value.toFixed(2)}%`, `Benchmark`];
+      return [`${value.toFixed(2)}%`, `2024Q4`];
     } else {
       return null;
     }
@@ -453,52 +464,124 @@ const VintageRecoveryChart = ({
 
   const toFilterData = (param: any) => {
     console.log(param, "param....");
-
+  
     let arr: any = [];
-    const maxArr = param?.map((item: any) => [...item.mob]);
-    maxArr.map((item: any) => {
+    const maxArr = param?.map((item: any) => [...item.M]); // Extract all M values
+    maxArr.forEach((item: any) => {
       arr = [...arr, ...item];
     });
-    const data: any = [...new Array(Math.max(...arr))].map((_, i) => ({
-      name: i + 1,
-      Q1: param[0]?.percentage[i],
-      Q2: param[1]?.percentage[i],
-      Q3: param[2]?.percentage[i],
-      Q4: param[3]?.percentage[i],
-      Q5: param[4]?.percentage[i],
-      Q6: param[5]?.percentage[i],
-      Q_Benchmark: param[6]?.percentage[i],
+  
+    const data: any = param[0]?.M.map((month: string, i: number) => ({
+      name: month, // Use month names from the 'M' array
+      Q1: param[0]?.percentage[i] || null, // Ensure safe access to percentage values
+      Q2: param[1]?.percentage[i] || null,
+      Q3: param[2]?.percentage[i] || null,
+      Q4: param[3]?.percentage[i] || null,
+      Q5: param[4]?.percentage[i] || null,
+      Q6: param[5]?.percentage[i] || null,
+      Q_Benchmark: param[6]?.percentage[i] || null,
     }));
+  
     setDataRecovery(data);
   };
+  //   const data: any =   [...arr].map((_, i) => ({
+  //     name: param?.map((item: any) => [...item.M]),
+  //     Q:param?.map((item: any) => [...item.percentage])
+  //     // Q1: param[0]?.percentage[i],
+  //     // Q2: param[1]?.percentage[i],
+  //     // Q3: param[2]?.percentage[i],
+  //     // Q4: param[3]?.percentage[i],
+  //     // Q5: param[4]?.percentage[i],
+  //     // Q6: param[5]?.percentage[i],
+  //     // Q_Benchmark: param[6]?.percentage[i],
+  //   }));
+  //   console.log(data,"data");
+    
+  //   setDataRecovery(data);
+  // };
+console.log(dataRecovery,"dataRecovery");
 
  
  
-  console.log(staticData,"staticData............");
+  console.log(PDData["PREM OS"],"PDData[PREM OS]...........");
   
   useEffect(() => {
-    if (!staticData) return;
-  
-    if (selectedCategory === "pos_seg" && staticData.pos_seg) {
-      let ld: StaticDataItem[] = []; // Explicitly type `ld`
-      
-      if (selectedSubCategory === "<1L") {
-        ld = staticData.pos_seg.filter((item:any) => item.sub_segment === "<1L");
-      } else if (selectedSubCategory === "1-5L") {
-        ld = staticData.pos_seg.filter((item:any) => item.sub_segment === "1-5L");
-      } else if (selectedSubCategory === "5-10L") {
-        ld = staticData.pos_seg.filter((item:any) => item.sub_segment === "5-10L");
-      } else if (selectedSubCategory === ">=10L") {
-        ld = staticData.pos_seg.filter((item:any) => item.sub_segment === ">=10L");
+   if (activeTabs==="Pre-Due"&& newselectedCategory==="All"&& PDData.all){
+    toFilterData(PDData.all)
+   }
+   else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_OS"&& PDData["PREM OS"]){
+      let ld: StaticDataItem[] = []; 
+        if (PremOSCategorie === "<20K" && PDData["PREM OS"]) {
+          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === "<=20k");
+        } else if (PremOSCategorie === "20K-50K" && PDData["PREM OS"]) {
+          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">20k, <=50k");
+        } else if (PremOSCategorie === "50K-150K" && PDData["PREM OS"]) {
+          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">50k, <=150k");
+        }else if (PremOSCategorie === ">150K" && PDData["PREM OS"]) {
+          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">150k");
+        }
+        
+        toFilterData(ld);
+   }
+ 
+   else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_Frequency"&& PDData["PREM FREQ"]){
+    let ld: StaticDataItem[] = []; 
+      if (PremFrequency === "Monthly") {
+        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
+      } else if (PremFrequency === "Quarterly") {
+        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
+      } else if (PremFrequency === "Semi Ann") {
+        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
+      }else if (PremFrequency === "Annual") {
+        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
       }
       
       toFilterData(ld);
-    } else if (staticData.all) {
-      toFilterData(staticData.all);
-    } else {
+ }  
+
+ else if (activeTabs==="Pre-Due"&& newselectedCategory === "Policy_Year"&& PDData["POLICY YEAR"]){
+  let ld: StaticDataItem[] = []; 
+    if (PolicyYear  === "13M") {
+      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "13M");
+    } else if (PolicyYear  === "25M") {
+      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "25M");
+    } else if (PolicyYear  === "61M") {
+      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "61M");
+    }else if (PolicyYear  === "49M") {
+      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "49M");
+    }
+    
+    toFilterData(ld);
+} 
+else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_Frequency"&& PDData["PREM FREQ"]){
+  let ld: StaticDataItem[] = []; 
+    if (PremFrequency === "Monthly") {
+      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
+    } else if (PremFrequency === "Quarterly") {
+      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
+    } else if (PremFrequency === "Semi Ann") {
+      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
+    }else if (PremFrequency === "Annual") {
+      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
+    }
+    
+    toFilterData(ld);
+}  
+else if (activeTabs==="Pre-Due"&& newselectedCategory==="Product"&& PDData["PRODUCT TYPE"]){
+  let ld: StaticDataItem[] = []; 
+    if (Product === "Traditional") {
+      ld = PDData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "TRADITIONAL");
+    } else if (Product === "ULIP") {
+      ld = PDData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "ULIP");
+    } 
+    
+    
+    toFilterData(ld);
+}      
+    else {
       toFilterData([]);
     }
-  }, [activeButton, selectedSubCategory, selectedCategory, staticData]);
+  }, [newselectedCategory,activeTabs,PremOSCategorie,PremFrequency,PolicyYear,Product ]);
   // Add staticData to the dependency array
   
   return (
@@ -520,7 +603,7 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q4 FY2023
+            2023Q2
             </span>
           </div>
           <div className="flex items-center">
@@ -535,7 +618,7 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q1 FY2024
+            2023Q3
             </span>
           </div>
           <div className="flex items-center">
@@ -550,7 +633,7 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q2 FY2024
+            2023Q4
             </span>
           </div>
           <div className="flex items-center">
@@ -566,7 +649,7 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q3 FY2024
+            2024Q1
             </span>
           </div>
           <div className="flex items-center">
@@ -581,7 +664,7 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q4 FY2024
+            2024Q2
             </span>
           </div>
           <div className="flex items-center">
@@ -596,21 +679,22 @@ const VintageRecoveryChart = ({
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Q1 FY2025
+            2024Q3
             </span>
           </div>
           <div className="flex items-center ">
             <div
-              className="legend-line"
+              className="legend-color"
               style={{
-                width: "25px", // Length of the line
-                height: "6px", // No height for a horizontal line
+                backgroundColor: "#DC3C49",
+                width: "13px",
+                height: "13px",
                 marginRight: "5px",
-                borderBottom: "4px dashed #DC3C49", // Dotted horizontal line
+                borderRadius: "3px",
               }}
             />
             <span className="text-[12px] font-[400] text-[#000000] font-['DM Sans']">
-              Benchmark
+            2024Q4
             </span>
           </div>
         </div>
