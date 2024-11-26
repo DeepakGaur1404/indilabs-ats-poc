@@ -19,8 +19,9 @@ const lineColors = [
   "#DC3C49",
 ];
 type Props = {
+  activeButton: string;
  
-  PDData:any
+  ELData:any
   newselectedCategory:any;
    activeTabs:any;
    PremOSCategorie:any
@@ -28,9 +29,10 @@ type Props = {
    PolicyYear :any
    Product:any
 };
-const VintageRecoveryChart = ({
- 
-  PDData,
+const EarlyLapseChart = ({
+  activeButton,
+  
+  ELData,
   newselectedCategory,
    activeTabs,
    PremOSCategorie,PremFrequency,PolicyYear ,Product
@@ -80,7 +82,7 @@ const VintageRecoveryChart = ({
         ...dataRecovery?.map((item: any) => (item["Q5"] ? item["Q5"] : 0)),
         ...dataRecovery?.map((item: any) => (item["Q6"] ? item["Q6"] : 0)),
         ...dataRecovery?.map((item: any) =>
-          item["Q_Benchmark"] ? item["Q_Benchmark"] : 0
+          item["Q7"] ? item["Q7"] : 0
         )
       );
     } else {
@@ -138,75 +140,74 @@ const VintageRecoveryChart = ({
   
     setDataRecovery(data);
   };
-  
   useEffect(() => {
-   if (activeTabs==="Pre-Due"&& newselectedCategory==="All"&& PDData.all){
-    toFilterData(PDData.all)
+   if (activeTabs==="Early Lapse"&& newselectedCategory==="All"&& ELData.all){
+    toFilterData(ELData.all)
    }
-   else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_OS"&& PDData["PREM OS"]){
+   else if (activeTabs==="Early Lapse"&& newselectedCategory==="Prem_OS"&& ELData["PREM OS"]){
       let ld: StaticDataItem[] = []; 
-        if (PremOSCategorie === "<20K" && PDData["PREM OS"]) {
-          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === "<=20k");
-        } else if (PremOSCategorie === "20K-50K" && PDData["PREM OS"]) {
-          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">20k, <=50k");
-        } else if (PremOSCategorie === "50K-150K" && PDData["PREM OS"]) {
-          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">50k, <=150k");
-        }else if (PremOSCategorie === ">150K" && PDData["PREM OS"]) {
-          ld = PDData["PREM OS"].filter((item:any) => item.sub_segment === ">150k");
+        if (PremOSCategorie === "<20K" && ELData["PREM OS"]) {
+          ld = ELData["PREM OS"].filter((item:any) => item.sub_segment === "<=20k");
+        } else if (PremOSCategorie === "20K-50K" && ELData["PREM OS"]) {
+          ld = ELData["PREM OS"].filter((item:any) => item.sub_segment === ">20k, <=50k");
+        } else if (PremOSCategorie === "50K-150K" && ELData["PREM OS"]) {
+          ld = ELData["PREM OS"].filter((item:any) => item.sub_segment === ">50k, <=150k");
+        }else if (PremOSCategorie === ">150K" && ELData["PREM OS"]) {
+          ld = ELData["PREM OS"].filter((item:any) => item.sub_segment === ">150k");
         }
         
         toFilterData(ld);
    }
  
-   else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_Frequency"&& PDData["PREM FREQ"]){
+   else if (activeTabs==="Early Lapse"&& newselectedCategory==="Prem_Frequency"&& ELData["PREM FREQ"]){
     let ld: StaticDataItem[] = []; 
       if (PremFrequency === "Monthly") {
-        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
+        ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
       } else if (PremFrequency === "Quarterly") {
-        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
+        ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
       } else if (PremFrequency === "Semi Ann") {
-        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
+        ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
       }else if (PremFrequency === "Annual") {
-        ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
+        ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
       }
       
       toFilterData(ld);
  }  
 
- else if (activeTabs==="Pre-Due"&& newselectedCategory === "Policy_Year"&& PDData["POLICY YEAR"]){
+ else if (activeTabs==="Early Lapse"&& newselectedCategory === "Policy_Year"&& ELData["POLICY YEAR"]){
   let ld: StaticDataItem[] = []; 
     if (PolicyYear  === "13M") {
-      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "13M");
+      ld = ELData["POLICY YEAR"].filter((item:any) => item.sub_segment === "13M");
     } else if (PolicyYear  === "25M") {
-      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "25M");
+      ld = ELData["POLICY YEAR"].filter((item:any) => item.sub_segment === "25M");
     } else if (PolicyYear  === "61M") {
-      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "61M");
+      ld = ELData["POLICY YEAR"].filter((item:any) => item.sub_segment === "61M");
     }else if (PolicyYear  === "49M") {
-      ld = PDData["POLICY YEAR"].filter((item:any) => item.sub_segment === "49M");
+      ld = ELData["POLICY YEAR"].filter((item:any) => item.sub_segment === "49M");
     }
     
     toFilterData(ld);
 } 
-else if (activeTabs==="Pre-Due"&& newselectedCategory==="Prem_Frequency"&& PDData["PREM FREQ"]){
+else if (activeTabs==="Early Lapse"&& newselectedCategory==="Prem_Frequency"&& ELData["PREM FREQ"]){
   let ld: StaticDataItem[] = []; 
     if (PremFrequency === "Monthly") {
-      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
+      ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Monthly");
     } else if (PremFrequency === "Quarterly") {
-      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
+      ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Quarterly");
     } else if (PremFrequency === "Semi Ann") {
-      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
+      ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Semi Ann");
     }else if (PremFrequency === "Annual") {
-      ld = PDData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
+      ld = ELData["PREM FREQ"].filter((item:any) => item.sub_segment === "Annual");
     }
     
     toFilterData(ld);
 }  
-else if (activeTabs==="Pre-Due"&& newselectedCategory==="Product"&& PDData["PRODUCT TYPE"]){
+else if (activeTabs==="Early Lapse"&& newselectedCategory==="Product"&& ELData["PRODUCT TYPE"]){
   let ld: StaticDataItem[] = []; 
     if (Product === "Traditional") {
-      ld = PDData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "TRADITIONAL");
+      ld = ELData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "TRADITIONAL");
     } else if (Product === "ULIP") {
-      ld = PDData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "ULIP");
+      ld = ELData["PRODUCT TYPE"].filter((item:any) => item.sub_segment === "ULIP");
     } 
     
     
@@ -369,12 +370,12 @@ else if (activeTabs==="Pre-Due"&& newselectedCategory==="Product"&& PDData["PROD
                 stroke={item}
                 strokeWidth={3}
                 dot={false}
-                // opacity={hoveredLine === null || hoveredLine === `Q${idx + 1}` ? 1 : 0.2} // Apply opacity based on hover
+                // opacity={hoveredLine === null || hoveredLine === `Q${idx + 1}` ? 1 : 0.2} 
               />
                 )
             )}
            
-           <Line
+          <Line
               type="monotone"
               dataKey="Q_Benchmark"
               stroke="#DC3C49"
@@ -389,4 +390,4 @@ else if (activeTabs==="Pre-Due"&& newselectedCategory==="Product"&& PDData["PROD
   );
 };
 
-export default VintageRecoveryChart;
+export default EarlyLapseChart;

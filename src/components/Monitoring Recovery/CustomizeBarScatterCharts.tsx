@@ -26,6 +26,9 @@ type Props = {
   staticDataRecoveryPerformance: any;
   setHoveredState: any;
   setHoveredSubSegment: any;
+  PDData:any
+  activeTabs:any;
+ newselectedCategory:any;
 };
 
 const colors = ["#4169E1", "#FFB200"];
@@ -41,6 +44,8 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   staticDataRecoveryPerformance,
   setHoveredState,
   setHoveredSubSegment,
+  PDData,activeTabs,
+  newselectedCategory
 }: Props) => {
   const [data, setData] = useState<
     { Placements: string; B1: number; Target: number; value: any }[]
@@ -87,15 +92,26 @@ const CustomizeBarScatterPeroformanceRecovery = ({
     return [value, name];
   };
 
-  const toFilterData = (param: any) => {
-    const data = param?.bars.map((item: any, i: any) => ({
-      Placements: item?.bar.sub_segment,
-      B1: item?.bar.value,
-      Target: item?.point.value,
-      value: i,
-    }));
-    setData(data);
-  };
+  const [PBdata, setPBData] = useState([]);
+
+  const [PYdata, setPYData] = useState([]);
+  const [PFdata, setPFData] = useState([]);
+  const [PTdata, setPTData] = useState([]);
+  useEffect(() => {
+   setPBData(PDData["premium_buckets"])
+   setPYData(PDData["policy_years"])
+  setPFData(PDData["payment_frequency"])
+  setPTData(PDData["product_type"])
+  },[PDData]);
+  // const toFilterData = (param: any) => {
+  //   const data = param?.bars.map((item: any, i: any) => ({
+  //     Placements: item?.bar?.sub_segment,
+  //     B1: item?.bar?.value,
+  //     Target: item?.point.value,
+  //     value: i,
+  //   }));
+  //   setData(data);
+  // };
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -106,45 +122,48 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   }, [data]);
   const containerClass = isWide ? "w-[49%] " : "w-[50%] ";
 
-  useEffect(() => {
-    setmobData(staticDataRecoveryPerformance?.vintage);
-    setlocationData(staticDataRecoveryPerformance?.location);
-    setagencyData(staticDataRecoveryPerformance?.agency);
-    setTosData(staticDataRecoveryPerformance?.pos);
+  // useEffect(() => {
+  //   setmobData(staticDataRecoveryPerformance?.vintage);
+  //   setlocationData(staticDataRecoveryPerformance?.location);
+  //   setagencyData(staticDataRecoveryPerformance?.agency);
+  //   setTosData(staticDataRecoveryPerformance?.pos);
 
-  }, [staticDataRecoveryPerformance]);
+  // }, [staticDataRecoveryPerformance]);
   // console.log(mobdata, "...mobdata");
   // console.log(staticDataRecoveryPerformance?.vintage, "...staticDataRecoveryPerformance?.vintage");
   // console.log(selectedCategory,"...selectedCategory");
+console.log("activeButton",activeButton);
 
    
   useEffect(() => {
-     if (activeButton ==="$Recovery") {
-    if (selectedCategory === "vintage") {
-      if (mobdata && mobdata.length > 0) {
-        toFilterData(mobdata[0]); 
+    //  if (activeButton ==="uniquePayer") {
+    if (activeButton ==="uniquePayer" && activeTabs==="Pre-Due"&&
+      newselectedCategory==="Prem_OS") {
+      if (PBdata && PBdata.length > 0) {
+        toFilterUniqueData(PBdata[0]); 
       }
     }
-    if (selectedCategory === "location") {
-      if (locationdata && locationdata.length > 0) {
-        toFilterData(locationdata[0]);// Only access mobdata[0] if mobdata is valid
+    if (activeButton ==="uniquePayer" && activeTabs==="Pre-Due"&&
+      newselectedCategory==="Policy_Year") {
+      if (PYdata && PYdata.length > 0) {
+        toFilterUniqueData(PYdata[0]); 
       }
-      
     }
-    if (selectedCategory === "agency") {
-      if (agencydata && agencydata.length > 0) {
-        toFilterData(agencydata[0]);
+    if (activeButton ==="uniquePayer" && activeTabs==="Pre-Due"&&
+      newselectedCategory==="Prem_Frequency") {
+      if (PFdata && PFdata.length > 0) {
+        toFilterUniqueData(PFdata[0]); 
       }
-     
     }
 
-    if (selectedCategory === "pos") {
-      if (tosdata && tosdata.length > 0) {
-        toFilterData(tosdata[0]);
+    if (activeButton ==="uniquePayer" && activeTabs==="Pre-Due"&&
+      newselectedCategory==="Product") {
+      if (PTdata && PTdata.length > 0) {
+        toFilterUniqueData(PTdata[0]); 
       }
     }
-      }
-  }, [mobdata, activeButton, selectedCategory]);
+      // }
+  }, [activeTabs, activeButton, newselectedCategory,PBdata]);
 
   const formatNumber = (num: any) => {
     if (num >= 1e7) {
@@ -244,45 +263,45 @@ const CustomizeBarScatterPeroformanceRecovery = ({
   //uniquepair
   const toFilterUniqueData = (param: any) => {
     const data = param?.bars.map((item: any) => ({
-      Placements: item.bar.sub_segment,
-      B1: item.bar.value,
+      Placements: item?.bar.sub_segment,
+      B1: item?.bar.value,
       //   Target: item.point.value,
     }));
     setDataUnique(data);
   };
 
-  useEffect(() => {
-    if (selectedCategory == "vintage") {
-      if (mobUdata && mobUdata.length > 0) {
-        toFilterUniqueData(mobUdata[0]);
-      }
+  // useEffect(() => {
+  //   if (selectedCategory == "vintage") {
+  //     if (mobUdata && mobUdata.length > 0) {
+  //       toFilterUniqueData(mobUdata[0]);
+  //     }
      
-    }
-    if (selectedCategory == "location") {
-      if (locationUdata && locationUdata.length > 0) {
-        toFilterUniqueData(locationUdata[0]);
-      }
+  //   }
+  //   if (selectedCategory == "location") {
+  //     if (locationUdata && locationUdata.length > 0) {
+  //       toFilterUniqueData(locationUdata[0]);
+  //     }
      
-    }
-    if (selectedCategory == "agency") {
-      if (agencyUdata && agencyUdata.length > 0) {
-        toFilterUniqueData(agencyUdata[0]);
-      }
+  //   }
+  //   if (selectedCategory == "agency") {
+  //     if (agencyUdata && agencyUdata.length > 0) {
+  //       toFilterUniqueData(agencyUdata[0]);
+  //     }
       
-    }
-    if (selectedCategory == "pos") {
-      if (tosUdata && tosUdata.length > 0) {
-        toFilterUniqueData(tosUdata[0]);
-      }
+  //   }
+  //   if (selectedCategory == "pos") {
+  //     if (tosUdata && tosUdata.length > 0) {
+  //       toFilterUniqueData(tosUdata[0]);
+  //     }
      
-    }
-  }, [activeButton, selectedCategory]);
-  useEffect(() => {
-    setmobUData(staticDataUniquePerformance?.vintage);
-    setlocationUData(staticDataUniquePerformance?.location);
-    setagencyUData(staticDataUniquePerformance?.agency);
-    setTosUData(staticDataUniquePerformance?.pos);
-  }, [staticDataUniquePerformance]);
+  //   }
+  // }, [activeButton, selectedCategory]);
+  // useEffect(() => {
+  //   setmobUData(staticDataUniquePerformance?.vintage);
+  //   setlocationUData(staticDataUniquePerformance?.location);
+  //   setagencyUData(staticDataUniquePerformance?.agency);
+  //   setTosUData(staticDataUniquePerformance?.pos);
+  // }, [staticDataUniquePerformance]);
 
   // const arrTicksUnique = () => {
   //   let arr: any = [];
@@ -362,7 +381,8 @@ const CustomizeBarScatterPeroformanceRecovery = ({
           </div>
         ) : null}
       </div>
-      {customizeBarScatterTitle === "Recovery (millions)" &&
+      {
+      // customizeBarScatterTitle === "Recovery (millions)" &&
         activeButton === "$Recovery" && (
           <ResponsiveContainer width="100%" height={315}>
             <ComposedChart
@@ -442,7 +462,8 @@ const CustomizeBarScatterPeroformanceRecovery = ({
           </ResponsiveContainer>
         )}
 
-      {customizeBarScatterTitle === "Unique Payers" &&
+      {
+      // customizeBarScatterTitle === "Unique Payers" &&
         activeButton === "uniquePayer" && (
           <ResponsiveContainer width="98%" height={315}>
             <ComposedChart
